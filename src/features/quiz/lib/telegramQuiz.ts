@@ -30,8 +30,8 @@ export async function sendTelegramQuizLead(
   payload: QuizSubmissionData,
   clientIp?: string
 ): Promise<TelegramQuizResult> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
   const score = calculateQuizScore(payload.answers);
   const locale = (payload.locale || "uz") as "uz" | "ru" | "en";
@@ -106,16 +106,44 @@ export async function sendTelegramQuizLead(
     .join("\n");
 
   try {
+    const inlineButtons: Array<{ text: string; url: string }> = [];
+
+    if (payload.telegramHandle) {
+      const cleanHandle = payload.telegramHandle.replace(/^@/, "").trim();
+      if (cleanHandle) {
+        inlineButtons.push({
+          text: "✈️ Telegramda yozish",
+          url: `https://t.me/${cleanHandle}`,
+        });
+      }
+    } else if (payload.phone) {
+      const cleanPhoneDigits = payload.phone.replace(/[^0-9]/g, "");
+      if (cleanPhoneDigits) {
+        inlineButtons.push({
+          text: "📞 Aloqaga chiqish",
+          url: `https://t.me/+${cleanPhoneDigits}`,
+        });
+      }
+    }
+
+    const requestPayload: Record<string, unknown> = {
+      chat_id: chatId,
+      text: message,
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+    };
+
+    if (inlineButtons.length > 0) {
+      requestPayload.reply_markup = {
+        inline_keyboard: [inlineButtons],
+      };
+    }
+
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "HTML",
-        disable_web_page_preview: true,
-      }),
+      body: JSON.stringify(requestPayload),
     });
 
     if (!response.ok) {

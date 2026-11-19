@@ -14,12 +14,12 @@ export async function sendTelegramLead(
   lead: ApplyFormData,
   clientIp?: string
 ): Promise<TelegramSendResult> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
   if (!token || !chatId) {
     console.warn(
-      "[Telegram Service] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID. Skipping Telegram dispatch in dev mode."
+      "[Telegram Service] Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID. Please configure them in .env.local"
     );
     return {
       success: true, // Don't block application submission in dev mode
@@ -116,16 +116,44 @@ export async function sendTelegramLead(
         .join("\n");
 
   try {
+    const inlineButtons: Array<{ text: string; url: string }> = [];
+
+    if (lead.telegramHandle) {
+      const cleanHandle = lead.telegramHandle.replace(/^@/, "").trim();
+      if (cleanHandle) {
+        inlineButtons.push({
+          text: "✈️ Telegramda yozish",
+          url: `https://t.me/${cleanHandle}`,
+        });
+      }
+    } else if (lead.phone) {
+      const cleanPhoneDigits = lead.phone.replace(/[^0-9]/g, "");
+      if (cleanPhoneDigits) {
+        inlineButtons.push({
+          text: "📞 Aloqaga chiqish",
+          url: `https://t.me/+${cleanPhoneDigits}`,
+        });
+      }
+    }
+
+    const payload: Record<string, unknown> = {
+      chat_id: chatId,
+      text: message,
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+    };
+
+    if (inlineButtons.length > 0) {
+      payload.reply_markup = {
+        inline_keyboard: [inlineButtons],
+      };
+    }
+
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "HTML",
-        disable_web_page_preview: true,
-      }),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
