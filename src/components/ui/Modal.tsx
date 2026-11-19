@@ -27,19 +27,21 @@ export function Modal({
       <DialogPrimitive.Portal>
         {/* Backdrop Overlay */}
         <DialogPrimitive.Overlay
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 duration-200"
         />
 
-        {/* Responsive Content: Bottom Sheet on Mobile (< md:), Centered Modal on Desktop (md:+) */}
+        {/* Content Container (Mobile: Bottom Sheet Drawer, Desktop: Centered Dialog) */}
         <DialogPrimitive.Content
           aria-describedby={undefined}
           className={cn(
-            // Mobile (Drawer)
-            "fixed inset-x-0 bottom-0 z-50 max-h-[90dvh] bg-cream border-t border-border text-charcoal rounded-t-[28px] flex flex-col overflow-hidden shadow-2xl focus:outline-none",
+            // FIXED ON SCREEN & ON TOP OF BACKDROP
+            "fixed z-50 bg-cream text-charcoal flex flex-col focus:outline-none shadow-modal",
+            // Mobile: Bottom Sheet
+            "inset-x-0 bottom-0 max-h-[90dvh] rounded-t-[28px] border-t border-border overflow-hidden",
             "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom duration-300",
-            // Desktop (Centered Modal)
-            "md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg md:rounded-3xl md:border md:shadow-modal",
-            "md:data-[state=closed]:zoom-out-95 md:data-[state=open]:zoom-in-95 md:data-[state=closed]:slide-out-to-bottom-0 md:data-[state=open]:slide-in-from-bottom-0",
+            // Desktop (sm: / md:): Centered Modal
+            "sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-full sm:max-w-lg sm:rounded-3xl sm:border sm:border-border sm:max-h-[90dvh]",
+            "sm:data-[state=closed]:zoom-out-95 sm:data-[state=open]:zoom-in-95 sm:data-[state=closed]:slide-out-to-bottom-0 sm:data-[state=open]:slide-in-from-bottom-0",
             className
           )}
         >
@@ -47,13 +49,13 @@ export function Modal({
             <DialogPrimitive.Title>{ariaLabel}</DialogPrimitive.Title>
           </span>
 
-          {/* Top Drag Handle (Mobile Only) */}
-          <div className="pt-3 pb-1 flex justify-center shrink-0 md:hidden" aria-hidden="true">
+          {/* Drag Handle for Mobile */}
+          <div className="pt-3 pb-1 flex justify-center shrink-0 sm:hidden" aria-hidden="true">
             <div className="w-12 h-1.5 rounded-full bg-charcoal/20" />
           </div>
 
-          {/* Scrollable Body */}
-          <div className="flex-1 overflow-y-auto px-5 pb-8 pt-2 md:p-8">
+          {/* Scrollable Content Body */}
+          <div className="flex-1 overflow-y-auto p-5 sm:p-7">
             {children}
           </div>
         </DialogPrimitive.Content>

@@ -37,7 +37,6 @@ export function ApplyModal({
       isOpen={isOpen}
       onClose={onClose}
       ariaLabel={modalTitle}
-      className="!max-w-lg w-full p-6 sm:p-9 relative bg-cream border border-[#E5E0D8] rounded-2xl shadow-[0_25px_60px_rgba(46,90,68,0.15)] text-charcoal"
     >
       {/* Modal Header */}
       <div className="flex justify-between items-center mb-5 pb-4 border-b border-[#E5E0D8]">
