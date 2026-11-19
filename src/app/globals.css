@@ -1,0 +1,197 @@
+@import "lenis/dist/lenis.css";
+@import "tw-animate-css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Header Height */
+  --header-h: 5rem;
+
+  /* Fluid Typography */
+  --text-display: clamp(2.25rem, 6vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 4vw, 3rem);
+  --text-body: clamp(1rem, 1.1vw, 1.125rem);
+
+  /* Section Spacing */
+  --section-y: clamp(4rem, 9vw, 8rem);
+
+  /* Shadcn HSL Design Tokens (Warm Sage & Cream) */
+  --background: 40 25% 97%; /* #FAF8F5 */
+  --foreground: 153 14% 13%; /* #1F2924 */
+
+  --card: 0 0% 100%;
+  --card-foreground: 153 14% 13%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 153 14% 13%;
+
+  --primary: 150 32% 26%; /* #2E5A44 */
+  --primary-foreground: 40 25% 97%; /* #FAF8F5 */
+
+  --secondary: 40 18% 93%; /* #F2EFE9 */
+  --secondary-foreground: 153 14% 13%;
+
+  --muted: 40 18% 93%;
+  --muted-foreground: 147 5% 38%; /* #5C6660 */
+
+  --accent: 40 18% 93%;
+  --accent-foreground: 150 32% 26%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 38 18% 87%; /* #E5E0D8 */
+  --input: 38 18% 87%;
+  --ring: 150 32% 26%;
+
+  --radius: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background-color: #FAF8F5;
+  color: #1F2924;
+}
+
+body {
+  background-color: #FAF8F5;
+  color: #1F2924;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid #2E5A44;
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible,
+:focus-visible.on-dark {
+  outline-color: #DFBA73;
+}
+
+/* Selection */
+::selection {
+  background-color: #2E5A44;
+  color: #FAF8F5;
+}
+
+/* Scrollbar (Minimalist Light Cream) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D6CFC4;
+  border-radius: 9999px;
+  border: 2px solid #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B58A5B;
+}
+
+/* Fluid Typography Utilities */
+.text-display {
+  font-size: var(--text-display);
+  line-height: 1.1;
+}
+
+.text-fluid-h2 {
+  font-size: var(--text-h2);
+  line-height: 1.2;
+}
+
+.text-fluid-body {
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+.section-spacing {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+/* Essential Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes heroMaskReveal {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marqueeReverse 35s linear infinite;
+}
+
+.animate-hero-mask-reveal {
+  animation: heroMaskReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-hero-mask-reveal,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}

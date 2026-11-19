@@ -1,0 +1,573 @@
+{
+  "common": {
+    "brandName": "Dinna Mirzabayeva",
+    "brandRole": "Psychologist & Personal Growth Coach",
+    "businessConsulting": "Psychology Center",
+    "brandAria": "Dinna Mirzabayeva - Home page",
+    "cta": "Book a Consultation",
+    "learnMore": "Learn More",
+    "viewServices": "Explore Services",
+    "applyNow": "Submit Request",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "watchVideo": "Watch video",
+    "viewDetails": "View details",
+    "participate": "Participate",
+    "prev": "Previous",
+    "next": "Next",
+    "changeLanguage": "Change language"
+  },
+  "cta": {
+    "primary": "Book a Consultation",
+    "primaryShort": "Consultation",
+    "mentorship": "Book a Consultation"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "methodology": "Process",
+    "stages": "Process",
+    "expert": "About Me",
+    "media": "Client Stories",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "book": "Trainings",
+    "events": "Programs",
+    "tests": "3-min Test",
+    "mainNavAria": "Main navigation"
+  },
+  "hero": {
+    "kicker": "Professional Psychological Care & Therapy",
+    "titlePrefix": "Find yourself and restore ",
+    "titleHighlight": "inner peace.",
+    "titleSuffix": "",
+    "title": "Find yourself and restore inner peace.",
+    "description": "Dinna Mirzabayeva — In-person psychological consultations in Tashkent (5/5), worldwide online therapy, and transformational personal growth trainings.",
+    "ctaPrimary": "Book a Consultation",
+    "ctaSecondary": "3-minute Self Check",
+    "captionRole": "Practicing Psychologist · @m1rzabayevaa_021",
+    "metric1Label": "01 / EXPERIENCE",
+    "metric1Desc": "Individual sessions conducted",
+    "metric2Label": "02 / OUTCOME",
+    "metric2Desc": "Clients felt profound emotional relief",
+    "metric3Label": "03 / FORMAT",
+    "metric3Desc": "Tashkent 5/5 offline & Worldwide online",
+    "partnersLabel": "100% CONFIDENTIALITY · SAFE & WELCOMING ATMOSPHERE · EMPATHY",
+    "clothAriaLabel": "Dinna Mirzabayeva portrait",
+    "portraitAlt": "Dinna Mirzabayeva psychologist portrait",
+    "statusPill": "Tashkent 5/5 · Booking Open",
+    "badgeExperience": "500+ Sessions",
+    "badgeFormat": "In-Person & Online Format",
+    "reassurance": "100% Confidential · Tashkent 5/5 In-Person & Online",
+    "quickQuiz": "Take quick quiz →",
+    "tickerItems": [
+      "Inner peace",
+      "Self-confidence",
+      "Healthy personal boundaries",
+      "Tashkent 5/5 In-Person",
+      "Online video sessions",
+      "Emotional balance",
+      "100% strict confidentiality",
+      "Signature coaching trainings"
+    ]
+  },
+  "services": {
+    "kicker": "SERVICES & FORMATS",
+    "titlePrefix": "An individual pathway to ",
+    "titleHighlight": "peace and harmony.",
+    "title": "An individual pathway to peace and harmony.",
+    "description": "Every soul holds a unique story. Choose the format that feels safest, most supportive, and comfortable for you.",
+    "tagDirection": "3 primary directions",
+    "diagKicker": "INITIAL EXPLORATION",
+    "diagTime": "SAFE & PRIVATE",
+    "diagTitle": "Which format suits you best?",
+    "diagDesc": "In a gentle and confidential setting, we will explore your inner questions, anxiety, or relationship challenges together.",
+    "diagPrivacy": "🔒 100% Confidentiality Guarantee",
+    "diagCta": "Book a Consultation",
+    "diagServiceApplyName": "Individual Consultation",
+    "bookTimeCta": "Choose a Time",
+    "selectService": "Select",
+    "items": [
+      {
+        "index": "01",
+        "title": "Individual Consultation (Tashkent 5/5)",
+        "description": "An intimate, quiet, and secure session in Tashkent 5/5. A safe haven to work through stress, emotional burnout, anxiety, and personal transitions."
+      },
+      {
+        "index": "02",
+        "title": "Online Consultation",
+        "description": "Compassionate psychological support from anywhere in the world via Zoom or Telegram. Time-efficient, completely confidential, and comfortable."
+      },
+      {
+        "index": "03",
+        "title": "Transformational Trainings",
+        "description": "Interactive group workshops dedicated to self-worth, emotional intelligence, healthy boundaries, and authentic relationship building."
+      }
+    ]
+  },
+  "events": {
+    "kicker": "TRAININGS & WORKSHOPS",
+    "titlePrefix": "Practical experiences for ",
+    "titleHighlight": "personal growth.",
+    "title": "Practical experiences for personal growth.",
+    "description": "Intensives designed to work through emotions, build healthy boundaries, and regain genuine personal freedom.",
+    "status": "ACTIVE",
+    "cta": "Join Program"
+  },
+  "stages": {
+    "kicker": "THE THERAPEUTIC JOURNEY",
+    "titlePrefix": "From emotional tension to ",
+    "titleHighlight": "peaceful living.",
+    "title": "From emotional tension to peaceful living.",
+    "description": "How does the psychological journey unfold? Step by step, gently, and in complete alignment with your natural rhythm.",
+    "direction1": "STEPS 01-04",
+    "tab1": "Individual Therapy Path",
+    "direction2": "STEPS 01-04",
+    "tab2": "Transformational Workshops",
+    "introSmallTitle": "Individual Therapy Path",
+    "introSmallDesc": "From the very first session, experience safe connection and relief from emotional weight.",
+    "introCorporateTitle": "Transformational Workshops",
+    "introCorporateDesc": "Practical techniques in a supportive community for lasting transformation.",
+    "stageAction": "Book this step",
+    "ctaBandTitle": "Ready to grant yourself peace of mind?",
+    "ctaBandDesc": "Take the first gentle step. Select a convenient time for your consultation.",
+    "ctaBandButton": "Book a Consultation",
+    "systematization": [
+      {
+        "step": "01",
+        "title": "Safe Connection & Initial Listening",
+        "description": "A compassionate space where your story is heard with warmth and zero judgment.",
+        "points": [
+          "Assessment of your current emotional baseline.",
+          "Creating a calm and confidential atmosphere.",
+          "Clarifying your main aspirations and needs.",
+          "100% confidentiality guarantee."
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Uncovering Root Causes",
+        "description": "Gently exploring the deeper roots of anxiety, fears, or emotional heaviness.",
+        "points": [
+          "Understanding underlying patterns and emotional triggers.",
+          "Deconstructing recurring relationship narratives.",
+          "Calming the internal critic.",
+          "Bringing unconscious blocks to gentle light."
+        ]
+      },
+      {
+        "step": "03",
+        "title": "Resolution & Emotional Release",
+        "description": "Releasing emotional pressure through proven psychological practices.",
+        "points": [
+          "Mindfulness and somatic relaxation techniques.",
+          "Re-establishing calm, healthy personal boundaries.",
+          "Tools for emotional resilience and regulation.",
+          "Cognitive clarity and renewed inner perspective."
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Inner Harmony & Empowered Living",
+        "description": "Cultivating lasting self-trust and the capacity to live with joy and serenity.",
+        "points": [
+          "Deep, unconditional self-acceptance and love.",
+          "Forming supportive, sustainable life habits.",
+          "Finding steady inner grounding amidst life's challenges.",
+          "True tranquility experienced day after day."
+        ]
+      }
+    ],
+    "mentorship": [
+      {
+        "step": "01",
+        "title": "Community Welcome & Safe Space",
+        "description": "Fostering mutual warmth and trust among all participants.",
+        "points": [
+          "Setting personal intentions and growth goals.",
+          "Clear agreements on mutual privacy and safety.",
+          "Introductory interactive connection practices."
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Emotional Intelligence",
+        "description": "Learning to understand, welcome, and communicate your feelings.",
+        "points": [
+          "Decoding anxiety and stress signals.",
+          "Navigating emotional mood swings.",
+          "Elevating self-esteem and confidence."
+        ]
+      },
+      {
+        "step": "03",
+        "title": "The Psychology of Relationships",
+        "description": "The art of fostering genuine, fulfilling bonds with loved ones.",
+        "points": [
+          "Resolving conflicts with empathy and grace.",
+          "Freeing oneself from codependency.",
+          "Authentic, heart-to-heart communication."
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Sustained Personal Transformation",
+        "description": "Integrating newfound wisdom into everyday life.",
+        "points": [
+          "Personalized roadmap for lifelong well-being.",
+          "Renewed vitality, inspiration, and joy.",
+          "An ongoing network of empathetic peers."
+        ]
+      }
+    ]
+  },
+  "partners": {
+    "kicker": "VALUES & TRUST",
+    "count": "100% CONFIDENTIALITY GUARANTEE",
+    "title": "Values & Trust",
+    "b2bPartner": "Partner"
+  },
+  "ctaBand": {
+    "kicker": "SELF-CHECK DIAGNOSTIC",
+    "titlePrefix": "Isn't it time to take ",
+    "titleHighlight": "tender care of yourself?",
+    "title": "Isn't it time to take tender care of yourself?",
+    "description": "Don't overlook chronic fatigue and background anxiety. Take a gentle 3-minute psychological test to understand your emotional state.",
+    "cta": "Book a Consultation",
+    "startTest": "Take 3-minute Test",
+    "strategicAnalysis": "State Diagnostic"
+  },
+  "expert": {
+    "kicker": "PSYCHOLOGIST & COACH",
+    "name": "DINNA MIRZABAYEVA",
+    "experience": "@M1RZABAYEVAA_021",
+    "headlinePrefix": "Every person possesses the power to ",
+    "headlineHighlight": "heal and find happiness.",
+    "headlineSuffix": "",
+    "quote": "My mission is not to tell you how to live, but to gently guide you toward your own fountain of peace and inner strength.",
+    "bio1": "Dinna Mirzabayeva is a certified psychologist and personal growth facilitator conducting in-person consultations in Tashkent (5/5) and online across the globe.",
+    "bio2": "With deep clinical empathy, evidence-informed modalities, and an uncompromising commitment to client privacy, she creates an emotional sanctuary for healing.",
+    "pillar1Tag": "PRINCIPLE / 01",
+    "pillar1Title": "Empathy & Acceptance",
+    "pillar1Desc": "Complete emotional safety without judgment or criticism.",
+    "pillar2Tag": "PRINCIPLE / 02",
+    "pillar2Title": "100% Confidentiality",
+    "pillar2Desc": "Every shared emotion and story remains forever private.",
+    "pillar3Tag": "PRINCIPLE / 03",
+    "pillar3Title": "Lasting Well-being",
+    "pillar3Desc": "Sustainable inner grounding that accompanies you for life.",
+    "certificatesHint": "CREDENTIALS & DIPLOMAS (Click to zoom)"
+  },
+  "testimonials": {
+    "kicker": "CLIENT VOICES",
+    "titlePrefix": "Words from those who ",
+    "titleHighlight": "restored their peace.",
+    "title": "Words from those who restored their peace.",
+    "tagKey": "FEEDBACK",
+    "tagFormat": "CONFIDENTIAL REVIEW",
+    "playTrigger": "READ"
+  },
+  "book": {
+    "kicker": "TRANSFORMATIONAL WORKSHOPS",
+    "pedestalLeft": "SIGNATURE PROGRAM",
+    "pedestalRight": "INNER TRANQUILITY",
+    "titlePrefix": "«Inner Harmony» — the art of ",
+    "titleHighlight": "befriending oneself.",
+    "title": "Transformational Workshops",
+    "bookTitle": "Transformational Workshops",
+    "sectionAria": "Workshops and consultations",
+    "strategicAnalysisCta": "Register for Workshop",
+    "description": "An experiential journey to release anxiety, overcome limiting patterns, and rebuild unwavering self-love.",
+    "spec1Label": "01 / FORMAT",
+    "spec1Value": "Tashkent 5/5 in-person & Online cohorts",
+    "spec2Label": "02 / STRUCTURE",
+    "spec2Value": "Experiential practices, guided meditations & Q&A",
+    "spec3Label": "03 / OUTCOME",
+    "spec3Value": "Grounded self-trust, calmness, and vitality",
+    "cta": "Join Workshop"
+  },
+  "webinars": {
+    "kicker": "INSIGHTS & GUIDANCE",
+    "titlePrefix": "Meaningful reflections on ",
+    "titleHighlight": "understanding oneself.",
+    "title": "Insights and mental health guidance.",
+    "lessonTag": "TOPIC",
+    "openLesson": "OPEN INSIGHT",
+    "watchTrigger": "WATCH →"
+  },
+  "diplomas": {
+    "kicker": "PROFESSIONAL EDUCATION",
+    "titlePrefix": "Credentials and psychological ",
+    "titleHighlight": "certifications.",
+    "title": "Credentials and psychological certifications.",
+    "description": "Certified diplomas and advanced training qualifications in psychology and psychotherapy.",
+    "zoomHint": "ZOOM IN ↗",
+    "badgeLabel": "CERTIFICATION"
+  },
+  "contact": {
+    "kicker": "DIRECT CONNECTION",
+    "titlePrefix": "You are not alone. Let us ",
+    "titleHighlight": "find a gentle way forward.",
+    "title": "You are not alone. Let us find a gentle way forward.",
+    "description": "Visit the comfortable private office in Tashkent 5/5 or reserve a worldwide online appointment.",
+    "descriptionDirect": "Reach out directly via your preferred messaging channel.",
+    "phoneLabel": "PHONE NUMBER",
+    "phoneValue": "+998 90 000 00 21",
+    "telegramChannelLabel": "Telegram Channel",
+    "telegramChannelBadge": "helpful articles",
+    "telegramDirectLabel": "Message on Telegram",
+    "telegramDirectBadge": "direct chat",
+    "addressLabel": "LOCATION",
+    "addressValue": "Tashkent, 5/5 (In-person appointments)",
+    "formTitle": "Book a Consultation",
+    "formSubtitle": "🔒 All information is 100% confidential. We will reach out promptly.",
+    "formSubmit": "Book Consultation →",
+    "formSuccess": "Your request has been received. We will contact you shortly to confirm your time.",
+    "nameLabel": "YOUR NAME",
+    "namePlaceholder": "Enter your name",
+    "phoneInputLabel": "PHONE NUMBER",
+    "businessInputLabel": "CONSULTATION FORMAT OR TOPIC",
+    "businessInputPlaceholder": "Tashkent 5/5 offline or Online? What is on your heart...",
+    "hoursLabel": "Hours",
+    "hoursValue": "Monday - Saturday: 10:00 - 19:00",
+    "retry": "Try again",
+    "nameError": "Please enter your name",
+    "phoneError": "Please enter your full phone number (+998 (XX) XXX-XX-XX)",
+    "submitAnother": "Send another request",
+    "cta": "Book Consultation →"
+  },
+  "applyModal": {
+    "title": "Book a Consultation",
+    "serviceTitle": "Consultation Format",
+    "consultTitle": "Psychological Consultation",
+    "serviceSubtitle": "Please provide your details, and we will contact you to coordinate a comfortable time.",
+    "subtitle": "🔒 Your details are 100% confidential.",
+    "badgeConsultation": "CONSULTATION",
+    "badgeService": "BOOKING",
+    "selectedPrefix": "Selected format:",
+    "selectedServiceLabel": "Selected service:",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "businessLabel": "Preferred format",
+    "businessPlaceholder": "Tashkent 5/5 in-person / Online",
+    "yes": "Tashkent 5/5 in-person",
+    "no": "Online consultation",
+    "businessDetailPlaceholder": "Topic or brief note (optional)...",
+    "questionLabel": "What would you like to explore?",
+    "questionPlaceholder": "Stress, anxiety, sleep, relationships, self-worth...",
+    "badgeBook": "WORKSHOP REGISTRATION",
+    "bookTitle": "Signature Trainings",
+    "bookSubtitle": "Fill in your details to reserve your place in the workshop.",
+    "addressLabel": "Your city",
+    "addressPlaceholder": "Tashkent or other city...",
+    "bookNoteLabel": "Notes or questions",
+    "bookNotePlaceholder": "Any questions or notes (optional)...",
+    "bookSubmit": "Register for Workshop",
+    "bookSuccessMessage": "Request received! We will be in touch shortly.",
+    "bookSuccessBody": "We will reach out to arrange all workshop details.",
+    "submit": "Book Consultation",
+    "submitButton": "Book Consultation",
+    "submitting": "Submitting...",
+    "successMessage": "Your request has been received. We will reach out shortly!",
+    "errorMessage": "An error occurred. Please verify your details and try again.",
+    "companyScaleLabel": "PREFERRED FORMAT",
+    "scale1Sub": "Tashkent 5/5",
+    "scale2Sub": "Online Zoom",
+    "scale3Sub": "Telegram",
+    "scale4Sub": "Workshop",
+    "thankYouBadge": "REQUEST RECEIVED · 100% CONFIDENTIAL",
+    "thankYouTitle": "Your request is confirmed.",
+    "thankYouBody": "Your note has reached Dinna Mirzabayeva. We will get in touch shortly to select the ideal slot for you.",
+    "timelineStep1Prefix": "01 / RECEIVED:",
+    "timelineStep1Text": "Request registered privately",
+    "timelineStep2Prefix": "02 / CONTACT:",
+    "timelineStep2Text": "Coordinating time and format with you",
+    "timelineStep3Prefix": "03 / SESSION:",
+    "timelineStep3Text": "In-person at Tashkent 5/5 or online via Zoom/Telegram",
+    "actionTelegram": "Go to Telegram Channel",
+    "actionWebinars": "Visit Instagram Profile",
+    "privacyBadge": "🔒 100% CONFIDENTIALITY GUARANTEED"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "kicker": "FREQUENTLY ASKED QUESTIONS",
+    "headline": "Frequently Asked Questions",
+    "headlineUz": "Frequently Asked Questions",
+    "lede": "Candid and reassuring answers about consultations, confidentiality, format options, and what to expect.",
+    "communityBtn": "Book a Consultation",
+    "searchPlaceholder": "Search question...",
+    "searchLabel": "Search FAQ",
+    "noResults": "No matching questions found.",
+    "clearSearch": "Clear search",
+    "allCategories": "All Questions",
+    "categories": {
+      "systematization": {
+        "title": "Session Process",
+        "count": "Formats"
+      },
+      "consulting": {
+        "title": "Offline 5/5 & Online",
+        "count": "Appointments"
+      },
+      "mentorship": {
+        "title": "Confidentiality",
+        "count": "Privacy"
+      },
+      "guarantees": {
+        "title": "Outcomes & Growth",
+        "count": "Results"
+      }
+    },
+    "items": [
+      {
+        "id": "q1",
+        "category": "systematization",
+        "question": "What happens during the first session and how should I prepare?",
+        "answer": "The initial meeting is a gentle introduction and listening session. No special preparation is required. Dinna Mirzabayeva will hear your concerns without judgment, help structure what is overwhelming you, and outline a supportive journey ahead."
+      },
+      {
+        "id": "q2",
+        "category": "systematization",
+        "question": "How long does each consultation last?",
+        "answer": "An individual consultation typically lasts 60 to 90 minutes. This provides ample, unhurried time to gain clarity and experience genuine emotional release."
+      },
+      {
+        "id": "q3",
+        "category": "consulting",
+        "question": "Where does the in-person consultation in Tashkent take place?",
+        "answer": "In-person consultations are conducted in a peaceful, welcoming, and completely private office located at Tashkent 5/5."
+      },
+      {
+        "id": "q4",
+        "category": "consulting",
+        "question": "Is online therapy as effective as meeting in person?",
+        "answer": "Yes, online consultations (via Zoom or Telegram) offer equal clinical depth and connection, with the added benefit of being in your own familiar sanctuary."
+      },
+      {
+        "id": "q5",
+        "category": "mentorship",
+        "question": "Is everything I share kept strictly confidential?",
+        "answer": "Absolutely! Upholding psychological ethical guidelines, everything discussed during consultations is strictly confidential and never disclosed to third parties."
+      },
+      {
+        "id": "q6",
+        "category": "mentorship",
+        "question": "What concerns can I bring to therapy?",
+        "answer": "Chronic stress, anxiety, burnout, impostor syndrome, relationship challenges, grief, finding life purpose, and rebuilding authentic self-worth."
+      },
+      {
+        "id": "q7",
+        "category": "guarantees",
+        "question": "How many sessions are typically needed to feel a change?",
+        "answer": "Many clients feel noticeable relief after the first session. For lasting and foundational transformation, a series of 3–5 or 8–10 sessions is generally recommended."
+      },
+      {
+        "id": "q8",
+        "category": "guarantees",
+        "question": "How can I register for the transformational workshops?",
+        "answer": "You can submit a request directly on the site, or message Dinna Mirzabayeva on Instagram (@m1rzabayevaa_021) or Telegram."
+      }
+    ],
+    "bottomCard": {
+      "title": "Have more questions?",
+      "description": "Reach out directly to Dinna Mirzabayeva and choose a comfortable time.",
+      "cta": "Book a Consultation"
+    }
+  },
+  "mediaArchive": {
+    "sectionAria": "Client reflections",
+    "kicker": "GRATITUDE & SINCERITY",
+    "headingPrefix": "Stories of those who ",
+    "headingHighlight": "rediscovered peace",
+    "tabTestimonials": "CLIENT EXPERIENCES",
+    "tabWebinars": "INSIGHTS & GUIDANCE",
+    "tabEvents": "WORKSHOP GLIMPSES",
+    "counterCases": "STORIES",
+    "counterLessons": "INSIGHTS",
+    "counterCities": "FORMATS",
+    "testimonialsListAria": "Reviews list",
+    "webinarsListAria": "Insights list",
+    "eventsListAria": "Workshops list",
+    "countryUzbekistan": "Uzbekistan",
+    "countryKazakhstan": "Kazakhstan",
+    "countryKyrgyzstan": "Kyrgyzstan",
+    "countryTajikistan": "Tajikistan",
+    "cityTashkent": "Toshkent 5/5",
+    "citySamarkand": "Samarkand",
+    "cityFergana": "Fergana",
+    "cityShymkent": "Online World",
+    "cityOsh": "Online",
+    "cityKhujand": "Online",
+    "businessTourSuffix": "workshop"
+  },
+  "footer": {
+    "brand": "DINNA MIRZABAYEVA",
+    "location": "Tashkent, 5/5 (In-Person) & Worldwide Online",
+    "phone": "+998 90 000 00 21",
+    "rights": "© 2026 Dinna Mirzabayeva. All rights reserved.",
+    "backToTop": "Back to top",
+    "instagram": "Instagram",
+    "telegram": "Telegram",
+    "channel": "Channel",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "quiz": {
+    "badge": "3-MINUTE ASSESSMENT",
+    "metaTitle": "3-Minute Emotional Well-being Self Check | Dinna Mirzabayeva",
+    "metaDescription": "Check your anxiety levels, sleep quality, and emotional exhaustion in 3 minutes and receive a personalized recommendation.",
+    "introTitle": "3-Minute Emotional Self Check",
+    "introSubtitle": "5 gentle questions, 3 minutes, immediate insight.",
+    "introDescription": "Assess your current stress and emotional well-being without judgment and with compassion.",
+    "startAction": "Start Assessment",
+    "backAction": "Back",
+    "questionOf": "{current} / {total}",
+    "stepAria": "Question {current} of {total}",
+    "leadTitle": "View Your Assessment & Guidance",
+    "leadSubtitle": "🔒 100% confidential. Confirm your details so we can send your personalized insights.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "phoneLabel": "Phone Number",
+    "companyScaleLabel": "Preferred consultation format",
+    "viewResultAction": "View Result",
+    "submittingAction": "Analyzing...",
+    "resultScoreLabel": "EMOTIONAL TENSION INDEX",
+    "resultScoreOutOf": "out of 15",
+    "levelLabel": "EMOTIONAL STATE OVERVIEW",
+    "recommendationHeading": "Psychologist's Recommendation",
+    "ctaTelegram": "Book a Consultation",
+    "telegramDirectAction": "Message on Telegram",
+    "retakeAction": "Retake Assessment",
+    "nameError": "Please enter your name (at least 2 characters)",
+    "phoneError": "Please enter full phone number (+998)",
+    "scaleError": "Select your preferred format",
+    "scale1Sub": "Tashkent 5/5",
+    "scale2Sub": "Online Zoom",
+    "scale3Sub": "Telegram",
+    "scale4Sub": "Workshop"
+  },
+  "booking": {
+    "kicker": "BOOK A CONSULTATION",
+    "title": "Individual Psychological Consultation",
+    "description": "Choose a suitable time for an in-person meeting in Tashkent 5/5 or an online appointment from anywhere.",
+    "badgeDuration": "60–90 min",
+    "badgePrice": "Individual",
+    "badgePrivacy": "🔒 100% Confidential",
+    "successTitle": "Appointment confirmed",
+    "successMessage": "Thank you! Your request has been received. Dinna Mirzabayeva will reach out to confirm your session.",
+    "errorTitle": "Calendar currently unavailable",
+    "errorDesc": "You can message directly on Telegram to select a convenient time.",
+    "errorTelegramCta": "Message on Telegram",
+    "metaTitle": "Select Consultation Time | Dinna Mirzabayeva",
+    "metaDescription": "Schedule an in-person session in Tashkent 5/5 or an online consultation."
+  },
+  "stickyBar": {
+    "ariaLabel": "Quick actions",
+    "takeTest": "Quiz",
+    "bookConsultation": "Book Session",
+    "book": "Book Session"
+  }
+}

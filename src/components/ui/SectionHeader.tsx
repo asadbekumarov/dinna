@@ -1,0 +1,44 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+import { MaskedHeading } from "@/components/ui/MaskedHeading";
+
+interface SectionHeaderProps {
+  kicker?: string;
+  title: string;
+  index?: string;
+  description?: string;
+  className?: string;
+}
+
+export function SectionHeader({
+  kicker,
+  title,
+  index,
+  description,
+  className,
+}: SectionHeaderProps) {
+  return (
+    <div className={cn("mb-12 md:mb-16", className)}>
+      <div className="flex items-center gap-4 mb-3">
+        {index && (
+          <span className="font-mono text-charcoal-muted text-xs tracking-widest">
+            /{index}
+          </span>
+        )}
+        {kicker && (
+          <span className="text-xs font-sans uppercase tracking-[0.2em] text-charcoal-muted font-medium">
+            {kicker}
+          </span>
+        )}
+      </div>
+      <MaskedHeading className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-charcoal max-w-3xl leading-[1.15]">
+        {title}
+      </MaskedHeading>
+      {description && (
+        <p className="mt-4 text-base sm:text-lg text-charcoal-light max-w-2xl font-light leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}

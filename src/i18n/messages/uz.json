@@ -1,0 +1,573 @@
+{
+  "common": {
+    "brandName": "Dinna Mirzabayeva",
+    "brandRole": "Psixolog & Shaxsiy Rivojlanish Treneri",
+    "businessConsulting": "Psixologik Markaz",
+    "brandAria": "Dinna Mirzabayeva - Asosiy sahifa",
+    "cta": "Konsultatsiyaga yozilish",
+    "learnMore": "Batafsil ma'lumot",
+    "viewServices": "Xizmatlar bilan tanishish",
+    "applyNow": "Ariza yuborish",
+    "close": "Yopish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish",
+    "watchVideo": "Video ko'rish",
+    "viewDetails": "Batafsil ko'rish",
+    "participate": "Qatnashish",
+    "prev": "Oldingi",
+    "next": "Keyingi",
+    "changeLanguage": "Tilni o'zgartirish"
+  },
+  "cta": {
+    "primary": "Konsultatsiyaga yozilish",
+    "primaryShort": "Konsultatsiya",
+    "mentorship": "Konsultatsiyaga yozilish"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "methodology": "Bosqichlar",
+    "stages": "Bosqichlar",
+    "expert": "Men haqimda",
+    "media": "Mijozlar natijalari",
+    "faq": "Savol-javoblar",
+    "contact": "Bog'lanish",
+    "book": "Treninglar",
+    "events": "Dasturlar",
+    "tests": "3 daqiqalik test",
+    "mainNavAria": "Asosiy navigatsiya"
+  },
+  "hero": {
+    "kicker": "Professional Psixologik Yordam & Terapiya",
+    "titlePrefix": "O'zingizni toping va qalbingizga ",
+    "titleHighlight": "xotirjamlik bering.",
+    "titleSuffix": "",
+    "title": "O'zingizni toping va qalbingizga xotirjamlik bering.",
+    "description": "Dinna Mirzabayeva — Toshkentda oflayn (5/5) va dunyo bo'ylab onlayn individual psixologik konsultatsiyalar hamda mualliflik treninglari.",
+    "ctaPrimary": "Konsultatsiyaga yozilish",
+    "ctaSecondary": "3 daqiqalik psixologik test",
+    "captionRole": "Amaliyotchi Psixolog · @m1rzabayevaa_021",
+    "metric1Label": "01 / TAJRIBA",
+    "metric1Desc": "O'tkazilgan individual seanslar",
+    "metric2Label": "02 / NATIJA",
+    "metric2Desc": "Ijobiy ruhiy yengillik sezganlar",
+    "metric3Label": "03 / FORMAT",
+    "metric3Desc": "Toshkent 5/5 oflayn & Dunyo onlayn",
+    "partnersLabel": "100% MAXFIYLIK · XAVFSIZ VA ILIQ MUHIT · EMPATIYA",
+    "clothAriaLabel": "Dinna Mirzabayeva portreti",
+    "portraitAlt": "Dinna Mirzabayeva psixolog portreti",
+    "statusPill": "Toshkent 5/5 · Qabul ochiq",
+    "badgeExperience": "500+ Seanslar",
+    "badgeFormat": "Oflayn & Onlayn Format",
+    "reassurance": "100% maxfiylik kafolatlangan · Toshkent 5/5 oflayn & Onlayn",
+    "quickQuiz": "Testdan o'tish →",
+    "tickerItems": [
+      "Ichki xotirjamlik",
+      "O‘ziga bo‘lgan ishonch",
+      "Sog‘lom shaxsiy chegaralar",
+      "Toshkent 5/5 oflayn qabul",
+      "Onlayn video terapiya",
+      "Hissiy muvozanat",
+      "100% qat'iy maxfiylik",
+      "Mualliflik treninglari"
+    ]
+  },
+  "services": {
+    "kicker": "XIZMAT VA YO'NALISHLAR",
+    "titlePrefix": "Ruhiy xotirjamlik va o'sish sari ",
+    "titleHighlight": "individual yondashuv.",
+    "title": "Ruhiy xotirjamlik va o'sish sari individual yondashuv.",
+    "description": "Har bir inson qalbida o'ziga xos dunyo yotadi. Sizga mos keluvchi xavfsiz va professional formatni tanlang.",
+    "tagDirection": "3 ta asosiy yo'nalish",
+    "diagKicker": "DASTLABKI TANISHUV",
+    "diagTime": "XAVFSIZ VA MAXFIY",
+    "diagTitle": "Qaysi format sizga mos keladi?",
+    "diagDesc": "Ichki holatingiz, xavotir yoki munosabatlardagi savollaringizni qulay formatda birgalikda tahlil qilamiz.",
+    "diagPrivacy": "🔒 100% Maxfiylik kafolati",
+    "diagCta": "Konsultatsiyaga yozilish",
+    "diagServiceApplyName": "Individual konsultatsiya",
+    "bookTimeCta": "Vaqtni tanlash",
+    "selectService": "Yozilish",
+    "items": [
+      {
+        "index": "01",
+        "title": "Individual konsultatsiya (Toshkent 5/5)",
+        "description": "Toshkent 5/5 dagi shinam va sokin xonada yuzma-yuz suhbat. Stress, hissiy charchoq, xavotir va shaxsiy krizislarni yengish uchun xavfsiz shaxsiy makon."
+      },
+      {
+        "index": "02",
+        "title": "Onlayn konsultatsiya",
+        "description": "Dunyoning istalgan burchagidan turib Zoom yoki Telegram orqali qulay va professional psixologik ko'mak. Vaqtingizni tejagan holda to'liq konfidensial seans."
+      },
+      {
+        "index": "03",
+        "title": "Mualliflik treninglari",
+        "description": "Ichki xotirjamlik, o'z-o'zini qadrlash, hissiy intellekt va uyg'un munosabatlar qurish bo'yicha amaliy va interaktiv guruh treninglari."
+      }
+    ]
+  },
+  "events": {
+    "kicker": "TRENINGLAR VA DASTURLAR",
+    "titlePrefix": "Shaxsiy o'sish va uyg'unlik sari ",
+    "titleHighlight": "mualliflik mashg'ulotlari.",
+    "title": "Shaxsiy o'sish va uyg'unlik sari mualliflik mashg'ulotlari.",
+    "description": "Hissiyotlar bilan ishlash, o'z chegaralarini belgilash va ichki erkinlikka erishish uchun amaliy psixologik intensivlar.",
+    "status": "O'TKAZILMOQDA",
+    "cta": "Ishtirok etish"
+  },
+  "stages": {
+    "kicker": "KONSULTATSIYA BOSQICHLARI",
+    "titlePrefix": "Ichki xavotirdan ",
+    "titleHighlight": "xotirjam hayot sari.",
+    "title": "Ichki xavotirdan xotirjam hayot sari.",
+    "description": "Psixologik yordam jarayoni qanday kechadi? Bosqichma-bosqich, muloyim va sizning shaxsiy maromingizga to'liq moslashgan yo'l.",
+    "direction1": "BOSQICH 01-04",
+    "tab1": "Individual terapiya yo'li",
+    "direction2": "BOSQICH 01-04",
+    "tab2": "Mualliflik treninglari",
+    "introSmallTitle": "Individual terapiya yo'li",
+    "introSmallDesc": "Birinchi seansdan boshlab to'liq xavfsiz va ishonchli muloqot orqali ichki zo'riqishdan xalos bo'lish.",
+    "introCorporateTitle": "Mualliflik treninglari",
+    "introCorporateDesc": "Guruhda qulay muhitda amaliy psixologik texnikalarni o'rganish va hayotga tatbiq etish.",
+    "stageAction": "Ushbu bosqich bo'yicha yozilish",
+    "ctaBandTitle": "Qalbingizga xotirjamlik berishga tayyormisiz?",
+    "ctaBandDesc": "Birinchi qadamni tashlang. O'zingiz uchun eng qulay vaqtni tanlang.",
+    "ctaBandButton": "Konsultatsiyaga yozilish",
+    "systematization": [
+      {
+        "step": "01",
+        "title": "Xavfsiz tanishuv va birlamchi tahlil",
+        "description": "Sizni qiynayotgan hissiyotlar va vaziyatni hech qanday hukmsiz, mehr bilan tinglash.",
+        "points": [
+          "Birlamchi emotsional holatni baholash.",
+          "Siz uchun qulay suhbat maromini shakllantirish.",
+          "Murojaatning asosiy maqsadini belgilab olish.",
+          "To'liq maxfiylik va ishonch muhitini kafolatlash."
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Ildiz sabablarni chuqur anglash",
+        "description": "Xavotir, qo'rquv yoki tushkunlikning asl tub sabablarini yumshoq tarzda aniqlash.",
+        "points": [
+          "Bolalik yoki o'tmish travmalarini yumshoq tahlil qilish.",
+          "Hissiy bloklar va ichki tanqid ovozini ochish.",
+          "Munosabatlardagi takrorlanuvchi salbiy ssenariylarni ko'rish.",
+          "Ong osti to'siqlarini yuzaga chiqarish."
+        ]
+      },
+      {
+        "step": "03",
+        "title": "Yechim va hissiy yengillik",
+        "description": "Amaliy psixologik texnikalar yordamida ichki bosimdan xalos bo'lish.",
+        "points": [
+          "Nafas va tanadagi zo'riqishni bo'shatish amaliyotlari.",
+          "O'z chegaralarini xotirjam va chiroyli himoya qilish.",
+          "Hissiyotlarni boshqarishning yangi ko'nikmalari.",
+          "Kognitiv qayta baholash va fikrlar tozaligi."
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Ichki uyg'unlik va yangi hayot",
+        "description": "O'ziga ishonchni mustahkamlab, mustaqil va baxtli yashash ko'nikmasi.",
+        "points": [
+          "O'z-o'ziga bo'lgan samimiy muhabbat va qabul qilish.",
+          "Yangi, sog'lom hayotiy odatlarni mustahkamlash.",
+          "Stressli vaziyatlarda ichki tayanchga tayanish.",
+          "Kundalik hayotda haqiqiy ruhiy xotirjamlik."
+        ]
+      }
+    ],
+    "mentorship": [
+      {
+        "step": "01",
+        "title": "Guruhga kirish va xavfsiz muhit",
+        "description": "Trening ishtirokchilari bilan bir-birini tushunuvchi iliq muhitni yaratish.",
+        "points": [
+          "Boshlang'ich niyatlar va maqsadlarni belgilash.",
+          "Guruh qoidalariga asoslangan to'liq maxfiylik.",
+          "Birlamchi interaktiv amaliyotlar."
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Hissiy intellekt va o'zlikni anglash",
+        "description": "O'z his-tuyg'ularini tanish va ularni to'g'ri ifodalash amaliyoti.",
+        "points": [
+          "G'azab, qo'rquv va xavotir signallarini o'qish.",
+          "Emotsional holatni boshqarish usullari.",
+          "O'ziga bo'lgan hurmatni oshirish."
+        ]
+      },
+      {
+        "step": "03",
+        "title": "Munosabatlar psixologiyasi",
+        "description": "Yaqinlar va jamiyat bilan uyg'un muloqot o'rnatish sirlari.",
+        "points": [
+          "Konfliktlarni yumshoq va tushunish bilan hal qilish.",
+          "Manipulyatsiyalardan xalos bo'lish.",
+          "Yurakdan yurakka samimiy aloqa."
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Shaxsiy transformatsiya natijasi",
+        "description": "Olingan bilimlarni kundalik odatga aylantirib, yorqin natijalarga erishish.",
+        "points": [
+          "Shaxsiy o'sish rejasi va monitoring.",
+          "Yangi ichki quvvat va ilhom bilan yashash.",
+          "Doimiy qo'llab-quvvatlovchi hamfikrlar doirasi."
+        ]
+      }
+    ]
+  },
+  "partners": {
+    "kicker": "QADRIYATLAR VA ISHONCH",
+    "count": "100% MAXFIYLIK KAFOLATI",
+    "title": "Qadriyatlar va Ishonch",
+    "b2bPartner": "Hamkor"
+  },
+  "ctaBand": {
+    "kicker": "ICHKI DIAGNOSTIKA",
+    "titlePrefix": "O'zingizga e'tibor qaratish vaqti ",
+    "titleHighlight": "kelmadimi?",
+    "title": "O'zingizga e'tibor qaratish vaqti kelmadimi?",
+    "description": "Hissiy charchoq, xavotir va tushunarsiz toliqishni e'tiborsiz qoldirmang. 3 daqiqalik muloyim test orqali joriy ruhiy holatingizni bilib oling.",
+    "cta": "Konsultatsiyaga yozilish",
+    "startTest": "3 daqiqalik testni boshlash",
+    "strategicAnalysis": "Holat diagnostikasi"
+  },
+  "expert": {
+    "kicker": "PSIXOLOG & TRENER",
+    "name": "DINNA MIRZABAYEVA",
+    "experience": "@M1RZABAYEVAA_021",
+    "headlinePrefix": "Har bir insonda o'z ",
+    "headlineHighlight": "baxtini topish va tiklanish",
+    "headlineSuffix": " kuchi bor.",
+    "quote": "Mening maqsadim — sizga qanday yashashni o'rgatish emas, balki qalbingizdagi asl xotirjamlik va o'z kuchingizni his qilishingizga xavfsiz yo'l ochib berishdir.",
+    "bio1": "Dinna Mirzabayeva — Toshkentda oflayn (5/5 manzili) va dunyo bo'ylab onlayn konsultatsiyalar olib boruvchi amaliyotchi psixolog va mualliflik treninglari o'tkazuvchi mutaxassis.",
+    "bio2": "Ko'p yillik amaliy tajriba, empatiyaga asoslangan xavfsiz terapiya metodlari va har bir mijozning shaxsiy dunyosini 100% maxfiy saqlash uning faoliyatining bosh tamoyilidir.",
+    "pillar1Tag": "TAMOYIL / 01",
+    "pillar1Title": "Empatiya va Qabul",
+    "pillar1Desc": "Hech qanday hukm yoki tanqidsiz, to'liq tushunish va qabul qilish muhiti.",
+    "pillar2Tag": "TAMOYIL / 02",
+    "pillar2Title": "100% Maxfiylik",
+    "pillar2Desc": "Seansda aytilgan har bir so'z faqat siz va psixolog o'rtasida muqaddas saqlanadi.",
+    "pillar3Tag": "TAMOYIL / 03",
+    "pillar3Title": "Barqaror Natija",
+    "pillar3Desc": "Vaqtinchalik motivatsiya emas, balki butun umrga xizmat qiluvchi ichki xotirjamlik.",
+    "certificatesHint": "MALAKA VA PROFESSIONAL SERTIFIKATLAR (Kattalashtirish uchun bosing)"
+  },
+  "testimonials": {
+    "kicker": "MIJOZLAR NATIJALARI",
+    "titlePrefix": "Qalbiga xotirjamlik qaytgan ",
+    "titleHighlight": "insonlar so'zlari.",
+    "title": "Qalbiga xotirjamlik qaytgan insonlar so'zlari.",
+    "tagKey": "FIKR",
+    "tagFormat": "MAXFIY TAQRIZ",
+    "playTrigger": "O'QISH"
+  },
+  "book": {
+    "kicker": "SHAXSIY RIVOJLANISH TRENINGLARI",
+    "pedestalLeft": "MUALLIFLIK DASTURI",
+    "pedestalRight": "ICHKI XOTIRJAMLIK",
+    "titlePrefix": "«Ichki uyg'unlik» — o'zingiz bilan ",
+    "titleHighlight": "til topishish san'ati.",
+    "title": "Mualliflik Treninglari",
+    "bookTitle": "Mualliflik Treninglari",
+    "sectionAria": "Treninglar va konsultatsiya",
+    "strategicAnalysisCta": "Treningga yozilish",
+    "description": "Stress, qo'rquv va cheklovchi e'tiqodlardan xalos bo'lib, o'zingizga bo'lgan ishonchni tiklashga qaratilgan amaliy transformatsion kurs.",
+    "spec1Label": "01 / FORMAT",
+    "spec1Value": "Toshkent 5/5 oflayn & Qulay onlayn guruhlar",
+    "spec2Label": "02 / MAZMUN",
+    "spec2Value": "Amaliy mashqlar, meditativ texnikalar va savol-javob",
+    "spec3Label": "03 / NATIJA",
+    "spec3Value": "Ichki xotirjamlik, barqaror o'zlik va ruhiy yengillik",
+    "cta": "Treningga yozilish"
+  },
+  "webinars": {
+    "kicker": "FOYDALI PSIXOLOGIK TAVSIYALAR",
+    "titlePrefix": "O'z-o'zini tushunish bo'yicha ",
+    "titleHighlight": "muhim suhbatlar.",
+    "title": "Foydali psixologik tavsiyalar.",
+    "lessonTag": "MAVZU",
+    "openLesson": "OCHIQ DARS",
+    "watchTrigger": "KO'RISH →"
+  },
+  "diplomas": {
+    "kicker": "PROFESSIONAL TA'LIM",
+    "titlePrefix": "Malaka va psixologik ",
+    "titleHighlight": "sertifikatlar.",
+    "title": "Malaka va professional sertifikatlar.",
+    "description": "Psixologiya va psixoterapiya bo'yicha professional sertifikatlar va malaka oshirish hujjatlari.",
+    "zoomHint": "KATTALASHTIRISH ↗",
+    "badgeLabel": "MALAKA SERTIFIKATI"
+  },
+  "contact": {
+    "kicker": "BEVOSITA ALOQA",
+    "titlePrefix": "Siz yolg'iz emassiz. Keling, ",
+    "titleHighlight": "birgalikda yechim topamiz.",
+    "title": "Siz yolg'iz emassiz. Keling, birgalikda yechim topamiz.",
+    "description": "Toshkent 5/5 manzilidagi ofisimda shaxsan uchrashing yoki onlayn muloqot uchun qulay vaqtni belgilang.",
+    "descriptionDirect": "Quyidagi aloqa kanallari orqali to'g'ridan-to'g'ri bog'lanishingiz mumkin.",
+    "phoneLabel": "TELEFON RAQAMI",
+    "phoneValue": "+998 90 000 00 21",
+    "telegramChannelLabel": "Telegram kanal",
+    "telegramChannelBadge": "foydali maqolalar",
+    "telegramDirectLabel": "Telegramda yozish",
+    "telegramDirectBadge": "to'g'ridan-to'g'ri aloqa",
+    "addressLabel": "MANZIL",
+    "addressValue": "Toshkent shahri, 5/5 (Oflayn qabul)",
+    "formTitle": "Konsultatsiyaga yozilish",
+    "formSubtitle": "🔒 Barcha ma'lumotlar 100% maxfiy saqlanadi. Tez orada siz bilan bog'lanamiz.",
+    "formSubmit": "Konsultatsiyaga yozilish →",
+    "formSuccess": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanib, qulay vaqtni kelishib olamiz.",
+    "nameLabel": "ISMINGIZ",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phoneInputLabel": "TELEFON RAQAMINGIZ",
+    "businessInputLabel": "KONSULTATSIYA FORMATI YOKI SAVOLINGIZ",
+    "businessInputPlaceholder": "Toshkent 5/5 oflayn yoki Onlayn? Sizni qiynayotgan asosiy holat...",
+    "hoursLabel": "Qabul vaqti",
+    "hoursValue": "Dushanba - Shanba: 10:00 - 19:00",
+    "retry": "Qayta urinish",
+    "nameError": "Iltimos, ismingizni kiriting",
+    "phoneError": "Iltimos, to'liq telefon raqamingizni kiriting (+998 (XX) XXX-XX-XX)",
+    "submitAnother": "Yana murojaat yuborish",
+    "cta": "Konsultatsiyaga yozilish →"
+  },
+  "applyModal": {
+    "title": "Konsultatsiyaga yozilish",
+    "serviceTitle": "Konsultatsiya formati",
+    "consultTitle": "Psixologik konsultatsiya",
+    "serviceSubtitle": "Ma'lumotlaringizni to'ldiring, qulay vaqtni belgilash uchun tez orada siz bilan bog'lanamiz.",
+    "subtitle": "🔒 Barcha ma'lumotlaringiz 100% maxfiy saqlanadi.",
+    "badgeConsultation": "KONSULTATSIYA",
+    "badgeService": "YOZILISH",
+    "selectedPrefix": "Tanlangan format:",
+    "selectedServiceLabel": "Tanlangan xizmat:",
+    "nameLabel": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phoneLabel": "Telefon raqamingiz",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "businessLabel": "Sizga qaysi format qulayroq?",
+    "businessPlaceholder": "Toshkent 5/5 oflayn / Onlayn",
+    "yes": "Toshkent 5/5 oflayn",
+    "no": "Onlayn konsultatsiya",
+    "businessDetailPlaceholder": "Sizni qiynayotgan mavzu yoki qisqacha izoh (ixtiyoriy)...",
+    "questionLabel": "Sizni qanday holat bezovta qilmoqda?",
+    "questionPlaceholder": "Stress, xavotir, uyqu, munosabatlar yoki shaxsiy o'sish...",
+    "badgeBook": "TRENINGGA YOZILISH",
+    "bookTitle": "Mualliflik Treninglari",
+    "bookSubtitle": "Treningda ishtirok etish uchun ma'lumotlaringizni to'ldiring.",
+    "addressLabel": "Yashash shahringiz",
+    "addressPlaceholder": "Toshkent yoki boshqa shahar...",
+    "bookNoteLabel": "Izoh yoki savolingiz",
+    "bookNotePlaceholder": "Ishtirok bo'yicha qo'shimcha savolingiz (ixtiyoriy)...",
+    "bookSubmit": "Treningga yozilish",
+    "bookSuccessMessage": "Murojaatingiz qabul qilindi! Tez orada siz bilan bog'lanamiz.",
+    "bookSuccessBody": "Tez orada siz bilan bog'lanamiz va trening tafsilotlarini kelishib olamiz.",
+    "submit": "Konsultatsiyaga yozilish",
+    "submitButton": "Konsultatsiyaga yozilish",
+    "submitting": "Yozilmoqda...",
+    "successMessage": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanamiz!",
+    "errorMessage": "Xatolik yuz berdi. Iltimos, ma'lumotlarni tekshirib qaytadan urinib ko'ring.",
+    "companyScaleLabel": "QAYSI FORMAT MA'QUL?",
+    "scale1Sub": "Toshkent 5/5",
+    "scale2Sub": "Onlayn Zoom",
+    "scale3Sub": "Telegram audio",
+    "scale4Sub": "Trening",
+    "thankYouBadge": "MUROJAAT QABUL QILINDI · 100% MAXFIY",
+    "thankYouTitle": "Arizangiz qabul qilindi.",
+    "thankYouBody": "Ma'lumotlaringiz Dinna Mirzabayevaga yetib bordi. Tez orada siz bilan bog'lanib, sizga mos va qulay vaqtni belgilaymiz.",
+    "timelineStep1Prefix": "01 / QABUL:",
+    "timelineStep1Text": "Arizangiz ro'yxatga olindi",
+    "timelineStep2Prefix": "02 / ALOQA:",
+    "timelineStep2Text": "Qulay vaqt va formatni aniqlash uchun aloqaga chiqamiz",
+    "timelineStep3Prefix": "03 / SEANS:",
+    "timelineStep3Text": "Toshkent 5/5 ofisida yoki onlayn xavfsiz konsultatsiya",
+    "actionTelegram": "Telegram kanalga o'tish",
+    "actionWebinars": "Instagram profilini ko'rish",
+    "privacyBadge": "🔒 100% MAXFIYLIK KAFOLATLANADI"
+  },
+  "faq": {
+    "tag": "FAQ",
+    "kicker": "KO'P BERILADIGAN SAVOLLAR",
+    "headline": "Ko'p beriladigan savollar",
+    "headlineUz": "Ko'p beriladigan savollar",
+    "lede": "Konsultatsiya formati, maxfiylik, uchrashuv tartibi va boshqa muhim savollarga ochiq va samimiy javoblar.",
+    "communityBtn": "Konsultatsiyaga yozilish",
+    "searchPlaceholder": "Savolingizni qidiring...",
+    "searchLabel": "Savollar qidiruvi",
+    "noResults": "Qidiruvingiz bo'yicha savol topilmadi.",
+    "clearSearch": "Filtrni tozalash",
+    "allCategories": "Barchasi",
+    "categories": {
+      "systematization": {
+        "title": "Konsultatsiya tartibi",
+        "count": "Formatlar"
+      },
+      "consulting": {
+        "title": "Oflayn 5/5 & Onlayn",
+        "count": "Uchrashuv"
+      },
+      "mentorship": {
+        "title": "Maxfiylik va Kafolat",
+        "count": "Xavfsizlik"
+      },
+      "guarantees": {
+        "title": "Natija va O'zgarish",
+        "count": "Samara"
+      }
+    },
+    "items": [
+      {
+        "id": "q1",
+        "category": "systematization",
+        "question": "Birinchi konsultatsiyaga qanday tayyorlanish kerak?",
+        "answer": "Hech qanday maxsus tayyorgarlik talab etilmaydi. Faqat o'zingiz bo'lib keling. Dinna Mirzabayeva sizni hech qanday hukm yoki tanqidsiz tinglaydi va suhbatni sizga eng qulay sur'atda olib boradi."
+      },
+      {
+        "id": "q2",
+        "category": "mentorship",
+        "question": "Suhbatlarimiz sir saqlanishiga kafolat bormi?",
+        "answer": "Ha, mutlaqo! Psixologik etika va professional konfidensiallik qoidalariga binoan, seansda aytilgan har bir so'z, sizning shaxsingiz va kechinmalaringiz 100% muqaddas sir saqlanadi va uchinchi shaxslarga hech qachon berilmaydi."
+      },
+      {
+        "id": "q3",
+        "category": "consulting",
+        "question": "Onlayn konsultatsiya oflayn kabi samaralimi?",
+        "answer": "Albatta. Zoom yoki Telegram orqali o'tkaziladigan onlayn seanslar Toshkentdagi 5/5 oflayn uchrashuv kabi yuqori samara beradi. Siz uyingizdagi tinch va xavfsiz muhitda turib to'liq ruhiy yengillik olasiz."
+      },
+      {
+        "id": "q4",
+        "category": "guarantees",
+        "question": "Nechta seansdan keyin o'zgarish seziladi?",
+        "answer": "Ko'pchilik insonlar eng birinchi uchrashuvdayoq yelkasidagi og'ir yuk tushganini va chuqur xotirjamlikni his qilishadi. Barqaror va mustahkam o'zgarishlar uchun esa har bir holatga qarab 3–5 seanslik yo'l xaritasi tuziladi."
+      },
+      {
+        "id": "q5",
+        "category": "mentorship",
+        "question": "Aytilgan ma'lumotlar maxfiy qoladimi?",
+        "answer": "Mutlaqo! Psixologik etika kodeksiga binoan, konsultatsiyada aytilgan barcha ma'lumotlar, ism-familiyangiz va shaxsiy kechinmalaringiz 100% maxfiy saqlanadi va uchinchi shaxslarga berilmaydi."
+      },
+      {
+        "id": "q6",
+        "category": "mentorship",
+        "question": "Qanday mavzularda murojaat qilishim mumkin?",
+        "answer": "Surunkali stress, xavotir (trevoga), depressiv holatlar, o'ziga ishonchsizlik, munosabatlardagi inqirozlar, kasbiy hissiy charchoq (burnout) va shaxsiy o'sish to'siqlari kabi masalalarda murojaat qilishingiz mumkin."
+      },
+      {
+        "id": "q7",
+        "category": "guarantees",
+        "question": "Natijani his qilish uchun nechta seans kerak bo'ladi?",
+        "answer": "Ko'p mijozlar birinchi seansdayoq katta ruhiy yengillik va tushunishni his qilishadi. Barqaror va chuqur o'zgarishlar uchun esa har bir holatga qarab 3–5 yoki 8–10 seanslik kurs tavsiya qilinishi mumkin."
+      },
+      {
+        "id": "q8",
+        "category": "guarantees",
+        "question": "Mualliflik treninglariga qanday yozilsa bo'ladi?",
+        "answer": "Treninglar muntazam guruhlarda o'tkaziladi. Sayt orqali ariza qoldirishingiz yoki Dinna Mirzabayevaning Instagram (@m1rzabayevaa_021) va Telegram profiliga yozishingiz mumkin."
+      }
+    ],
+    "bottomCard": {
+      "title": "Boshqa savollaringiz bormi?",
+      "description": "Dinna Mirzabayeva bilan to'g'ridan-to'g'ri bog'laning va o'zingizga mos vaqtni tanlang.",
+      "cta": "Konsultatsiyaga yozilish"
+    }
+  },
+  "mediaArchive": {
+    "sectionAria": "Mijozlar natijalari",
+    "kicker": "MINNATDORLIK VA SAMIMIYAT",
+    "headingPrefix": "Qalbiga xotirjamlik va ",
+    "headingHighlight": "quvonch qaytgan insonlar",
+    "tabTestimonials": "MIJOZLAR NATIJALARI",
+    "tabWebinars": "FOYDALI TAVSIYALAR",
+    "tabEvents": "TRENINGLARDAN LAVHALAR",
+    "counterCases": "TA NATIJA",
+    "counterLessons": "TA TAVSIYA",
+    "counterCities": "TA FORMAT",
+    "testimonialsListAria": "Natijalar ro'yxati",
+    "webinarsListAria": "Tavsiyalar ro'yxati",
+    "eventsListAria": "Treninglar ro'yxati",
+    "countryUzbekistan": "O'zbekiston",
+    "countryKazakhstan": "Qozog'iston",
+    "countryKyrgyzstan": "Qirg'iziston",
+    "countryTajikistan": "Tojikiston",
+    "cityTashkent": "Toshkent 5/5",
+    "citySamarkand": "Samarqand",
+    "cityFergana": "Farg'ona",
+    "cityShymkent": "Onlayn Dunyo",
+    "cityOsh": "Onlayn",
+    "cityKhujand": "Onlayn",
+    "businessTourSuffix": "dagi trening"
+  },
+  "footer": {
+    "brand": "DINNA MIRZABAYEVA",
+    "location": "Toshkent shahri, 5/5 (Oflayn) & Onlayn Dunyo",
+    "phone": "+998 90 000 00 21",
+    "rights": "© 2026 Dinna Mirzabayeva. Barcha huquqlar himoyalangan.",
+    "backToTop": "Yuqoriga qaytish",
+    "instagram": "Instagram",
+    "telegram": "Telegram",
+    "channel": "Kanal",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari"
+  },
+  "quiz": {
+    "badge": "3 DAQIQALIK TEST",
+    "metaTitle": "3 daqiqalik ichki holat diagnostikasi | Dinna Mirzabayeva",
+    "metaDescription": "Ichki xavotir, uyqu sifati va hissiy charchoq darajangizni 3 daqiqada muloyim tahlil qiling va individual tavsiya oling.",
+    "introTitle": "3 daqiqalik ichki holat diagnostikasi",
+    "introSubtitle": "5 ta muloyim savol, 3 daqiqa, darhol natija.",
+    "introDescription": "Kunlik stress, uyqu va hissiy holatingizni hech qanday hukmsiz, muloyim baholang va o'zingizga e'tibor qarating.",
+    "startAction": "Diagnostikani boshlash",
+    "backAction": "Orqaga",
+    "questionOf": "{current} / {total}",
+    "stepAria": "Savol {current} dan {total} gacha",
+    "leadTitle": "Natijangiz va shaxsiy tavsiyani ko'rish",
+    "leadSubtitle": "🔒 Barcha ma'lumotlar 100% maxfiy saqlanadi. Qulay vaqtda sizga yordam berishimiz uchun ma'lumotlaringizni tasdiqlang.",
+    "nameLabel": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phoneLabel": "Telefon raqamingiz",
+    "companyScaleLabel": "Qaysi format sizga ma'qul?",
+    "viewResultAction": "Natijani ko'rish",
+    "submittingAction": "Tahlil qilinmoqda...",
+    "resultScoreLabel": "ICHKI ZO'RIQISH KO'RSATKICHI",
+    "resultScoreOutOf": "15 dan",
+    "levelLabel": "RUHIY HOLAT KO'RINIShI",
+    "recommendationHeading": "Psixolog tavsiyasi",
+    "ctaTelegram": "Konsultatsiyaga yozilish",
+    "telegramDirectAction": "Telegramda yozish",
+    "retakeAction": "Testni qayta topshirish",
+    "nameError": "Iltimos, ismingizni kiriting (kamida 2 ta belgi)",
+    "phoneError": "Telefon raqamini to'liq kiriting (+998)",
+    "scaleError": "Sizga ma'qul formatni tanlang",
+    "scale1Sub": "Toshkent 5/5",
+    "scale2Sub": "Onlayn Zoom",
+    "scale3Sub": "Telegram",
+    "scale4Sub": "Trening"
+  },
+  "booking": {
+    "kicker": "KONSULTATSIYAGA YOZILISH",
+    "title": "Individual psixologik konsultatsiya",
+    "description": "Toshkent 5/5 dagi shinam ofisda yoki dunyoning istalgan nuqtasidan onlayn formatda uchrashuv vaqtini tanlang.",
+    "badgeDuration": "60–90 daqiqa",
+    "badgePrice": "Individual",
+    "badgePrivacy": "🔒 100% Maxfiy",
+    "successTitle": "Uchrashuv vaqti belgilandi",
+    "successMessage": "Rahmat! Arizangiz qabul qilindi. Tez orada Dinna Mirzabayeva siz bilan bog'lanib seans tafsilotlarini tasdiqlaydi.",
+    "errorTitle": "Kalendar yuklanmadi",
+    "errorDesc": "Telegram orqali to'g'ridan-to'g'ri yozib o'zingizga qulay vaqtni kelishib olishingiz mumkin.",
+    "errorTelegramCta": "Telegram orqali yozish",
+    "metaTitle": "Konsultatsiya vaqtini tanlang | Dinna Mirzabayeva",
+    "metaDescription": "Toshkent 5/5 oflayn yoki onlayn individual psixologik konsultatsiya vaqtini belgilang."
+  },
+  "stickyBar": {
+    "ariaLabel": "Tezkor amallar",
+    "takeTest": "Test",
+    "bookConsultation": "Yozilish",
+    "book": "Yozilish"
+  }
+}
