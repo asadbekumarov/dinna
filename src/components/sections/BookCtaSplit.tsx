@@ -99,7 +99,7 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
           </article>
 
           {/* Card 2: 3-Minute Assessment Test */}
-          <article className="group relative overflow-hidden rounded-3xl border border-sage/40 p-7 sm:p-10 flex flex-col justify-between shadow-xl min-h-[520px] transition-all duration-500 hover:shadow-2xl">
+          <article className="group relative overflow-hidden rounded-3xl border border-charcoal/20 p-7 sm:p-10 flex flex-col justify-between shadow-xl min-h-[520px] transition-all duration-500 hover:shadow-2xl">
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0">
               <Image
@@ -109,8 +109,8 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              {/* Deep Sage Gradient Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#13271b] via-[#1a3525]/90 to-[#224430]/70" />
+              {/* Dark Rich Editorial Gradient Scrim (Natural tones matching Card 1) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/90 to-charcoal/70" />
             </div>
 
             {/* Card Content (Crisp High-Contrast White & Cream) */}
