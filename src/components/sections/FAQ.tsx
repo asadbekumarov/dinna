@@ -2,10 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { formatSectionKicker } from "@/config/sections";
 import { FAQSkeleton } from "@/components/ui/skeletons";
-import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
 import {
@@ -123,18 +120,8 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (kicker + serif H2) */}
+        {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
-            <Badge
-              variant="outline"
-              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
-            >
-              {formatSectionKicker("faq", t("kicker"))}
-            </Badge>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
             {isUz ? t("headlineUz") : t("headline")}
           </h2>

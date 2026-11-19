@@ -7,9 +7,6 @@ import { Link } from "@/i18n/routing";
 import { siteMedia } from "@/config/siteMedia";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
-import { formatSectionKicker } from "@/config/sections";
-import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
@@ -41,18 +38,8 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (kicker + serif H2) */}
+        {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
-            <Badge
-              variant="outline"
-              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
-            >
-              {formatSectionKicker("book", tBook("kicker"))}
-            </Badge>
-          </div>
-
           <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
             {tBook("titlePrefix")}
             <span className="italic text-sage ml-1">

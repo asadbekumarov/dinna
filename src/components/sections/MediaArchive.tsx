@@ -6,8 +6,6 @@ import { useTranslations } from "next-intl";
 import { YouTubeModal } from "@/components/ui/YouTubeModal";
 import { siteMedia, VideoItem } from "@/config/siteMedia";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
-import { formatSectionKicker } from "@/config/sections";
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
 
@@ -49,17 +47,8 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (kicker + serif H2) */}
+        {/* Section Header */}
         <div className="max-w-3xl mb-10">
-          <div className="flex items-center gap-3 mb-4">
-            <Badge
-              variant="outline"
-              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
-            >
-              {formatSectionKicker("media", t("kicker"))}
-            </Badge>
-          </div>
-
           <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
             {t("headingPrefix")}
             <span className="italic text-sage ml-1">
