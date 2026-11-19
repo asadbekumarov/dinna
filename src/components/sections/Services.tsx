@@ -9,6 +9,7 @@ import { formatSectionKicker } from "@/config/sections";
 import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 
 interface ServiceEnhanced {
   index: string;
@@ -39,13 +40,9 @@ export function Services({ onOpenApply }: ServicesProps) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (01 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              01
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
@@ -100,7 +97,7 @@ export function Services({ onOpenApply }: ServicesProps) {
                 <ul className="space-y-2 py-4 border-t border-border text-xs text-charcoal/90 mb-6">
                   {service.features?.map((feat, fIdx) => (
                     <li key={fIdx} className="flex items-start gap-2">
-                      <span className="text-sage text-sm leading-none mt-0.5 font-bold">✓</span>
+                      <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{feat}</span>
                     </li>
                   ))}

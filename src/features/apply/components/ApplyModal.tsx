@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Modal } from "@/components/ui/Modal";
 import { ApplyForm } from "./ApplyForm";
 import { contactConfig } from "@/config/contact";
+import { X } from "lucide-react";
 
 interface ApplyModalProps {
   isOpen: boolean;
@@ -54,7 +55,7 @@ export function ApplyModal({
           aria-label={commonT("close")}
           className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-cream-200 hover:bg-cream-300 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer"
         >
-          ✕
+          <X className="w-4 h-4" />
         </button>
       </div>
 

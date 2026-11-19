@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
+import { Lock, Sparkles, MapPin, Video } from "lucide-react";
 
 interface ApplyFormProps {
   onSuccess: () => void;
@@ -222,7 +223,9 @@ export function ApplyForm({ onSuccess, selectedService }: ApplyFormProps) {
       <div className="bg-[#142820]/5 border border-[#C59B6D]/30 p-3.5 sm:p-4 rounded-2xl transition-all duration-300">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <span className="text-base">🔒</span>
+            <span className="w-7 h-7 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0">
+              <Lock className="w-3.5 h-3.5 text-sage" />
+            </span>
             <div>
               <p className="text-xs font-semibold text-charcoal tracking-wide">
                 Anonim yozilish (Ism shart emas)
@@ -246,7 +249,7 @@ export function ApplyForm({ onSuccess, selectedService }: ApplyFormProps) {
               variant="outline"
               className="bg-sage/10 text-sage border-sage/30 text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 rounded-full w-full justify-center"
             >
-              <span>✨</span>
+              <Sparkles className="w-3.5 h-3.5 text-terracotta shrink-0" />
               <span>Sizning shaxsingiz 100% sir saqlanadi. Taxallusdan foydalanishingiz mumkin.</span>
             </Badge>
           </div>
@@ -266,16 +269,17 @@ export function ApplyForm({ onSuccess, selectedService }: ApplyFormProps) {
                 id: "Toshkent (Oflayn • 5/5)",
                 title: "Toshkent (Oflayn 5/5)",
                 desc: "Shaxsiy kabinetda",
-                icon: "🌿",
+                icon: MapPin,
               },
               {
                 id: "Onlayn (Video-aloqa)",
                 title: "Onlayn Video",
                 desc: "Zoom / Telegram",
-                icon: "💻",
+                icon: Video,
               },
             ].map((item) => {
               const isSelected = format === item.id;
+              const IconComp = item.icon;
               return (
                 <button
                   key={item.id}
@@ -289,7 +293,7 @@ export function ApplyForm({ onSuccess, selectedService }: ApplyFormProps) {
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold leading-tight">{item.title}</span>
-                    <span className="text-xs">{item.icon}</span>
+                    <IconComp className={`w-3.5 h-3.5 ${isSelected ? "text-cream" : "text-sage"}`} />
                   </div>
                   <span className={`text-[10px] ${isSelected ? "text-white/80" : "text-[#5C6660]"}`}>
                     {item.desc}

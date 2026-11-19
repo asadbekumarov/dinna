@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
 
 export function MobileStickyBar() {
   const t = useTranslations("stickyBar");
@@ -83,7 +84,7 @@ export function MobileStickyBar() {
           href="/test"
           className="min-h-[48px] min-w-[44px] px-3.5 py-2 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-charcoal-muted hover:text-charcoal bg-cream-200 hover:bg-cream-300 border border-border rounded-full transition-colors shrink-0 active:scale-[0.97]"
         >
-          <span className="text-sm">🕊️</span>
+          <Sparkles className="w-3.5 h-3.5 text-terracotta" />
           <span>{t("takeTest")}</span>
         </Link>
 

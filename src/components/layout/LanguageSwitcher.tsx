@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useTransition } from "react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
+import { Check } from "lucide-react";
 
 interface LanguageOption {
   code: string;
@@ -147,7 +148,7 @@ export function LanguageSwitcher({
                   <span className="font-sans text-xs">{lang.nativeName}</span>
                 </div>
                 {isSelected && (
-                  <span className="text-sage font-mono text-xs font-bold">✓</span>
+                  <Check className="w-3.5 h-3.5 text-sage" />
                 )}
               </button>
             );

@@ -83,7 +83,7 @@
     "diagTime": "XAVFSIZ VA MAXFIY",
     "diagTitle": "Qaysi format sizga mos keladi?",
     "diagDesc": "Ichki holatingiz, xavotir yoki munosabatlardagi savollaringizni qulay formatda birgalikda tahlil qilamiz.",
-    "diagPrivacy": "🔒 100% Maxfiylik kafolati",
+    "diagPrivacy": "100% Maxfiylik kafolati",
     "diagCta": "Konsultatsiyaga yozilish",
     "diagServiceApplyName": "Individual konsultatsiya",
     "bookTimeCta": "Vaqtni tanlash",
@@ -286,8 +286,7 @@
           "2 daqiqada qulay sana va soatni tanlash",
           "Toshkent 5/5 oflayn yoki onlayn (Zoom/Telegram)",
           "Shaxsiy istaklar va xavotirlarni oldindan belgilash"
-        ],
-        "icon": "🌱"
+        ]
       },
       {
         "num": "02",
@@ -299,8 +298,7 @@
           "100% qat'iy psixologik konfidensiallik",
           "Hech qanday hukmsiz va erkin qabul muhiti",
           "Ichki og'riqlar, stress va xavotir ildizini topish"
-        ],
-        "icon": "🕊️"
+        ]
       },
       {
         "num": "03",
@@ -312,8 +310,7 @@
           "Birinchi seansdayoq his etiladigan ruhiy yengillik",
           "Shaxsiy tiklanish va hissiy muvozanat rejasi",
           "Zaruriyat tug'ilganda doimiy professional hamrohlik"
-        ],
-        "icon": "✨"
+        ]
       }
     ]
   },
@@ -418,7 +415,7 @@
     "addressLabel": "MANZIL",
     "addressValue": "Toshkent shahri, 5/5 (Oflayn qabul)",
     "formTitle": "Konsultatsiyaga yozilish",
-    "formSubtitle": "🔒 Barcha ma'lumotlar 100% maxfiy saqlanadi. Tez orada siz bilan bog'lanamiz.",
+    "formSubtitle": "Barcha ma'lumotlar 100% maxfiy saqlanadi. Tez orada siz bilan bog'lanamiz.",
     "formSubmit": "Konsultatsiyaga yozilish →",
     "formSuccess": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanib, qulay vaqtni kelishib olamiz.",
     "nameLabel": "ISMINGIZ",
@@ -448,7 +445,7 @@
     "serviceTitle": "Konsultatsiya formati",
     "consultTitle": "Psixologik konsultatsiya",
     "serviceSubtitle": "Ma'lumotlaringizni to'ldiring, qulay vaqtni belgilash uchun tez orada siz bilan bog'lanamiz.",
-    "subtitle": "🔒 Barcha ma'lumotlaringiz 100% maxfiy saqlanadi.",
+    "subtitle": "Barcha ma'lumotlaringiz 100% maxfiy saqlanadi.",
     "badgeConsultation": "KONSULTATSIYA",
     "badgeService": "YOZILISH",
     "selectedPrefix": "Tanlangan format:",
@@ -495,7 +492,7 @@
     "timelineStep3Text": "Toshkent 5/5 ofisida yoki onlayn xavfsiz konsultatsiya",
     "actionTelegram": "Telegram kanalga o'tish",
     "actionWebinars": "Instagram profilini ko'rish",
-    "privacyBadge": "🔒 100% MAXFIYLIK KAFOLATLANADI"
+    "privacyBadge": "100% MAXFIYLIK KAFOLATLANADI"
   },
   "faq": {
     "tag": "FAQ",
@@ -695,7 +692,7 @@
     "questionOf": "{current} / {total}",
     "stepAria": "Savol {current} dan {total} gacha",
     "leadTitle": "Natijangiz va shaxsiy tavsiyani ko'rish",
-    "leadSubtitle": "🔒 Barcha ma'lumotlar 100% maxfiy saqlanadi. Qulay vaqtda sizga yordam berishimiz uchun ma'lumotlaringizni tasdiqlang.",
+    "leadSubtitle": "Barcha ma'lumotlar 100% maxfiy saqlanadi. Qulay vaqtda sizga yordam berishimiz uchun ma'lumotlaringizni tasdiqlang.",
     "nameLabel": "Ismingiz",
     "namePlaceholder": "Ismingizni kiriting",
     "phoneLabel": "Telefon raqamingiz",
@@ -723,7 +720,7 @@
     "description": "Toshkent 5/5 dagi shinam ofisda yoki dunyoning istalgan nuqtasidan onlayn formatda uchrashuv vaqtini tanlang.",
     "badgeDuration": "60–90 daqiqa",
     "badgePrice": "Individual",
-    "badgePrivacy": "🔒 100% Maxfiy",
+    "badgePrivacy": "100% Maxfiy",
     "successTitle": "Uchrashuv vaqti belgilandi",
     "successMessage": "Rahmat! Arizangiz qabul qilindi. Tez orada Dinna Mirzabayeva siz bilan bog'lanib seans tafsilotlarini tasdiqlaydi.",
     "errorTitle": "Kalendar yuklanmadi",

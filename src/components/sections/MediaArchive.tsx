@@ -9,6 +9,7 @@ import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { formatSectionKicker } from "@/config/sections";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Star } from "lucide-react";
 
 interface MediaArchiveProps {
   onOpenApply?: (options?: string | { service?: string }) => void;
@@ -48,13 +49,9 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (04 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              04
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <Badge
               variant="outline"
               className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
@@ -106,7 +103,11 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
                 <div>
                   {/* Top Quote & Rating */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-terracotta text-sm">★★★★★</span>
+                    <div className="flex items-center gap-0.5 text-terracotta" aria-label="5 out of 5 stars">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-terracotta text-terracotta" />
+                      ))}
+                    </div>
                     <span className="font-mono text-[10px] text-charcoal-muted uppercase tracking-wider">
                       {item.format}
                     </span>

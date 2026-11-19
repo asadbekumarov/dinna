@@ -22,8 +22,6 @@ export function getSectionNumber(key: SectionKey): string {
   return num < 10 ? `0${num}` : `${num}`;
 }
 
-export function formatSectionKicker(key: SectionKey, title: string): string {
-  const cleanTitle = title.replace(/^\d{2}\s*\/\s*/, "").trim();
-  const num = getSectionNumber(key);
-  return `${num} / ${cleanTitle}`;
+export function formatSectionKicker(_key: SectionKey, title: string): string {
+  return title.replace(/^\d{2}\s*\/\s*/, "").trim();
 }

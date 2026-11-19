@@ -7,6 +7,7 @@ import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Check, Lock } from "lucide-react";
 
 interface StepItem {
   num: string;
@@ -36,13 +37,9 @@ export function Stages({ onOpenApply }: StagesProps) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (02 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              02
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
@@ -96,7 +93,7 @@ export function Stages({ onOpenApply }: StagesProps) {
                 <ul className="space-y-1.5 bg-cream-200/60 p-3.5 rounded-xl border border-border text-xs text-charcoal/90">
                   {step.highlights?.map((h, hIdx) => (
                     <li key={hIdx} className="flex items-start gap-2">
-                      <span className="text-sage font-bold">✓</span>
+                      <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
@@ -139,7 +136,7 @@ export function Stages({ onOpenApply }: StagesProps) {
               <ul className="space-y-2 py-4 border-t border-border text-xs text-charcoal/90">
                 {step.highlights?.map((h, hIdx) => (
                   <li key={hIdx} className="flex items-start gap-2">
-                    <span className="text-sage text-sm font-bold">✓</span>
+                    <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{h}</span>
                   </li>
                 ))}
@@ -151,8 +148,8 @@ export function Stages({ onOpenApply }: StagesProps) {
         {/* Reassurance Callout Bar */}
         <div className="border border-border bg-white/70 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-card">
           <div className="flex items-center gap-4 text-center sm:text-left">
-            <span className="w-12 h-12 rounded-full bg-sage/10 text-sage flex items-center justify-center text-xl shrink-0">
-              🔒
+            <span className="w-12 h-12 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0">
+              <Lock className="w-5 h-5 text-sage" />
             </span>
             <div>
               <h4 className="font-serif text-lg sm:text-xl text-charcoal font-medium">

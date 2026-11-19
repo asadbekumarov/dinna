@@ -7,6 +7,7 @@ import { FAQSkeleton } from "@/components/ui/skeletons";
 import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { Search, X } from "lucide-react";
 import {
   Accordion,
   AccordionItem,
@@ -122,13 +123,9 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (06 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              06
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
@@ -150,8 +147,8 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
         {/* Search Bar (text-base / 16px to prevent iOS auto-zoom) */}
         <div className="max-w-2xl mb-6">
           <div className="relative flex items-center">
-            <span className="absolute left-4 pointer-events-none text-sage text-base" aria-hidden="true">
-              🔍
+            <span className="absolute left-4 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
+              <Search className="w-4 h-4 text-sage" />
             </span>
 
             <Input
@@ -170,7 +167,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
                 aria-label={t("clearSearch")}
                 className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
               >
-                ✕
+                <X className="w-4 h-4" />
               </button>
             )}
           </div>

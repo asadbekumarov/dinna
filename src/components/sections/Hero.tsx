@@ -10,6 +10,7 @@ import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Marquee } from "@/components/ui/Marquee";
+import { Lock, Sparkles, Star } from "lucide-react";
 
 interface HeroProps {
   onOpenModal?: () => void;
@@ -133,15 +134,15 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                 href="/test"
                 className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-mono text-charcoal-muted hover:text-sage transition-colors"
               >
-                <span>🕊️</span>
+                <Sparkles className="w-3.5 h-3.5 text-terracotta" />
                 <span>{t("quickQuiz")}</span>
               </Link>
             </div>
 
             {/* Reassuring Confidentiality Line */}
             <div className="hidden sm:flex items-center gap-2.5 pt-4 text-xs text-charcoal-muted">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sage/10 text-sage text-[10px]">
-                🔒
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sage/10 text-sage">
+                <Lock className="w-3 h-3 text-sage" />
               </span>
               <span>{t("reassurance")}</span>
             </div>
@@ -186,8 +187,8 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
               {/* Floating Badge 2: Bottom Experience Badge */}
               <div className="absolute -bottom-4 -left-4 z-30">
                 <div className="bg-white/95 md:backdrop-blur-md border border-border rounded-2xl py-2 px-3.5 shadow-card flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-sage/10 text-sage flex items-center justify-center text-sm shrink-0">
-                    🌿
+                  <span className="w-8 h-8 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4 text-sage" />
                   </span>
                   <div className="text-left">
                     <span className="block font-serif text-sm font-semibold text-charcoal leading-tight">
@@ -231,9 +232,9 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
 
             {/* Metric 03 */}
             <div className="flex flex-col items-center">
-              <div className="text-2xl font-light text-charcoal tracking-tight flex items-baseline">
+              <div className="text-2xl font-light text-charcoal tracking-tight flex items-center">
                 <span>5/5</span>
-                <span className="text-terracotta font-serif italic text-sm ml-0.5">★</span>
+                <Star className="w-3.5 h-3.5 fill-terracotta text-terracotta ml-1" />
               </div>
               <span className="font-mono text-[10px] text-sage font-medium uppercase mt-1 line-clamp-1">
                 {t("metric3Label")}
@@ -285,9 +286,9 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                   {t("metric3Desc")}
                 </span>
               </div>
-              <div className="text-3xl sm:text-4xl font-light tracking-tight text-charcoal ml-4 flex items-baseline shrink-0">
+              <div className="text-3xl sm:text-4xl font-light tracking-tight text-charcoal ml-4 flex items-center shrink-0">
                 <span>5/5</span>
-                <span className="text-terracotta font-serif italic ml-1">★</span>
+                <Star className="w-4 h-4 fill-terracotta text-terracotta ml-1" />
               </div>
             </div>
           </div>
@@ -301,7 +302,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
             {tickerItems.map((item, idx) => (
               <React.Fragment key={idx}>
                 <span className="flex items-center gap-2 whitespace-nowrap">
-                  <span className="text-terracotta font-serif" aria-hidden="true">✦</span>
+                  <Sparkles className="w-3 h-3 text-terracotta shrink-0" aria-hidden="true" />
                   <span className="hover:text-sage transition-colors">{item}</span>
                 </span>
                 <span className="text-border" aria-hidden="true">·</span>

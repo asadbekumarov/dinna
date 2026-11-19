@@ -11,6 +11,7 @@ import { formatSectionKicker } from "@/config/sections";
 import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 
 interface BookCtaSplitProps {
   onOpenApply?: (options?: string | { service?: string }) => void;
@@ -40,13 +41,9 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (05 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              05
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
@@ -139,15 +136,15 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
 
               <div className="p-4 bg-white/70 rounded-xl border border-border/80 text-xs text-charcoal/90 space-y-2 mb-6">
                 <div className="flex items-center gap-2">
-                  <span className="text-sage font-bold">✓</span>
+                  <Check className="w-4 h-4 text-sage shrink-0" />
                   <span>3 daqiqalik holat diagnostikasi</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sage font-bold">✓</span>
+                  <Check className="w-4 h-4 text-sage shrink-0" />
                   <span>Toshkent 5/5 oflayn & Dunyo onlayn</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sage font-bold">✓</span>
+                  <Check className="w-4 h-4 text-sage shrink-0" />
                   <span>100% konfidensial va xavfsiz muhit</span>
                 </div>
               </div>

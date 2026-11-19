@@ -83,7 +83,7 @@
     "diagTime": "SAFE & PRIVATE",
     "diagTitle": "Which format suits you best?",
     "diagDesc": "In a gentle and confidential setting, we will explore your inner questions, anxiety, or relationship challenges together.",
-    "diagPrivacy": "🔒 100% Confidentiality Guarantee",
+    "diagPrivacy": "100% Confidentiality Guarantee",
     "diagCta": "Book a Consultation",
     "diagServiceApplyName": "Individual Consultation",
     "bookTimeCta": "Choose a Time",
@@ -286,8 +286,7 @@
           "Select date and time in 2 minutes",
           "Tashkent 5/5 in-person or online (Zoom/Telegram)",
           "Share preliminary goals in confidence"
-        ],
-        "icon": "🌱"
+        ]
       },
       {
         "num": "02",
@@ -299,8 +298,7 @@
           "100% strict professional confidentiality",
           "Safe, welcoming, judgment-free space",
           "Identify the true roots of anxiety and pain"
-        ],
-        "icon": "🕊️"
+        ]
       },
       {
         "num": "03",
@@ -312,8 +310,7 @@
           "Noticeable relief felt from the very first session",
           "Clear personal recovery and balance blueprint",
           "Ongoing professional guidance as needed"
-        ],
-        "icon": "✨"
+        ]
       }
     ]
   },
@@ -418,7 +415,7 @@
     "addressLabel": "LOCATION",
     "addressValue": "Tashkent, 5/5 (In-person appointments)",
     "formTitle": "Book a Consultation",
-    "formSubtitle": "🔒 All information is 100% confidential. We will reach out promptly.",
+    "formSubtitle": "All information is 100% confidential. We will reach out promptly.",
     "formSubmit": "Book Consultation →",
     "formSuccess": "Your request has been received. We will contact you shortly to confirm your time.",
     "nameLabel": "YOUR NAME",
@@ -448,7 +445,7 @@
     "serviceTitle": "Consultation Format",
     "consultTitle": "Psychological Consultation",
     "serviceSubtitle": "Please provide your details, and we will contact you to coordinate a comfortable time.",
-    "subtitle": "🔒 Your details are 100% confidential.",
+    "subtitle": "Your details are 100% confidential.",
     "badgeConsultation": "CONSULTATION",
     "badgeService": "BOOKING",
     "selectedPrefix": "Selected format:",
@@ -495,7 +492,7 @@
     "timelineStep3Text": "In-person at Tashkent 5/5 or online via Zoom/Telegram",
     "actionTelegram": "Go to Telegram Channel",
     "actionWebinars": "Visit Instagram Profile",
-    "privacyBadge": "🔒 100% CONFIDENTIALITY GUARANTEED"
+    "privacyBadge": "100% CONFIDENTIALITY GUARANTEED"
   },
   "faq": {
     "tag": "FAQ",
@@ -695,7 +692,7 @@
     "questionOf": "{current} / {total}",
     "stepAria": "Question {current} of {total}",
     "leadTitle": "View Your Assessment & Guidance",
-    "leadSubtitle": "🔒 100% confidential. Confirm your details so we can send your personalized insights.",
+    "leadSubtitle": "100% confidential. Confirm your details so we can send your personalized insights.",
     "nameLabel": "Your Name",
     "namePlaceholder": "Enter your name",
     "phoneLabel": "Phone Number",
@@ -723,7 +720,7 @@
     "description": "Choose a suitable time for an in-person meeting in Tashkent 5/5 or an online appointment from anywhere.",
     "badgeDuration": "60–90 min",
     "badgePrice": "Individual",
-    "badgePrivacy": "🔒 100% Confidential",
+    "badgePrivacy": "100% Confidential",
     "successTitle": "Appointment confirmed",
     "successMessage": "Thank you! Your request has been received. Dinna Mirzabayeva will reach out to confirm your session.",
     "errorTitle": "Calendar currently unavailable",

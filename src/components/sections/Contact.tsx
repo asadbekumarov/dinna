@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
+import { MapPin, Video, Sparkles, CheckCircle2, ShieldCheck } from "lucide-react";
 import {
   formatUzbekPhone,
   cleanUzbekPhone,
@@ -41,9 +42,9 @@ export function Contact() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const formatOptions = [
-    { id: "Toshkent 5/5", label: t("formatOffline") || "Toshkent 5/5 (Oflayn)", icon: "🌿" },
-    { id: "Onlayn (Zoom/Telegram)", label: t("formatOnline") || "Onlayn (Zoom / Telegram)", icon: "🕊️" },
-    { id: "Mualliflik Treningi", label: t("formatTraining") || "Mualliflik Treningi", icon: "✨" },
+    { id: "Toshkent 5/5", label: t("formatOffline") || "Toshkent 5/5 (Oflayn)", icon: MapPin },
+    { id: "Onlayn (Zoom/Telegram)", label: t("formatOnline") || "Onlayn (Zoom / Telegram)", icon: Video },
+    { id: "Mualliflik Treningi", label: t("formatTraining") || "Mualliflik Treningi", icon: Sparkles },
   ];
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -143,13 +144,9 @@ export function Contact() {
       className="scroll-mt-20 relative bg-cream border-t border-border py-[var(--section-y)] pb-28 sm:pb-32 overflow-x-clip text-charcoal"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header (07 + kicker + serif H2) */}
+        {/* Section Header (kicker + serif H2) */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
-              07
-            </span>
-            <span className="text-border" aria-hidden="true">/</span>
             <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
@@ -185,7 +182,9 @@ export function Contact() {
 
               {isSuccess ? (
                 <div className="p-6 bg-sage/10 border border-sage/30 rounded-xl text-center space-y-3">
-                  <span className="text-3xl">🕊️</span>
+                  <div className="w-12 h-12 rounded-full bg-sage/20 text-sage mx-auto flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6 text-sage" />
+                  </div>
                   <h4 className="font-serif text-xl text-sage font-medium">
                     {applyT("thankYouBadge") || "Arizangiz qabul qilindi"}
                   </h4>
@@ -239,6 +238,7 @@ export function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                       {formatOptions.map((opt) => {
                         const isSelected = formData.companySize === opt.id;
+                        const IconComponent = opt.icon;
                         return (
                           <button
                             key={opt.id}
@@ -250,7 +250,7 @@ export function Contact() {
                                 : "bg-cream-100 border-border text-charcoal hover:bg-cream-200"
                             }`}
                           >
-                            <span className="text-sm shrink-0">{opt.icon}</span>
+                            <IconComponent className={`w-4 h-4 shrink-0 ${isSelected ? "text-cream" : "text-sage"}`} />
                             <span className="line-clamp-2 leading-tight">{opt.label}</span>
                           </button>
                         );
@@ -402,7 +402,7 @@ export function Contact() {
 
             {/* Confidentiality Reminder Card */}
             <div className="p-5 bg-cream-200/80 border border-sage/20 rounded-2xl flex items-start gap-3">
-              <span className="text-xl">🌿</span>
+              <ShieldCheck className="w-5 h-5 text-sage shrink-0 mt-0.5" />
               <div>
                 <h5 className="font-serif text-base text-charcoal font-medium">
                   Xavfsiz va sokin muhit

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useLockScroll } from "@/hooks/useLockScroll";
+import { X } from "lucide-react";
 
 export interface LightboxMedia {
   src: string;
@@ -115,7 +116,7 @@ export function Lightbox({ isOpen, onClose, media }: LightboxProps) {
             aria-label="Yopish"
             className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-cream-200 hover:bg-cream-300 text-charcoal flex items-center justify-center transition-colors cursor-pointer shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
           >
-            ✕
+            <X className="w-4 h-4" />
           </button>
         </div>
 

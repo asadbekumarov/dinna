@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Card, CardContent } from "@/components/ui/card";
+import { Sparkles, Lock } from "lucide-react";
 
 type QuizStep = "intro" | "questions" | "lead" | "result";
 
@@ -444,7 +445,9 @@ export function QuizView() {
             <div className="bg-[#1B352B]/80 border border-[#C59B6D]/30 p-4 rounded-2xl mb-6">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5">
-                  <span className="text-lg">🔒</span>
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <Lock className="w-4 h-4 text-[#DFBA73]" />
+                  </span>
                   <div>
                     <p className="text-xs font-semibold text-cream tracking-wide">
                       Anonim yozilish (Ism shart emas)
@@ -468,7 +471,7 @@ export function QuizView() {
                     variant="outline"
                     className="bg-[#DFBA73]/10 text-[#DFBA73] border-[#DFBA73]/30 text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 rounded-full w-full justify-center"
                   >
-                    <span>✨</span>
+                    <Sparkles className="w-3.5 h-3.5 text-[#DFBA73] shrink-0" />
                     <span>Sizning shaxsingiz 100% maxfiy saqlanadi. Taxallusingiz bilan murojaat qilinadi.</span>
                   </Badge>
                 </div>
@@ -673,7 +676,7 @@ export function QuizView() {
 
               {/* Empathetic Highlight Callout Box based on Q1 */}
               <div className="p-5 sm:p-6 mb-8 rounded-2xl bg-[#1B352B]/80 border border-[#C59B6D]/30 flex items-start gap-4 shadow-sm">
-                <span className="text-2xl shrink-0 mt-0.5">🕊️</span>
+                <Sparkles className="w-6 h-6 text-[#DFBA73] shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-serif text-lg sm:text-xl font-normal text-cream leading-snug">
                     {diagnosticEmpathy}
@@ -699,7 +702,7 @@ export function QuizView() {
 
               {/* Confidentiality reminder */}
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl flex items-center gap-3 mb-8">
-                <span className="text-lg">🔒</span>
+                <Lock className="w-4 h-4 text-[#A3B8AE] shrink-0" />
                 <span className="text-xs text-[#A3B8AE]">
                   Sizning javoblaringiz va murojaatingiz to&apos;liq maxfiy saqlanadi. Suhbat davomida barcha ma&apos;lumotlar shaxsiy sir hisoblanadi.
                 </span>
