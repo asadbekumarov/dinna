@@ -438,7 +438,8 @@
     "notePlaceholder": "Qisqacha nima sizni bezovta qilayotganini yozishingiz mumkin...",
     "anonymousLabel": "Anonim rejim (ism kiritish shart emas)",
     "anonymousHint": "Shaxsingiz to'liq sir saqlanadi",
-    "submitButton": "Ariza yuborish"
+    "submitButton": "Ariza yuborish",
+    "successMessage": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanib, qulay vaqtni kelishib olamiz."
   },
   "applyModal": {
     "title": "Konsultatsiyaga yozilish",
@@ -522,7 +523,9 @@
     "noteLabel": "Qisqa izoh yoki holat tavsifi (ixtiyoriy)",
     "notePlaceholder": "Masalan: Uyqusizlik, munosabatlar yoki xotirjamlikni tiklash...",
     "submitFinal": "Arizani yuborish",
-    "submittingFinal": "Yuborilmoqda..."
+    "submittingFinal": "Yuborilmoqda...",
+    "step1Format": "Uchrashuv formati",
+    "step1Time": "Sizga qulay kun va vaqt oralig'i"
   },
   "faq": {
     "tag": "FAQ",

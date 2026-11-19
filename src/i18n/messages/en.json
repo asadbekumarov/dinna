@@ -438,7 +438,8 @@
     "notePlaceholder": "Briefly share what you would like to address...",
     "anonymousLabel": "Anonymous mode (no name required)",
     "anonymousHint": "Your identity remains completely confidential",
-    "submitButton": "Submit Request"
+    "submitButton": "Submit Request",
+    "successMessage": "Your request has been received. We will get back to you shortly."
   },
   "applyModal": {
     "title": "Book a Consultation",
@@ -522,7 +523,9 @@
     "noteLabel": "Brief note or topic of concern (optional)",
     "notePlaceholder": "e.g., Anxiety, sleep, relationships, finding peace...",
     "submitFinal": "Submit Request",
-    "submittingFinal": "Submitting..."
+    "submittingFinal": "Submitting...",
+    "step1Format": "Session format",
+    "step1Time": "Preferred day and time slot"
   },
   "faq": {
     "tag": "FAQ",
