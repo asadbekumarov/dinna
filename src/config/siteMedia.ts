@@ -18,16 +18,16 @@ export const siteMedia = {
 
   hero: {
     portrait: {
-      src: "/images/hero/dinna-portrait.jpg",
+      src: "/images/hero/dinna-mirzabayeva-hero.webp",
       width: 900,
-      height: 1100,
+      height: 1125,
       alt: "Dinna Mirzabayeva — Psixolog",
     },
   },
 
   expert: {
     portrait: {
-      src: "/images/hero/dinna-portrait.jpg",
+      src: "/images/expert/dinna-mirzabayeva-expert.webp",
       width: 800,
       height: 1000,
       alt: "Dinna Mirzabayeva amaliyotchi psixolog portreti",

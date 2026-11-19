@@ -61,7 +61,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
             <div className="block lg:hidden my-6 w-full max-w-[340px] mx-auto">
               <div className="relative w-full aspect-[4/5] rounded-t-full rounded-b-2xl overflow-hidden border border-sage/20 shadow-card bg-cream-200">
                 <Image
-                  src="/images/hero/dinna-portrait.webp"
+                  src="/images/hero/dinna-mirzabayeva-hero.webp"
                   alt={t("portraitAlt")}
                   fill
                   priority
@@ -133,7 +133,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
               {/* Arch Photo Container */}
               <div className="relative w-full aspect-[4/5] rounded-t-full rounded-b-2xl overflow-hidden border border-sage/20 shadow-modal bg-cream-200 group">
                 <Image
-                  src="/images/hero/dinna-portrait.webp"
+                  src="/images/hero/dinna-mirzabayeva-hero.webp"
                   alt={t("portraitAlt")}
                   fill
                   priority
