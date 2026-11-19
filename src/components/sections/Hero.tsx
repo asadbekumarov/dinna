@@ -19,7 +19,17 @@ interface HeroProps {
 
 export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
   const { openApply } = useApplyModal();
-  const handleOpenModal = onOpenModal || onOpenApply || openApply;
+
+  const handleOpenModal = () => {
+    if (onOpenModal) {
+      onOpenModal();
+    } else if (onOpenApply) {
+      onOpenApply();
+    } else {
+      openApply();
+    }
+  };
+
   const t = useTranslations("hero");
   const ctaT = useTranslations("cta");
 
