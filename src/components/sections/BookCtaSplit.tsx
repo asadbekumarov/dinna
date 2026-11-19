@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
@@ -41,42 +42,56 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
         {/* 2 Equal Cards: Consultation & Assessment */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
           {/* Card 1: Individual Consultation */}
-          <article className="bg-white/90 border border-border rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/40 transition-colors">
-            <div>
-              <div className="w-11 h-11 rounded-xl bg-sage-soft text-sage flex items-center justify-center mb-5">
-                <HeartPulse className="w-5 h-5 text-sage" aria-hidden="true" />
+          <article className="group relative overflow-hidden rounded-3xl border border-charcoal/20 p-7 sm:p-10 flex flex-col justify-between shadow-xl min-h-[520px] transition-all duration-500 hover:shadow-2xl">
+            {/* Background Image Container */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/cta/consultation-bg.webp"
+                alt={t("card1Title")}
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              {/* Dark Rich Editorial Gradient Scrim */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/90 to-charcoal/70" />
+            </div>
+
+            {/* Card Content (Crisp High-Contrast White & Cream) */}
+            <div className="relative z-10">
+              <div className="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 text-cream flex items-center justify-center mb-6">
+                <HeartPulse className="w-6 h-6 text-cream" aria-hidden="true" />
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3 leading-snug">
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-cream mb-3 leading-snug">
                 {t("card1Title")}
               </h3>
 
-              <p className="text-sm text-charcoal-muted leading-relaxed mb-6 font-normal">
+              <p className="text-sm sm:text-base text-cream/80 leading-relaxed mb-6 font-normal">
                 {t("card1Desc")}
               </p>
 
-              <div className="p-4 bg-cream-50 rounded-xl border border-border text-xs text-charcoal/90 space-y-2.5 mb-6">
+              <div className="p-4 sm:p-5 bg-black/30 rounded-2xl border border-white/15 text-xs sm:text-sm text-cream/95 space-y-3 mb-6">
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card1Point1")}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card1Point2")}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card1Point3")}</span>
                 </div>
               </div>
             </div>
 
             {/* CTA 1: Apply for consultation */}
-            <div className="pt-4 border-t border-border">
+            <div className="relative z-10 pt-5 border-t border-white/15">
               <Button
                 type="button"
                 onClick={handleConsultation}
-                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-sm font-semibold tracking-wide shadow-sm"
+                className="w-full sm:w-auto min-h-[50px] px-8 rounded-full bg-cream text-charcoal hover:bg-white text-sm font-semibold tracking-wide shadow-md transition-all active:scale-[0.98]"
               >
                 {t("card1Cta")} &rarr;
               </Button>
@@ -84,41 +99,55 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
           </article>
 
           {/* Card 2: 3-Minute Assessment Test */}
-          <article className="bg-cream-200/80 border border-sage/30 rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/50 transition-colors">
-            <div>
-              <div className="w-11 h-11 rounded-xl bg-terracotta-soft text-terracotta-dark flex items-center justify-center mb-5">
-                <ShieldCheck className="w-5 h-5 text-terracotta-dark" aria-hidden="true" />
+          <article className="group relative overflow-hidden rounded-3xl border border-sage/40 p-7 sm:p-10 flex flex-col justify-between shadow-xl min-h-[520px] transition-all duration-500 hover:shadow-2xl">
+            {/* Background Image Container */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/cta/diagnostic-bg.webp"
+                alt={t("card2Title")}
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              {/* Deep Sage Gradient Scrim */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#13271b] via-[#1a3525]/90 to-[#224430]/70" />
+            </div>
+
+            {/* Card Content (Crisp High-Contrast White & Cream) */}
+            <div className="relative z-10">
+              <div className="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 text-cream flex items-center justify-center mb-6">
+                <ShieldCheck className="w-6 h-6 text-cream" aria-hidden="true" />
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3 leading-snug">
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-cream mb-3 leading-snug">
                 {t("card2Title")}
               </h3>
 
-              <p className="text-sm text-charcoal-muted leading-relaxed mb-6 font-normal">
+              <p className="text-sm sm:text-base text-cream/80 leading-relaxed mb-6 font-normal">
                 {t("card2Desc")}
               </p>
 
-              <div className="p-4 bg-white/80 rounded-xl border border-border text-xs text-charcoal/90 space-y-2.5 mb-6">
+              <div className="p-4 sm:p-5 bg-black/30 rounded-2xl border border-white/15 text-xs sm:text-sm text-cream/95 space-y-3 mb-6">
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card2Point1")}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card2Point2")}</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
                   <span>{t("card2Point3")}</span>
                 </div>
               </div>
             </div>
 
             {/* CTA 2: Start 3-minute test */}
-            <div className="pt-4 border-t border-border/80">
+            <div className="relative z-10 pt-5 border-t border-white/15">
               <Button
                 asChild
-                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-sm font-semibold tracking-wide shadow-sm"
+                className="w-full sm:w-auto min-h-[50px] px-8 rounded-full bg-cream text-charcoal hover:bg-white text-sm font-semibold tracking-wide shadow-md transition-all active:scale-[0.98]"
               >
                 <Link href="/test">
                   <span>{t("card2Cta")} &rarr;</span>
