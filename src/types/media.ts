@@ -17,6 +17,14 @@ export interface VideoItem {
   duration?: string;
 }
 
+export interface ReelItem {
+  id: string;
+  title: string;
+  url: string;
+  thumb: string;
+  category: string;
+}
+
 export interface PartnerLogo {
   id: string;
   name: string;

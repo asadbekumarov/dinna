@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { YouTubeModal } from "@/components/ui/YouTubeModal";
-import { siteMedia, VideoItem } from "@/config/siteMedia";
+import { siteMedia } from "@/config/siteMedia";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
@@ -28,16 +27,13 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
   const t = useTranslations("mediaArchive");
 
   const [activeTab, setActiveTab] = useState<string>("testimonials");
-  const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
 
   const testimonialsList: TestimonialItem[] = (t.raw("testimonials") as TestimonialItem[]) || [];
-  const webinars = siteMedia.webinars;
-  const events = siteMedia.events;
+  const reelsList = siteMedia.reels;
 
   const tabs = [
     { id: "testimonials", label: t("tabTestimonials"), count: testimonialsList.length },
-    { id: "webinars", label: t("tabWebinars"), count: webinars.length },
-    { id: "events", label: t("tabEvents"), count: events.length },
+    { id: "reels", label: t("tabWebinars"), count: reelsList.length },
   ];
 
   return (
@@ -127,98 +123,65 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
           </div>
         )}
 
-        {/* Tab 2: Webinars & Video Content */}
-        {activeTab === "webinars" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {webinars.map((vid, idx) => (
-              <article
-                key={vid.id || idx}
-                role="button"
-                tabIndex={0}
-                onClick={() => setActiveVideo(vid)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setActiveVideo(vid);
-                  }
-                }}
-                className="group relative bg-white/80 border border-border hover:border-sage/40 p-4 rounded-2xl shadow-card cursor-pointer flex flex-col justify-between transition-all"
+        {/* Tab 2: Authentic Instagram Reels (9:16 Portrait Cards) */}
+        {activeTab === "reels" && (
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible no-scrollbar">
+            {reelsList.map((reel) => (
+              <a
+                key={reel.id}
+                href={reel.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${reel.title} - ${t("watchOnInstagram")}`}
+                className="group relative snap-center w-[75vw] max-w-[280px] shrink-0 sm:w-auto sm:shrink aspect-[9/16] rounded-2xl overflow-hidden border border-border bg-charcoal shadow-card hover:border-sage/60 hover:shadow-xl transition-all flex flex-col justify-between p-5"
               >
-                <div>
-                  <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-cream-200 border border-border mb-3">
-                    <Image
-                      src={vid.thumb}
-                      alt={vid.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 400px"
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-charcoal/20 flex items-center justify-center">
-                      <div className="w-11 h-11 rounded-full bg-cream/90 text-sage flex items-center justify-center shadow-md">
-                        ▶
-                      </div>
-                    </div>
-                  </div>
+                {/* Background Image */}
+                <Image
+                  src={reel.thumb}
+                  alt={reel.title}
+                  fill
+                  sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
 
-                  <h4 className="font-serif text-base font-medium text-charcoal line-clamp-2 leading-snug group-hover:text-sage transition-colors">
-                    {vid.title}
+                {/* Dark Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/40 to-charcoal/20 group-hover:from-charcoal/90 transition-colors" />
+
+                {/* Top Badges */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-mono text-[10px] uppercase tracking-wider border border-white/20">
+                    {reel.category}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center border border-white/20 group-hover:bg-sage group-hover:border-sage transition-colors">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </span>
+                </div>
+
+                {/* Center Play Icon */}
+                <div className="relative z-10 flex items-center justify-center my-auto">
+                  <div className="w-12 h-12 rounded-full bg-white/30 backdrop-blur-md border border-white/40 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-sage group-hover:border-sage transition-all duration-300">
+                    <svg className="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Bottom Title & Action */}
+                <div className="relative z-10 pt-4">
+                  <h4 className="font-serif text-base sm:text-lg font-medium text-white leading-snug line-clamp-3 mb-2 drop-shadow-sm">
+                    {reel.title}
                   </h4>
+                  <span className="inline-flex items-center gap-1 font-mono text-[11px] text-white/80 group-hover:text-cream tracking-wide">
+                    {t("watchOnInstagram")} &rarr;
+                  </span>
                 </div>
-
-                <div className="pt-3 mt-3 border-t border-border flex items-center justify-between font-mono text-xs text-charcoal-muted">
-                  <span>{vid.duration || "Dars"}</span>
-                  <span className="text-sage font-medium">Ko&apos;rish →</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
-
-        {/* Tab 3: Events & Business Tours */}
-        {activeTab === "events" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {events.map((ev, idx) => (
-              <article
-                key={ev.id || idx}
-                className="bg-white/80 border border-border rounded-2xl p-4 shadow-card flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-cream-200 border border-border mb-3">
-                    <Image
-                      src={ev.image}
-                      alt={ev.city}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 400px"
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="font-mono text-[11px] text-terracotta-dark font-semibold uppercase">
-                      {ev.country}
-                    </span>
-                    <span className="font-mono text-xs text-charcoal-muted">
-                      {ev.date}
-                    </span>
-                  </div>
-
-                  <h4 className="font-serif text-xl font-normal text-charcoal">
-                    {ev.city}
-                  </h4>
-                </div>
-              </article>
+              </a>
             ))}
           </div>
         )}
       </div>
-
-      {/* YouTube Modal */}
-      <YouTubeModal
-        isOpen={Boolean(activeVideo)}
-        onClose={() => setActiveVideo(null)}
-        videoId={activeVideo?.id ?? null}
-        title={activeVideo?.title}
-      />
     </section>
   );
 }

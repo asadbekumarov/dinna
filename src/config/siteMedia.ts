@@ -1,12 +1,13 @@
 import type {
   MediaItem,
   VideoItem,
+  ReelItem,
   PartnerLogo,
   CityEvent,
   DiplomaItem,
 } from "@/types/media";
 
-export type { MediaItem, VideoItem, PartnerLogo, CityEvent, DiplomaItem };
+export type { MediaItem, VideoItem, ReelItem, PartnerLogo, CityEvent, DiplomaItem };
 
 export const siteMedia = {
   brand: {
@@ -196,6 +197,37 @@ export const siteMedia = {
       duration: "5:05",
     },
   ] as VideoItem[],
+
+  reels: [
+    {
+      id: "reel-1",
+      title: "Psixolog olim Taybi Kalerning 5 ta nazariyasi bor",
+      url: "https://www.instagram.com/reel/DaVKq7LM9vu/",
+      thumb: "/images/reels/reel-1.jpg",
+      category: "Nazariya va tahlil",
+    },
+    {
+      id: "reel-2",
+      title: "Tubida yolg'izlikdan qo'rqish va hech kimsiz qolish yotadi",
+      url: "https://www.instagram.com/reel/DadNvg3sxhM/",
+      thumb: "/images/reels/reel-2.jpg",
+      category: "Ichki qo'rquvlar",
+    },
+    {
+      id: "reel-3",
+      title: "O'zingizga xiyonat: boshqalar sizga xiyonat qilmaslik siri",
+      url: "https://www.instagram.com/reel/Dax4uxWsp-u/",
+      thumb: "/images/reels/reel-3.jpg",
+      category: "Munosabatlar",
+    },
+    {
+      id: "reel-4",
+      title: "Emotsional och inson nega xiyonat qiladi?",
+      url: "https://www.instagram.com/reel/DazXgDNMpzp/",
+      thumb: "/images/reels/reel-4.jpg",
+      category: "Hissiy ehtiyojlar",
+    },
+  ] as ReelItem[],
 
   webinars: [
     {
