@@ -2,14 +2,11 @@
 
 import React, { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { formatSectionKicker } from "@/config/sections";
 import { FAQSkeleton } from "@/components/ui/skeletons";
 import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
@@ -36,13 +33,10 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
   const t = useTranslations("faq");
   const locale = useLocale();
   const isUz = locale === "uz";
-  const isRu = locale === "ru";
-  const { openApply } = useApplyModal();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey>("all");
 
-  // Raw items from translation
   const rawItems = useMemo<FAQItem[]>(() => {
     return [
       {
@@ -96,7 +90,6 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
     ];
   }, [t]);
 
-  // Dynamic search & category filtering
   const filteredItems = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return rawItems.filter((item) => {
@@ -111,123 +104,55 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
     });
   }, [rawItems, searchQuery, selectedCategory]);
 
-  const handleCategoryClick = (cat: CategoryKey) => {
-    setSelectedCategory((prev) => (prev === cat ? "all" : cat));
-  };
-
-  const clearFilters = () => {
-    setSearchQuery("");
-    setSelectedCategory("all");
-  };
-
-  const categoryCounts = useMemo(() => {
-    const counts: Record<string, number> = {
-      systematization: 0,
-      consulting: 0,
-      mentorship: 0,
-      guarantees: 0,
-    };
-    rawItems.forEach((item) => {
-      if (item.category && item.category in counts) {
-        counts[item.category] = (counts[item.category] || 0) + 1;
-      }
-    });
-    return counts;
-  }, [rawItems]);
+  const categories = [
+    { key: "all" as CategoryKey, label: isUz ? "Barchasi" : locale === "ru" ? "Все" : "All" },
+    { key: "systematization" as CategoryKey, label: t("categories.systematization.title") },
+    { key: "consulting" as CategoryKey, label: t("categories.consulting.title") },
+    { key: "mentorship" as CategoryKey, label: t("categories.mentorship.title") },
+    { key: "guarantees" as CategoryKey, label: t("categories.guarantees.title") },
+  ];
 
   if (isLoading) {
     return <FAQSkeleton />;
   }
 
-  const formatCount = (count: number) => {
-    if (isUz) return `${count} ta javob`;
-    if (isRu) return `${count} ответов`;
-    return `${count} answers`;
-  };
-
-  const categories = [
-    {
-      key: "systematization" as CategoryKey,
-      title: t("categories.systematization.title"),
-      count: formatCount(categoryCounts.systematization || 0),
-      countNum: categoryCounts.systematization || 0,
-      icon: "💬",
-    },
-    {
-      key: "consulting" as CategoryKey,
-      title: t("categories.consulting.title"),
-      count: formatCount(categoryCounts.consulting || 0),
-      countNum: categoryCounts.consulting || 0,
-      icon: "📍",
-    },
-    {
-      key: "mentorship" as CategoryKey,
-      title: t("categories.mentorship.title"),
-      count: formatCount(categoryCounts.mentorship || 0),
-      countNum: categoryCounts.mentorship || 0,
-      icon: "🔒",
-    },
-    {
-      key: "guarantees" as CategoryKey,
-      title: t("categories.guarantees.title"),
-      count: formatCount(categoryCounts.guarantees || 0),
-      countNum: categoryCounts.guarantees || 0,
-      icon: "✨",
-    },
-  ];
-
   return (
     <section
       id="faq"
-      className="relative w-full bg-cream text-charcoal py-16 sm:py-24 overflow-hidden border-t border-[#E5DFD6]"
+      className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
-      {/* Organic Background Depth */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute left-[5%] top-1/4 w-[500px] h-[500px] rounded-full bg-[#E8DFD1]/60 blur-3xl"
-        />
-        <div
-          className="absolute right-[5%] bottom-1/4 w-[480px] h-[480px] rounded-full bg-[#DCE5DF]/55 blur-3xl"
-        />
-      </div>
-
-      <div className="relative z-10 max-w-[1224px] mx-auto px-5 sm:px-8">
-        {/* HERO AREA */}
-        <div className="flex flex-col items-center text-center max-w-[860px] mx-auto">
-          <div className="flex items-center justify-center gap-3">
-            <BotanicalMotif variant="leaf" className="w-5 h-5 text-[#C49A6C]" />
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Section Header (06 + kicker + serif H2) */}
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
+              06
+            </span>
+            <span className="text-border" aria-hidden="true">/</span>
+            <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
             <Badge
               variant="outline"
-              className="font-mono text-xs uppercase tracking-[0.22em] text-sage border-sage/30 bg-sage/5 font-medium py-1 px-3 rounded-full"
+              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
             >
               {formatSectionKicker("faq", t("kicker"))}
             </Badge>
-            <BotanicalMotif variant="leaf" className="w-5 h-5 text-[#C49A6C] -scale-x-100" />
           </div>
 
-          <h2 className="mt-5 font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-charcoal tracking-tight leading-[1.2]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
             {isUz ? t("headlineUz") : t("headline")}
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-[#5C6660] font-normal leading-relaxed max-w-[680px]">
+          <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4 max-w-2xl">
             {t("lede")}
           </p>
         </div>
 
-        {/* SEARCH BAR (shadcn Input) */}
-        <div className="mt-10 sm:mt-12 max-w-[860px] mx-auto">
-          <div className="relative group">
-            <div className="absolute inset-y-0 left-0 pl-5 sm:pl-6 flex items-center pointer-events-none z-10 text-[#5C6660]">
-              <svg
-                className="w-5 h-5 text-sage"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </div>
+        {/* Search Bar (text-base / 16px to prevent iOS auto-zoom) */}
+        <div className="max-w-2xl mb-6">
+          <div className="relative flex items-center">
+            <span className="absolute left-4 pointer-events-none text-sage text-base" aria-hidden="true">
+              🔍
+            </span>
 
             <Input
               type="text"
@@ -235,7 +160,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={t("searchPlaceholder")}
               aria-label={t("searchLabel")}
-              className="w-full h-[54px] sm:h-[60px] pl-[52px] sm:pl-[60px] pr-12 rounded-full bg-white text-charcoal placeholder:text-[#5C6660]/70 text-sm sm:text-base border-[#E5DFD6] focus:border-sage focus:ring-2 focus:ring-sage/20 shadow-[0_4px_20px_rgba(46,90,68,0.04)]"
+              className="w-full h-12 pl-11 pr-12 rounded-full bg-white text-charcoal placeholder:text-charcoal-muted/70 text-base border-border focus:border-sage focus:ring-1 focus:ring-sage shadow-sm"
             />
 
             {searchQuery && (
@@ -243,96 +168,49 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
                 type="button"
                 onClick={() => setSearchQuery("")}
                 aria-label={t("clearSearch")}
-                className="absolute inset-y-0 right-0 pr-5 flex items-center text-[#5C6660] hover:text-charcoal transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
               >
-                <div className="w-6 h-6 rounded-full bg-[#F2EFE9] flex items-center justify-center text-xs">
-                  ✕
-                </div>
+                ✕
               </button>
             )}
           </div>
         </div>
 
-        {/* CATEGORIES with shadcn Card */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Horizontal Scrollable Category Chips */}
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-6 mb-8 border-b border-border">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat.key;
             return (
-              <Card
+              <button
                 key={cat.key}
-                role="button"
-                tabIndex={0}
-                onClick={() => handleCategoryClick(cat.key)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    handleCategoryClick(cat.key);
-                  }
-                }}
-                className={`p-4 rounded-2xl border text-left transition-all duration-300 cursor-pointer flex items-center gap-3.5 ${
+                type="button"
+                onClick={() => setSelectedCategory(cat.key)}
+                className={`min-h-[44px] px-4 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer shrink-0 flex items-center justify-center ${
                   isSelected
-                    ? "bg-white border-sage shadow-[0_6px_20px_rgba(46,90,68,0.08)] scale-[1.01]"
-                    : "bg-white/80 border-[#E5DFD6] hover:bg-white hover:border-sage/30"
+                    ? "bg-sage text-cream shadow-sm font-semibold"
+                    : "bg-cream-200 hover:bg-cream-300 text-charcoal-muted hover:text-charcoal border border-border"
                 }`}
               >
-                <CardContent className="p-0 flex items-center gap-3.5 w-full">
-                  <span className="text-2xl shrink-0">{cat.icon}</span>
-                  <div className="min-w-0 flex-1">
-                    <span className={`text-sm font-medium block truncate ${isSelected ? "text-sage" : "text-charcoal"}`}>
-                      {cat.title}
-                    </span>
-                    <span className="text-xs font-mono text-[#5C6660] mt-0.5 block">
-                      {cat.count}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
+                {cat.label}
+              </button>
             );
           })}
         </div>
 
-        {/* ACTIVE FILTER STATUS */}
-        {(selectedCategory !== "all" || searchQuery) && (
-          <div className="mt-6 flex items-center justify-center gap-3">
-            <span className="text-sm text-[#5C6660]">
-              {filteredItems.length} {isUz ? "ta savol ko'rsatilmoqda" : "questions found"}
-            </span>
-            <Button
-              variant="link"
-              onClick={clearFilters}
-              className="text-sm text-sage hover:underline p-0 h-auto font-medium"
-            >
-              {t("clearSearch")}
-            </Button>
-          </div>
-        )}
-
-        {/* ACCORDION (Official shadcn/ui Accordion) */}
-        <div className="mt-10">
+        {/* Accordion List (min-h-[56px] trigger) */}
+        <div className="max-w-3xl">
           {filteredItems.length === 0 ? (
-            <div className="text-center py-12 px-6 rounded-2xl bg-white border border-[#E5DFD6]">
-              <p className="text-base text-[#5C6660]">
-                {t("noResults")}
-              </p>
-              <Button
-                onClick={clearFilters}
-                className="mt-4 rounded-full bg-sage text-cream text-xs font-medium hover:bg-sage-hover transition-all"
-              >
-                {t("clearSearch")}
-              </Button>
+            <div className="py-12 text-center text-charcoal-muted font-mono text-sm">
+              Hech qanday savol topilmadi.
             </div>
           ) : (
-            <Accordion type="single" collapsible defaultValue="q1" className="space-y-4">
+            <Accordion type="single" collapsible className="w-full divide-y divide-border border-b border-border">
               {filteredItems.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  value={item.id}
-                  className="rounded-2xl bg-white border border-[#E5DFD6] shadow-[0_4px_16px_rgba(46,90,68,0.03)] hover:border-sage/30 hover:shadow-[0_8px_25px_rgba(46,90,68,0.06)] data-[state=open]:border-sage/40 data-[state=open]:shadow-[0_12px_35px_rgba(46,90,68,0.08)] px-6 overflow-hidden transition-all duration-300"
-                >
-                  <AccordionTrigger className="py-5 sm:py-6 text-base sm:text-lg font-medium text-charcoal hover:text-sage hover:no-underline text-left leading-snug">
+                <AccordionItem key={item.id} value={item.id} className="border-none">
+                  <AccordionTrigger className="min-h-[56px] py-4 text-left font-serif text-lg sm:text-xl font-normal text-charcoal hover:text-sage transition-colors">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6 text-sm sm:text-base leading-relaxed text-[#5C6660] border-t border-[#E5DFD6]/60 pt-4">
+                  <AccordionContent className="pb-5 text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -340,27 +218,6 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
             </Accordion>
           )}
         </div>
-
-        {/* BOTTOM CALLOUT with shadcn Card */}
-        <Card className="mt-14 p-7 sm:p-8 rounded-2xl bg-[#F2EFE9] border border-[#E5DFD6] shadow-[0_4px_20px_rgba(46,90,68,0.04)]">
-          <CardContent className="p-0 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex flex-col text-center sm:text-left">
-              <span className="font-serif text-xl sm:text-2xl font-normal text-charcoal">
-                {t("bottomCard.title")}
-              </span>
-              <p className="text-xs sm:text-sm text-[#5C6660] mt-1.5 max-w-[540px]">
-                {t("bottomCard.description")}
-              </p>
-            </div>
-
-            <Button
-              onClick={openApply}
-              className="shrink-0 py-6 px-7 rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-medium tracking-wide transition-all shadow-[0_4px_16px_rgba(46,90,68,0.25)] active:scale-[0.98]"
-            >
-              {t("bottomCard.cta")} →
-            </Button>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );

@@ -40,6 +40,12 @@ export function Contact() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  const formatOptions = [
+    { id: "Toshkent 5/5", label: t("formatOffline") || "Toshkent 5/5 (Oflayn)", icon: "🌿" },
+    { id: "Onlayn (Zoom/Telegram)", label: t("formatOnline") || "Onlayn (Zoom / Telegram)", icon: "🕊️" },
+    { id: "Mualliflik Treningi", label: t("formatTraining") || "Mualliflik Treningi", icon: "✨" },
+  ];
+
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatUzbekPhone(e.target.value);
     setDisplayPhone(formatted);
@@ -98,6 +104,7 @@ export function Contact() {
       });
 
       const data = await res.json();
+
       if (!res.ok || !data.ok) {
         setErrorMessage(
           data.error || "Arizani yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
@@ -133,401 +140,279 @@ export function Contact() {
     <section
       id="aloqa"
       aria-label={t("title")}
-      className="scroll-mt-20 relative bg-cream border-t border-[#E5DFD6] py-16 sm:py-24 pb-28 sm:pb-32 overflow-hidden text-charcoal"
+      className="scroll-mt-20 relative bg-cream border-t border-border py-[var(--section-y)] pb-28 sm:pb-32 overflow-x-clip text-charcoal"
     >
-      <span id="kontakt" className="absolute -top-24 pointer-events-none" />
-      <span id="kontaktlar" className="absolute -top-24 pointer-events-none" />
-
-      {/* Atmospheric ambient glow */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="absolute -right-[5%] top-[15%] w-[550px] h-[550px] rounded-full bg-[#E8DFD1]/70 blur-3xl"
-        />
-        <div
-          className="absolute -left-[5%] bottom-[15%] w-[480px] h-[480px] rounded-full bg-[#DCE5DF]/60 blur-3xl"
-        />
-      </div>
-
-      <div className="max-w-[1360px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
-        {/* Left Column — Editorial Details & Direct Ledger */}
-        <div className="lg:col-span-6 space-y-8">
-          <div>
-            <div className="flex items-center gap-3">
-              <BotanicalMotif variant="leaf" className="w-5 h-5 text-[#C49A6C]" />
-              <span className="font-mono text-xs uppercase tracking-[0.22em] text-sage font-medium">
-                {formatSectionKicker("contact", t("kicker"))}
-              </span>
-            </div>
-
-            <MaskedHeading className="text-3xl sm:text-5xl font-normal tracking-[-0.02em] leading-[1.18] text-charcoal mt-5">
-              {t("titlePrefix")}
-              <span className="font-serif italic font-normal text-sage">
-                {t("titleHighlight")}
-              </span>
-            </MaskedHeading>
-
-            <p className="text-base sm:text-lg text-[#5C6660] font-normal leading-relaxed mt-4 max-w-xl">
-              {t("description")}
-            </p>
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Section Header (07 + kicker + serif H2) */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
+              07
+            </span>
+            <span className="text-border" aria-hidden="true">/</span>
+            <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
+            <Badge
+              variant="outline"
+              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
+            >
+              {formatSectionKicker("contact", t("kicker"))}
+            </Badge>
           </div>
 
-          {/* Contact Ledger */}
-          <div className="border-t border-[#E5E0D8] mt-8 bg-[#FFFFFF] rounded-2xl p-6 sm:p-7 border shadow-[0_4px_20px_rgba(46,90,68,0.04)] divide-y divide-[#E5E0D8]">
-            {/* Phone Row */}
-            <div className="py-4 flex items-baseline justify-between gap-4">
-              <span className="font-mono text-xs text-[#5C6660] uppercase tracking-wider shrink-0">
-                {t("phoneLabel")}
-              </span>
-              <a
-                href={contactConfig.phone.href}
-                aria-label={contactConfig.phone.ariaLabel}
-                className="text-base font-medium text-charcoal hover:text-sage transition-colors font-mono"
-              >
-                {contactConfig.phone.display}
-              </a>
-            </div>
+          <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
+            {t("titlePrefix")}
+            <span className="italic text-sage ml-1">
+              {t("titleHighlight")}
+            </span>
+          </MaskedHeading>
 
-            {/* Telegram Channel Row */}
-            <div className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
-              <span className="font-mono text-xs text-[#5C6660] uppercase tracking-wider shrink-0">
-                {t("telegramChannelLabel")}
-              </span>
-              <a
-                href={contactConfig.telegramChannel.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={contactConfig.telegramChannel.ariaLabel}
-                className="text-base font-medium text-sage hover:underline font-mono"
-              >
-                {contactConfig.telegramChannel.display}
-              </a>
-            </div>
-
-            {/* Telegram Direct Row */}
-            <div className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
-              <span className="font-mono text-xs text-[#5C6660] uppercase tracking-wider shrink-0">
-                {t("telegramDirectLabel")}
-              </span>
-              <a
-                href={contactConfig.telegramDirect.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={contactConfig.telegramDirect.ariaLabel}
-                className="text-base font-medium text-sage hover:underline font-mono"
-              >
-                {contactConfig.telegramDirect.display}
-              </a>
-            </div>
-
-            {/* Instagram Row */}
-            <div className="py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4">
-              <span className="font-mono text-xs text-[#5C6660] uppercase tracking-wider shrink-0">
-                Instagram
-              </span>
-              <a
-                href={contactConfig.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={contactConfig.instagram.ariaLabel}
-                className="text-base font-medium text-sage hover:underline font-mono"
-              >
-                {contactConfig.instagram.display}
-              </a>
-            </div>
-
-            {/* Office Row */}
-            <div className="py-4 flex items-baseline justify-between gap-4">
-              <span className="font-mono text-xs text-[#5C6660] uppercase tracking-wider shrink-0">
-                {t("addressLabel")}
-              </span>
-              <span className="text-base font-medium text-charcoal text-right">
-                {officeAddress}
-              </span>
-            </div>
-          </div>
+          <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4 max-w-2xl">
+            {t("description")}
+          </p>
         </div>
 
-        {/* Right Column — Direct Consultation Form with Tactile Elevation */}
-        <div className="lg:col-span-6 bg-[#FFFFFF] border border-[#E5DFD6] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,1),0_14px_45px_rgba(46,90,68,0.07)] p-8 sm:p-10 relative z-10">
-          <div className="flex items-center justify-between gap-2 mb-2">
-            <h3 className="font-serif text-2xl sm:text-3xl text-charcoal">
-              {t("formTitle")}
-            </h3>
-            <span className="px-2.5 py-1 rounded-full bg-sage/10 text-sage font-mono text-[11px] font-medium">
-              100% Maxfiy
-            </span>
-          </div>
-
-          <p className="text-xs text-[#5C6660] mb-7">
-            {t("formSubtitle")}
-          </p>
-
-          {isSuccess ? (
-            <div className="py-4 text-left animate-in fade-in duration-300">
-              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-sage mb-4">
-                <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-                <span>{applyT("thankYouBadge")}</span>
-              </div>
-
-              <h4 className="font-serif text-2xl sm:text-3xl text-charcoal mb-3">
-                {applyT("thankYouTitle")}
-              </h4>
-
-              <p className="text-xs sm:text-sm text-[#5C6660] leading-relaxed mb-6">
-                {applyT("thankYouBody")}
+        {/* 12-Column Grid: On Mobile Form is order-1 (first for conversion!), Details is order-2 */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Form Column (order-1 on mobile, order-2 on desktop lg:col-span-7) */}
+          <div className="order-1 lg:order-2 lg:col-span-7">
+            <div className="bg-white/85 border border-border rounded-2xl p-6 sm:p-8 shadow-card">
+              <h3 className="font-serif text-2xl text-charcoal font-normal mb-1">
+                {t("formTitle")}
+              </h3>
+              <p className="text-xs sm:text-sm text-charcoal-muted mb-6">
+                {t("formSubtitle")}
               </p>
 
-              <div className="border-t border-b border-[#E5E0D8] py-4 mb-6 space-y-3 font-mono text-xs">
-                <div className="flex items-start gap-2">
-                  <span className="text-sage shrink-0 font-bold">{applyT("timelineStep1Prefix")}</span>
-                  <span className="text-charcoal">{applyT("timelineStep1Text")}</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#C59B6D] shrink-0 font-bold">{applyT("timelineStep2Prefix")}</span>
-                  <span className="text-[#5C6660]">{applyT("timelineStep2Text")}</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#C59B6D] shrink-0 font-bold">{applyT("timelineStep3Prefix")}</span>
-                  <span className="text-[#5C6660]">{applyT("timelineStep3Text")}</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <a
-                  href={contactConfig.telegram.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={contactConfig.telegram.ariaLabel}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-sage hover:bg-sage-hover text-cream font-medium text-xs rounded-full transition-all"
-                >
-                  <span>{applyT("actionTelegram")}</span>
-                  <span>↗</span>
-                </a>
-                <button
-                  type="button"
-                  onClick={() => setIsSuccess(false)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#E5E0D8] hover:bg-[#F2EFE9] text-charcoal text-xs font-medium rounded-full transition-all cursor-pointer"
-                >
-                  <span>{t("submitAnother")}</span>
-                </button>
-              </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate className="space-y-5">
-              <div className="hidden" aria-hidden="true">
-                <input
-                  id="contact-website"
-                  type="text"
-                  name="website"
-                  value={formData.honeypot}
-                  onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, honeypot: e.target.value }))
-                  }
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </div>
-
-              {errorMessage && (
-                <div
-                  role="alert"
-                  className="p-3.5 border border-red-300 bg-red-50 text-red-700 text-xs rounded-xl flex items-center justify-between gap-3"
-                >
-                  <span>{errorMessage}</span>
-                  <button
+              {isSuccess ? (
+                <div className="p-6 bg-sage/10 border border-sage/30 rounded-xl text-center space-y-3">
+                  <span className="text-3xl">🕊️</span>
+                  <h4 className="font-serif text-xl text-sage font-medium">
+                    {applyT("thankYouBadge") || "Arizangiz qabul qilindi"}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed max-w-md mx-auto">
+                    {t("successMessage") || "Tez orada mutaxassisimiz siz bilan bog'lanadi."}
+                  </p>
+                  <Button
                     type="button"
-                    onClick={() => handleSubmit()}
-                    disabled={isSubmitting}
-                    className="shrink-0 px-3 py-1 bg-red-600 text-white text-xs rounded-full cursor-pointer"
+                    onClick={() => setIsSuccess(false)}
+                    variant="outline"
+                    className="mt-3 rounded-full text-xs min-h-[44px]"
                   >
-                    {t("retry")}
-                  </button>
+                    Yangi ariza qoldirish
+                  </Button>
                 </div>
-              )}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot anti-spam */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.honeypot}
+                    onChange={(e) => setFormData((p) => ({ ...p, honeypot: e.target.value }))}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
 
-              {/* Hook #1: Anonymous Mode Switch */}
-              <div className="bg-[#142820]/5 border border-[#C59B6D]/30 p-3.5 rounded-2xl">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">🔒</span>
-                    <div>
-                      <p className="text-xs font-semibold text-charcoal">
-                        Anonim yozilish (Ism shart emas)
-                      </p>
-                      <p className="text-[11px] text-[#5C6660]">
-                        100% maxfiylik kafolati
-                      </p>
+                  {/* Anonymous Mode Switch */}
+                  <div className="flex items-center justify-between p-3.5 bg-cream-200/70 border border-border rounded-xl">
+                    <div className="pr-3">
+                      <span className="font-medium text-xs sm:text-sm text-charcoal block">
+                        {t("anonymousLabel")}
+                      </span>
+                      <span className="text-[11px] text-charcoal-muted font-mono">
+                        {t("anonymousHint")}
+                      </span>
+                    </div>
+                    <Switch
+                      checked={isAnonymous}
+                      onCheckedChange={(checked) => setIsAnonymous(checked)}
+                      aria-label={t("anonymousLabel")}
+                    />
+                  </div>
+
+                  {/* Format Selection Buttons: min-h-[48px] */}
+                  <div>
+                    <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-2">
+                      {t("formatLabel")} <span className="text-terracotta">*</span>
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                      {formatOptions.map((opt) => {
+                        const isSelected = formData.companySize === opt.id;
+                        return (
+                          <button
+                            key={opt.id}
+                            type="button"
+                            onClick={() => setFormData((p) => ({ ...p, companySize: opt.id }))}
+                            className={`min-h-[48px] px-3 py-2 rounded-xl border text-xs font-medium transition-all text-left flex items-center gap-2 cursor-pointer ${
+                              isSelected
+                                ? "bg-sage text-cream border-sage shadow-sm font-semibold"
+                                : "bg-cream-100 border-border text-charcoal hover:bg-cream-200"
+                            }`}
+                          >
+                            <span className="text-sm shrink-0">{opt.icon}</span>
+                            <span className="line-clamp-2 leading-tight">{opt.label}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
-                  <Switch
-                    id="contact-anonymous"
-                    checked={isAnonymous}
-                    onCheckedChange={(checked) => {
-                      setIsAnonymous(checked);
-                      if (fieldErrors.name) {
-                        setFieldErrors((prev) => ({ ...prev, name: undefined }));
-                      }
-                    }}
-                    className="data-[state=checked]:bg-sage data-[state=unchecked]:bg-[#E5DFD6]"
-                  />
-                </div>
-                {isAnonymous && (
-                  <div className="mt-2.5 pt-2.5 border-t border-[#C59B6D]/20 animate-in fade-in duration-200">
-                    <Badge
-                      variant="outline"
-                      className="bg-sage/10 text-sage border-sage/30 text-[11px] py-0.5 px-2.5 rounded-full w-full justify-center"
-                    >
-                      ✨ Sizning shaxsingiz 100% sir saqlanadi
-                    </Badge>
+
+                  {/* Name Input (hidden if anonymous) */}
+                  {!isAnonymous && (
+                    <div>
+                      <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
+                        {t("nameLabel")} <span className="text-terracotta">*</span>
+                      </label>
+                      <Input
+                        type="text"
+                        value={formData.name}
+                        onChange={handleNameChange}
+                        placeholder={t("namePlaceholder")}
+                        className="w-full h-12 rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage text-base"
+                      />
+                      {fieldErrors.name && (
+                        <p className="text-xs text-red-600 mt-1 font-mono">{fieldErrors.name}</p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Phone Input (16px / text-base for iOS zoom protection) */}
+                  <div>
+                    <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
+                      {t("phoneLabel")} <span className="text-terracotta">*</span>
+                    </label>
+                    <Input
+                      type="tel"
+                      value={displayPhone}
+                      onChange={handlePhoneChange}
+                      placeholder="+998 90 123 45 67"
+                      className="w-full h-12 rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage font-mono text-base"
+                    />
+                    {fieldErrors.phone && (
+                      <p className="text-xs text-red-600 mt-1 font-mono">{fieldErrors.phone}</p>
+                    )}
                   </div>
-                )}
-              </div>
 
-              {/* Name / Nickname */}
-              <div>
-                <label
-                  htmlFor="contact-name"
-                  className="text-xs uppercase tracking-wider text-[#5C6660] font-mono block mb-2"
-                >
-                  {isAnonymous ? "Taxallus (masalan: Mehmon)" : t("nameLabel")}{" "}
-                  {!isAnonymous && <span className="text-sage">*</span>}
-                </label>
-                <Input
-                  id="contact-name"
-                  type="text"
-                  autoComplete="name"
-                  required={!isAnonymous}
-                  value={formData.name}
-                  onChange={handleNameChange}
-                  placeholder={isAnonymous ? "Mehmon yoki ixtiyoriy taxallus" : t("namePlaceholder")}
-                  disabled={isSubmitting}
-                  className={`w-full bg-cream border h-12 px-4 py-3.5 text-sm text-charcoal placeholder:text-[#5C6660]/60 rounded-xl transition-all ${
-                    fieldErrors.name
-                      ? "border-red-400 focus:ring-2 focus:ring-red-200"
-                      : "border-[#E5DFD6] focus:border-sage focus:ring-2 focus:ring-sage/20"
-                  }`}
-                />
-                {fieldErrors.name && (
-                  <p className="mt-1.5 text-xs text-red-500 font-light">
-                    {fieldErrors.name}
-                  </p>
-                )}
-              </div>
+                  {/* Note / Question (16px text-base) */}
+                  <div>
+                    <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
+                      {t("noteLabel")}
+                    </label>
+                    <Textarea
+                      value={formData.business}
+                      onChange={(e) => setFormData((p) => ({ ...p, business: e.target.value }))}
+                      placeholder={t("notePlaceholder")}
+                      rows={3}
+                      className="w-full rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage text-base leading-relaxed"
+                    />
+                  </div>
 
+                  {errorMessage && (
+                    <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl font-mono">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  {/* Submit Button: min-h-[48px] */}
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full min-h-[50px] rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold uppercase tracking-wider shadow-sm active:scale-[0.98] transition-all cursor-pointer"
+                  >
+                    {isSubmitting ? "Yuborilmoqda..." : t("submitButton") + " →"}
+                  </Button>
+                </form>
+              )}
+            </div>
+          </div>
+
+          {/* Details Column (order-2 on mobile, order-1 on desktop lg:col-span-5) */}
+          <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
+            {/* Contact Details Ledger */}
+            <div className="border border-border bg-white/70 rounded-2xl p-6 sm:p-7 shadow-card divide-y divide-border">
               {/* Phone */}
-              <div>
-                <label
-                  htmlFor="contact-phone"
-                  className="text-xs uppercase tracking-wider text-[#5C6660] font-mono block mb-2"
-                >
-                  {t("phoneInputLabel")}
-                </label>
-                <Input
-                  id="contact-phone"
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel"
-                  required
-                  value={displayPhone}
-                  onChange={handlePhoneChange}
-                  disabled={isSubmitting}
-                  placeholder="+998 (90) 123-45-67"
-                  className={`w-full bg-cream border h-12 px-4 py-3.5 text-sm text-charcoal placeholder:text-[#5C6660]/60 rounded-xl transition-all font-mono ${
-                    fieldErrors.phone
-                      ? "border-red-400 focus:ring-2 focus:ring-red-200"
-                      : "border-[#E5DFD6] focus:border-sage focus:ring-2 focus:ring-sage/20"
-                  }`}
-                />
-                {fieldErrors.phone && (
-                  <p className="mt-1.5 text-xs text-red-500 font-light">
-                    {fieldErrors.phone}
-                  </p>
-                )}
-              </div>
-
-              {/* Consultation Format Selector */}
-              <div>
-                <span className="text-xs uppercase tracking-wider text-[#5C6660] font-mono block mb-2">
-                  {applyT("companyScaleLabel")}
+              <div className="py-3.5 flex items-baseline justify-between gap-4">
+                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
+                  {t("phoneLabel")}
                 </span>
-                <div
-                  role="radiogroup"
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-2"
+                <a
+                  href={contactConfig.phone.href}
+                  className="text-sm font-medium text-charcoal hover:text-sage font-mono min-h-[44px] inline-flex items-center"
                 >
-                  {[
-                    { value: "Toshkent 5/5", title: "Toshkent 5/5", sub: "Oflayn qabul" },
-                    { value: "Onlayn Zoom", title: "Onlayn", sub: "Zoom / Video" },
-                    { value: "Telegram audio", title: "Telegram", sub: "Audio aloqa" },
-                    { value: "Trening", title: "Trening", sub: "Guruh dasturi" },
-                  ].map((opt) => {
-                    const isSelected = (formData.companySize || "Toshkent 5/5") === opt.value;
-                    return (
-                      <button
-                        key={opt.value}
-                        type="button"
-                        role="radio"
-                        aria-checked={isSelected}
-                        onClick={() =>
-                          setFormData((prev) => ({ ...prev, companySize: opt.value }))
-                        }
-                        disabled={isSubmitting}
-                        className={`py-2.5 px-2 rounded-xl text-xs transition-all text-center cursor-pointer flex flex-col items-center justify-center gap-0.5 border ${
-                          isSelected
-                            ? "bg-sage border-sage text-cream shadow-[0_2px_10px_rgba(46,90,68,0.25)]"
-                            : "bg-[#F2EFE9] border-[#E5E0D8] text-[#5C6660] hover:bg-[#EAE5DC]"
-                        }`}
-                      >
-                        <span className="font-semibold text-xs">{opt.title}</span>
-                        <span className="text-[10px] opacity-80 font-sans leading-tight">
-                          {opt.sub}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
+                  {contactConfig.phone.display}
+                </a>
               </div>
 
-              {/* Reason / Notes */}
+              {/* Telegram Channel */}
+              <div className="py-3.5 flex items-baseline justify-between gap-4">
+                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
+                  {t("telegramChannelLabel")}
+                </span>
+                <a
+                  href={contactConfig.telegramChannel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
+                >
+                  {contactConfig.telegramChannel.display}
+                </a>
+              </div>
+
+              {/* Telegram Direct */}
+              <div className="py-3.5 flex items-baseline justify-between gap-4">
+                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
+                  {t("telegramDirectLabel")}
+                </span>
+                <a
+                  href={contactConfig.telegramDirect.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
+                >
+                  {contactConfig.telegramDirect.display}
+                </a>
+              </div>
+
+              {/* Instagram */}
+              <div className="py-3.5 flex items-baseline justify-between gap-4">
+                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
+                  Instagram
+                </span>
+                <a
+                  href={contactConfig.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
+                >
+                  {contactConfig.instagram.display}
+                </a>
+              </div>
+
+              {/* Address */}
+              <div className="py-3.5 flex items-baseline justify-between gap-4">
+                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
+                  {t("addressLabel")}
+                </span>
+                <span className="text-xs sm:text-sm font-medium text-charcoal text-right">
+                  {officeAddress}
+                </span>
+              </div>
+            </div>
+
+            {/* Confidentiality Reminder Card */}
+            <div className="p-5 bg-cream-200/80 border border-sage/20 rounded-2xl flex items-start gap-3">
+              <span className="text-xl">🌿</span>
               <div>
-                <label
-                  htmlFor="contact-business"
-                  className="text-xs uppercase tracking-wider text-[#5C6660] font-mono block mb-2"
-                >
-                  {t("businessInputLabel")}
-                </label>
-                <Textarea
-                  id="contact-business"
-                  rows={3}
-                  value={formData.business}
-                  onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, business: e.target.value }))
-                  }
-                  placeholder={t("businessInputPlaceholder")}
-                  disabled={isSubmitting}
-                  className="w-full bg-cream border border-[#E5DFD6] px-4 py-3 text-sm text-charcoal placeholder:text-[#5C6660]/60 focus:border-sage focus:ring-2 focus:ring-sage/20 rounded-xl transition-all resize-none"
-                />
+                <h5 className="font-serif text-base text-charcoal font-medium">
+                  Xavfsiz va sokin muhit
+                </h5>
+                <p className="text-xs text-charcoal-muted leading-relaxed mt-1">
+                  Har bir suhbat qat&apos;iy maxfiylik qoidalariga asoslanadi. Sizning ma&apos;lumotlaringiz hech qachon uchinchi shaxslarga berilmaydi.
+                </p>
               </div>
-
-              {/* Privacy badge */}
-              <div className="flex items-center gap-2 text-xs text-[#5C6660] pt-1">
-                <span className="text-sage">🔒</span>
-                <span>Barcha ma&apos;lumotlar 100% maxfiy saqlanadi.</span>
-              </div>
-
-              {/* Submit Button (shadcn Button) */}
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-sage hover:bg-sage-hover text-cream py-6 text-xs tracking-wider uppercase font-medium transition-all rounded-full mt-2 flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_16px_rgba(46,90,68,0.25)] active:scale-[0.98] disabled:opacity-50"
-              >
-                {isSubmitting ? (
-                  <span>{applyT("submitting")}</span>
-                ) : (
-                  <span>{t("formSubmit")}</span>
-                )}
-              </Button>
-            </form>
-          )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

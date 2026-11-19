@@ -8,7 +8,7 @@ import { siteMedia } from "@/config/siteMedia";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { formatSectionKicker } from "@/config/sections";
-import { Card, CardContent } from "@/components/ui/card";
+import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +21,6 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
   const handleApply = onOpenApply || openApply;
   const tBook = useTranslations("book");
   const tCta = useTranslations("ctaBand");
-  const ctaCommon = useTranslations("cta");
   const { cover } = siteMedia.book;
 
   const handleOrderBook = () => {
@@ -38,147 +37,134 @@ export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
     <section
       id="kitob"
       aria-label={tBook("sectionAria")}
-      className="scroll-mt-20 py-16 sm:py-24 border-t border-b border-[#E5DFD6] bg-cream relative overflow-hidden text-charcoal"
+      className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
-      <span id="cta-band" className="absolute -top-24 pointer-events-none" />
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
+        {/* Section Header (05 + kicker + serif H2) */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="font-mono text-xs text-sage font-bold tracking-widest uppercase">
+              05
+            </span>
+            <span className="text-border" aria-hidden="true">/</span>
+            <BotanicalMotif variant="leaf" className="w-4 h-4 text-terracotta shrink-0" />
+            <Badge
+              variant="outline"
+              className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
+            >
+              {formatSectionKicker("book", tBook("kicker"))}
+            </Badge>
+          </div>
 
-      {/* Atmospheric depth glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[5%] top-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[#E8DFD1]/60 blur-3xl rounded-full"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[5%] top-1/2 -translate-y-1/2 w-[450px] h-[350px] bg-[#DCE5DF]/50 blur-3xl rounded-full"
-      />
+          <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
+            {tBook("titlePrefix")}
+            <span className="italic text-sage ml-1">
+              {tBook("titleHighlight")}
+            </span>
+          </MaskedHeading>
+        </div>
 
-      <div className="max-w-[1360px] mx-auto px-6 md:px-12 relative z-10">
+        {/* 2 Blocks Stacked on Mobile, Side-by-Side 7/5 on Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Left 7 Columns: Signature Training Card with shadcn Card */}
-          <Card className="lg:col-span-7 bg-white border-[#E5DFD6] rounded-2xl p-7 sm:p-9 flex flex-col justify-between shadow-[0_8px_30px_rgba(46,90,68,0.05)] hover:-translate-y-1 transition-all duration-500">
-            <CardContent className="p-0 flex flex-col justify-between h-full">
-              <div>
-                {/* Kicker */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-8 h-[2px] bg-sage rounded-full" aria-hidden="true" />
-                  <Badge
-                    variant="outline"
-                    className="font-mono text-xs uppercase tracking-[0.22em] text-sage border-sage/30 bg-sage/5 font-medium py-1 px-3 rounded-full"
-                  >
-                    {formatSectionKicker("book", tBook("kicker"))}
-                  </Badge>
+          {/* Block 1: The Book (lg:col-span-7) */}
+          <article className="lg:col-span-7 bg-white/80 border border-border rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/40 transition-colors">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-terracotta-dark font-semibold block mb-2">
+                {tBook("badge")}
+              </span>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3">
+                {tBook("bookTitle")}
+              </h3>
+
+              <p className="text-sm text-charcoal-muted leading-relaxed mb-6">
+                {tBook("description")}
+              </p>
+
+              {/* Cover & Specs */}
+              <div className="pt-6 border-t border-border grid grid-cols-1 sm:grid-cols-12 gap-6 items-center mb-6">
+                <div className="sm:col-span-4 flex justify-center">
+                  <div className="relative w-[140px] aspect-[1/1.38] rounded-xl overflow-hidden shadow-card border border-border">
+                    <Image
+                      src={cover.src}
+                      alt={cover.alt}
+                      fill
+                      sizes="140px"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
 
-                {/* Title */}
-                <MaskedHeading className="text-2xl sm:text-3xl font-normal tracking-[-0.02em] leading-[1.2] text-charcoal">
-                  {tBook("titlePrefix")}
-                  <span className="font-serif italic font-normal text-sage">
-                    {tBook("titleHighlight")}
-                  </span>
-                </MaskedHeading>
-
-                <p className="text-sm sm:text-base text-[#5C6660] font-normal mt-3 leading-relaxed max-w-xl">
-                  {tBook("description")}
-                </p>
-
-                {/* Card Body: Cover + Specs */}
-                <div className="mt-6 pt-6 border-t border-[#E5DFD6] grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-                  {/* Visual Frame */}
-                  <div className="sm:col-span-4 flex justify-center">
-                    <div className="relative w-[140px] sm:w-[160px] aspect-[1/1.35] shadow-[0_12px_30px_rgba(46,90,68,0.12)] border border-[#E5DFD6] rounded-xl overflow-hidden">
-                      <Image
-                        src={cover.src}
-                        alt={cover.alt}
-                        fill
-                        sizes="(max-width: 640px) 140px, 160px"
-                        className="object-cover"
-                        loading="lazy"
-                      />
+                <div className="sm:col-span-8 space-y-2.5 font-mono text-xs">
+                  {specs.map((item, idx) => (
+                    <div key={idx} className="flex items-baseline justify-between py-1.5 border-b border-border/70">
+                      <span className="text-charcoal-muted uppercase">{item.label}</span>
+                      <span className="font-semibold text-charcoal">{item.value}</span>
                     </div>
-                  </div>
-
-                  {/* Specs List */}
-                  <div className="sm:col-span-8 flex flex-col justify-center divide-y divide-[#E5DFD6]">
-                    {specs.map((spec, i) => (
-                      <div
-                        key={i}
-                        className="py-3 flex items-baseline justify-between gap-3 text-xs"
-                      >
-                        <span className="font-mono uppercase tracking-wider text-[#C59B6D] font-semibold shrink-0">
-                          {spec.label}
-                        </span>
-                        <span className="text-charcoal font-sans text-xs sm:text-sm text-right">
-                          {spec.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </div>
+            </div>
 
-              {/* Action Row */}
-              <div className="mt-8 pt-5 border-t border-[#E5DFD6] flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#5C6660]">
-                  {tBook("pedestalLeft")}
+            {/* CTA 1: Order Book */}
+            <div className="pt-4 border-t border-border">
+              <Button
+                type="button"
+                onClick={handleOrderBook}
+                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm"
+              >
+                {tBook("cta")} →
+              </Button>
+            </div>
+          </article>
+
+          {/* Block 2: Quick Diagnostic & Consultation CTA (lg:col-span-5) */}
+          <article className="lg:col-span-5 bg-cream-200/90 border border-sage/30 rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-wider text-sage font-bold">
+                  {tCta("kicker")}
                 </span>
-                <Button
-                  onClick={handleOrderBook}
-                  className="bg-sage hover:bg-sage-hover text-cream px-6 py-5 text-xs font-medium rounded-full shadow-[0_4px_16px_rgba(46,90,68,0.2)]"
-                >
-                  <span>{tBook("cta")}</span>
-                  <span>→</span>
-                </Button>
               </div>
-            </CardContent>
-          </Card>
 
-          {/* Right 5 Columns: Diagnostic Provocation Monolith */}
-          <Card className="lg:col-span-5 bg-white border-[#E5DFD6] rounded-2xl p-7 sm:p-9 flex flex-col justify-between shadow-[0_8px_30px_rgba(46,90,68,0.04)] hover:-translate-y-1 transition-all duration-500">
-            <CardContent className="p-0 flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-sage" />
-                  <Badge
-                    variant="outline"
-                    className="font-mono text-xs uppercase tracking-[0.22em] text-sage border-sage/30 bg-sage/5 font-medium rounded-full"
-                  >
-                    {tCta("kicker")}
-                  </Badge>
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3 leading-snug">
+                {tCta("title")}
+              </h3>
+
+              <p className="text-sm text-charcoal-muted leading-relaxed mb-6">
+                {tCta("description")}
+              </p>
+
+              <div className="p-4 bg-white/70 rounded-xl border border-border/80 text-xs text-charcoal/90 space-y-2 mb-6">
+                <div className="flex items-center gap-2">
+                  <span className="text-sage font-bold">✓</span>
+                  <span>3 daqiqalik holat diagnostikasi</span>
                 </div>
-
-                <MaskedHeading className="text-2xl sm:text-3xl font-normal tracking-[-0.02em] leading-[1.2] text-charcoal">
-                  {tCta("titlePrefix")}
-                  <span className="font-serif italic font-normal text-sage">
-                    {tCta("titleHighlight")}
-                  </span>
-                </MaskedHeading>
-
-                <p className="text-sm sm:text-base text-[#5C6660] font-normal mt-4 leading-relaxed">
-                  {tCta("description")}
-                </p>
+                <div className="flex items-center gap-2">
+                  <span className="text-sage font-bold">✓</span>
+                  <span>Toshkent 5/5 oflayn & Dunyo onlayn</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sage font-bold">✓</span>
+                  <span>100% konfidensial va xavfsiz muhit</span>
+                </div>
               </div>
+            </div>
 
-              <div className="mt-8 pt-6 border-t border-[#E5DFD6] flex flex-col gap-3">
-                <Button
-                  asChild
-                  className="w-full bg-sage hover:bg-sage-hover text-cream py-6 text-xs font-medium rounded-full shadow-[0_4px_16px_rgba(46,90,68,0.25)]"
-                >
-                  <Link href="/test" className="flex items-center justify-center gap-2">
-                    <span>{tCta("startTest")}</span>
-                    <span>→</span>
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => handleApply("Konsultatsiyaga yozilish")}
-                  className="w-full bg-white hover:bg-[#F2EFE9] text-charcoal border-[#E5DFD6] py-6 text-xs font-medium rounded-full"
-                >
-                  <span>{ctaCommon("primary")}</span>
-                  <span>→</span>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+            {/* CTA 2: Start Diagnostic */}
+            <div className="pt-4 border-t border-border/80 flex flex-col sm:flex-row gap-3">
+              <Button
+                asChild
+                className="w-full min-h-[48px] rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm"
+              >
+                <Link href="/test">
+                  <span>{tCta("ctaDiagnostic")} →</span>
+                </Link>
+              </Button>
+            </div>
+          </article>
         </div>
       </div>
     </section>

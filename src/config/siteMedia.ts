@@ -35,7 +35,7 @@ export const siteMedia = {
 
   book: {
     cover: {
-      src: "/images/book/cover.jpg",
+      src: "/images/book/cover.webp",
       width: 700,
       height: 900,
       alt: "Biznes shpargalkasi kitobi muqovasi",
@@ -50,7 +50,7 @@ export const siteMedia = {
       },
       {
         id: "cover",
-        src: "/images/book/cover.jpg",
+        src: "/images/book/cover.webp",
         width: 700,
         height: 900,
         alt: "Biznes shpargalkasi kitobi asosiy muqovasi",

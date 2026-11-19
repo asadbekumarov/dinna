@@ -104,6 +104,60 @@
         "title": "Transformational Trainings",
         "description": "Interactive group workshops dedicated to self-worth, emotional intelligence, healthy boundaries, and authentic relationship building."
       }
+    ],
+    "compareBadge": "COMPARISON",
+    "compareTitle": "Format Comparison",
+    "compareSubtitle": "Choose the session format that fits you best",
+    "badgeAllServices": "ALL SERVICES",
+    "detailsButton": "Details",
+    "applyButton": "Book Now",
+    "privacyNotice": "100% confidentiality guaranteed",
+    "itemsEnhanced": [
+      {
+        "index": "01",
+        "tag": "01 · SIGNATURE FORMAT",
+        "title": "Individual Consultation",
+        "description": "One-on-one consultation in a serene, private office in Tashkent (5/5). A safe haven to release anxiety, burnout, and internal conflict.",
+        "time": "60–90 minutes",
+        "format": "In-Person · Tashkent 5/5",
+        "features": [
+          "100% strict clinical confidentiality",
+          "Cozy, calm 5/5 office environment",
+          "Discover root causes of stress",
+          "Personalized practical action plan"
+        ],
+        "cta": "Book In-Person Session"
+      },
+      {
+        "index": "02",
+        "tag": "02 · GLOBAL CARE",
+        "title": "Secure Online Therapy",
+        "description": "Compassionate psychological support from anywhere in the world via Zoom or Telegram. Complete privacy in the comfort of your home.",
+        "time": "60 minutes",
+        "format": "Online · Zoom / Telegram",
+        "features": [
+          "Connect from any location worldwide",
+          "Save travel time and commute",
+          "Flexible session schedule",
+          "Take-home practices after every session"
+        ],
+        "cta": "Book Online Session"
+      },
+      {
+        "index": "03",
+        "tag": "03 · TRANSFORMATION",
+        "title": "Signature Group Trainings",
+        "description": "Intensive practical group journey focusing on healthy personal boundaries, genuine self-acceptance, and emotional connection.",
+        "time": "Practical Course",
+        "format": "Group Program · Growth",
+        "features": [
+          "Deep transformational psychological tools",
+          "Warm and supportive community",
+          "Internal peace and relational freedom",
+          "Direct guidance with Dinna Mirzabayeva"
+        ],
+        "cta": "Apply for Training"
+      }
     ]
   },
   "events": {
@@ -220,6 +274,47 @@
           "An ongoing network of empathetic peers."
         ]
       }
+    ],
+    "steps": [
+      {
+        "num": "01",
+        "tag": "STEP 1 · PREPARATION",
+        "title": "Quick diagnostic or request",
+        "time": "2 minutes",
+        "desc": "Choose your preferred time and session format in 2 minutes. No prior experience or preparation needed.",
+        "highlights": [
+          "Select date and time in 2 minutes",
+          "Tashkent 5/5 in-person or online (Zoom/Telegram)",
+          "Share preliminary goals in confidence"
+        ],
+        "icon": "🌱"
+      },
+      {
+        "num": "02",
+        "tag": "STEP 2 · SESSION",
+        "title": "Safe and confidential dialogue",
+        "time": "60–90 minutes",
+        "desc": "Meet in a tranquil office in Tashkent (5/5) or via private video call. Dinna Mirzabayeva listens without judgment, with deep empathy and understanding.",
+        "highlights": [
+          "100% strict professional confidentiality",
+          "Safe, welcoming, judgment-free space",
+          "Identify the true roots of anxiety and pain"
+        ],
+        "icon": "🕊️"
+      },
+      {
+        "num": "03",
+        "tag": "STEP 3 · OUTCOME",
+        "title": "Clarity, relief and continuing support",
+        "time": "Lasting impact",
+        "desc": "Tangible emotional relief and a concrete personal roadmap from session one. Long-term internal harmony rather than temporary motivation.",
+        "highlights": [
+          "Noticeable relief felt from the very first session",
+          "Clear personal recovery and balance blueprint",
+          "Ongoing professional guidance as needed"
+        ],
+        "icon": "✨"
+      }
     ]
   },
   "partners": {
@@ -236,7 +331,8 @@
     "description": "Don't overlook chronic fatigue and background anxiety. Take a gentle 3-minute psychological test to understand your emotional state.",
     "cta": "Book a Consultation",
     "startTest": "Take 3-minute Test",
-    "strategicAnalysis": "State Diagnostic"
+    "strategicAnalysis": "State Diagnostic",
+    "ctaDiagnostic": "Start 3-minute self-check"
   },
   "expert": {
     "kicker": "PSYCHOLOGIST & COACH",
@@ -285,7 +381,8 @@
     "spec2Value": "Experiential practices, guided meditations & Q&A",
     "spec3Label": "03 / OUTCOME",
     "spec3Value": "Grounded self-trust, calmness, and vitality",
-    "cta": "Join Workshop"
+    "cta": "Join Workshop",
+    "badge": "SIGNATURE PROGRAM"
   },
   "webinars": {
     "kicker": "INSIGHTS & GUIDANCE",
@@ -335,7 +432,16 @@
     "nameError": "Please enter your name",
     "phoneError": "Please enter your full phone number (+998 (XX) XXX-XX-XX)",
     "submitAnother": "Send another request",
-    "cta": "Book Consultation →"
+    "cta": "Book Consultation →",
+    "formatOffline": "Tashkent 5/5 (In-Person)",
+    "formatOnline": "Online (Zoom / Telegram)",
+    "formatTraining": "Signature Training",
+    "formatLabel": "Consultation Format",
+    "noteLabel": "Additional note or question (optional)",
+    "notePlaceholder": "Briefly share what you would like to address...",
+    "anonymousLabel": "Anonymous mode (no name required)",
+    "anonymousHint": "Your identity remains completely confidential",
+    "submitButton": "Submit Request"
   },
   "applyModal": {
     "title": "Book a Consultation",
@@ -501,7 +607,69 @@
     "cityShymkent": "Online World",
     "cityOsh": "Online",
     "cityKhujand": "Online",
-    "businessTourSuffix": "workshop"
+    "businessTourSuffix": "workshop",
+    "testimonials": [
+      {
+        "id": "test-1",
+        "author": "M.A.",
+        "role": "29 years old",
+        "format": "Tashkent 5/5 In-Person",
+        "avatarText": "MA",
+        "timeAgo": "Recently",
+        "highlight": "Freed from chronic anxiety",
+        "message": "After sessions with Dinna, years of chronic anxiety and fear began to dissolve. The 5/5 office atmosphere is so warm and safe. I finally learned to accept myself and breathe easily."
+      },
+      {
+        "id": "test-2",
+        "author": "D.K.",
+        "role": "34 years old",
+        "format": "Online (Zoom)",
+        "avatarText": "DK",
+        "timeAgo": "1 week ago",
+        "highlight": "A sense of relief after each session",
+        "message": "I never imagined experiencing such profound empathy and trust online. After each meeting, I feel a heavy weight lifted off my shoulders. Thank you!"
+      },
+      {
+        "id": "test-3",
+        "author": "S.R.",
+        "role": "26 years old",
+        "format": "Signature Training",
+        "avatarText": "SR",
+        "timeAgo": "2 weeks ago",
+        "highlight": "My perspective on relationships shifted",
+        "message": "Your signature training changed how I view relationships and myself. I learned how to calmly and gracefully honor my personal boundaries."
+      },
+      {
+        "id": "test-4",
+        "author": "N.T.",
+        "role": "31 years old",
+        "format": "Tashkent 5/5 In-Person",
+        "avatarText": "NT",
+        "timeAgo": "Recently",
+        "highlight": "Overcame emotional burnout",
+        "message": "Your practical exercises and steady support during my burnout were invaluable. Color and peace have returned to my daily life."
+      },
+      {
+        "id": "test-5",
+        "author": "G.B.",
+        "role": "38 years old",
+        "format": "Online Consultation",
+        "avatarText": "GB",
+        "timeAgo": "1 month ago",
+        "highlight": "Found my inner anchor",
+        "message": "During a severe family crisis, I was completely lost. Dinna helped me find my ground and make wise, calm decisions."
+      },
+      {
+        "id": "test-6",
+        "author": "Z.M.",
+        "role": "24 years old",
+        "format": "Personal Growth Course",
+        "avatarText": "ZM",
+        "timeAgo": "1 month ago",
+        "highlight": "Self-compassion returned",
+        "message": "The habit of constant self-criticism faded away. In its place came peace and self-compassion. This was the most important decision I've made."
+      }
+    ]
   },
   "footer": {
     "brand": "DINNA MIRZABAYEVA",

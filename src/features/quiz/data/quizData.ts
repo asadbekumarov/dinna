@@ -300,7 +300,7 @@ export function calculateQuizScore(answers: number[]): number {
   return answers.reduce((sum, curr) => sum + (Number.isFinite(curr) ? Number(curr) : 0), 0);
 }
 
-export function getQuizTier(score: number) {
+export function getQuizTier(_score: number) {
   // Always returns an empathetic baseline tier object for backward compatibility
   return {
     id: "clarity",

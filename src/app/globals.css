@@ -54,6 +54,7 @@ html {
   scroll-padding-top: 5rem;
   background-color: #FAF8F5;
   color: #1F2924;
+  overflow-x: clip;
 }
 
 body {
@@ -61,6 +62,7 @@ body {
   color: #1F2924;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 /* Accessibility Focus Ring */

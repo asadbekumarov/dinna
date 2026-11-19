@@ -52,7 +52,7 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream text-charcoal selection:bg-sage selection:text-cream">
+    <div className="min-h-screen flex flex-col bg-cream text-charcoal selection:bg-sage selection:text-cream overflow-x-clip">
       <Navbar />
 
       <main className="flex-1 pt-20">

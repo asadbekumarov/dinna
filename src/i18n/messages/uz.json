@@ -104,6 +104,60 @@
         "title": "Mualliflik treninglari",
         "description": "Ichki xotirjamlik, o'z-o'zini qadrlash, hissiy intellekt va uyg'un munosabatlar qurish bo'yicha amaliy va interaktiv guruh treninglari."
       }
+    ],
+    "compareBadge": "TAQQOSLASH",
+    "compareTitle": "Formatlar taqqosi",
+    "compareSubtitle": "O'zingizga ma'qul formatni tanlang",
+    "badgeAllServices": "BARCHA XIZMATLAR",
+    "detailsButton": "Batafsil",
+    "applyButton": "Yozilish",
+    "privacyNotice": "100% maxfiylik kafolatlangan",
+    "itemsEnhanced": [
+      {
+        "index": "01",
+        "tag": "01 · ASOSIY FORMAT",
+        "title": "Individual psixologik konsultatsiya",
+        "description": "Toshkent 5/5 dagi shinam va sokin kabinetda yakkama-yakka suhbat. Stress, xavotir va hissiy charchoqni yengish uchun xavfsiz shaxsiy makon.",
+        "time": "60–90 daqiqa",
+        "format": "Oflayn · Toshkent 5/5",
+        "features": [
+          "100% qat'iy psixologik konfidensiallik",
+          "Shinam va xavfsiz 5/5 kabinet",
+          "Ichki xavotir ildizini topish",
+          "Shaxsiy amaliy harakat rejasi"
+        ],
+        "cta": "Uchrashuvga yozilish"
+      },
+      {
+        "index": "02",
+        "tag": "02 · GLOBAL QULAYLIK",
+        "title": "Xavfsiz onlayn konsultatsiya",
+        "description": "Dunyoning istalgan burchagidan turib Zoom yoki Telegram orqali qulay psixologik ko'mak. O'z uyingiz sokinligida to'liq maxfiy seans.",
+        "time": "60 daqiqa",
+        "format": "Onlayn · Zoom / Telegram",
+        "features": [
+          "Dunyoning istalgan nuqtasidan ulanish",
+          "Shaxsiy vaqt va xarajatlarni tejash",
+          "Moslashuvchan seanslar jadvali",
+          "Seansdan so'ng amaliy mashqlar"
+        ],
+        "cta": "Onlayn seansga yozilish"
+      },
+      {
+        "index": "03",
+        "tag": "03 · TRANSFORMATSIYA",
+        "title": "Mualliflik treninglari va dasturlar",
+        "description": "Shaxsiy chegaralarni qurish, ichki o‘zlikni qabul qilish va sog‘lom munosabatlar o‘rnatish bo‘yicha chuqur amaliy guruh dasturi.",
+        "time": "Amaliy Kurs",
+        "format": "Guruh Dasturi · Transformatsiya",
+        "features": [
+          "Chuqur transformatsion psixologik texnikalar",
+          "Iliq va xavfsiz qo'llab-quvvatlash muhiti",
+          "Hayotiy munosabatlar va ichki erkinlik",
+          "Dinna Mirzabayeva bilan to'g'ridan-to'g'ri ishlash"
+        ],
+        "cta": "Treningga ariza berish"
+      }
     ]
   },
   "events": {
@@ -220,6 +274,47 @@
           "Doimiy qo'llab-quvvatlovchi hamfikrlar doirasi."
         ]
       }
+    ],
+    "steps": [
+      {
+        "num": "01",
+        "tag": "1-QADAM · TAYYORGARLIK",
+        "title": "Qisqa diagnostika yoki ariza",
+        "time": "2 daqiqa",
+        "desc": "2 daqiqada qulay vaqtni tanlash va o'zingizga qulay formatni belgilash. Hech qanday maxsus bilim yoki murakkab tayyorgarlik talab etilmaydi.",
+        "highlights": [
+          "2 daqiqada qulay sana va soatni tanlash",
+          "Toshkent 5/5 oflayn yoki onlayn (Zoom/Telegram)",
+          "Shaxsiy istaklar va xavotirlarni oldindan belgilash"
+        ],
+        "icon": "🌱"
+      },
+      {
+        "num": "02",
+        "tag": "2-QADAM · SEANS",
+        "title": "Xavfsiz va maxfiy suhbat",
+        "time": "60–90 daqiqa",
+        "desc": "Toshkent markazidagi (5/5 manzili) sokin kabinetda yoki onlayn video-seans. Dinna Mirzabayeva sizni hech qanday hukmsiz, tanqidsiz, to'liq empatiya bilan tinglaydi.",
+        "highlights": [
+          "100% qat'iy psixologik konfidensiallik",
+          "Hech qanday hukmsiz va erkin qabul muhiti",
+          "Ichki og'riqlar, stress va xavotir ildizini topish"
+        ],
+        "icon": "🕊️"
+      },
+      {
+        "num": "03",
+        "tag": "3-QADAM · NATIJA",
+        "title": "Aniq ichki yechim va qo'llab-quvvatlash",
+        "time": "Barqaror ta'sir",
+        "desc": "Birinchi uchrashuvdayoq yengillik va shaxsiy harakat rejasi. Vaqtinchalik motivatsiya emas, balki butun umrga xizmat qiluvchi ichki muvozanat.",
+        "highlights": [
+          "Birinchi seansdayoq his etiladigan ruhiy yengillik",
+          "Shaxsiy tiklanish va hissiy muvozanat rejasi",
+          "Zaruriyat tug'ilganda doimiy professional hamrohlik"
+        ],
+        "icon": "✨"
+      }
     ]
   },
   "partners": {
@@ -236,7 +331,8 @@
     "description": "Hissiy charchoq, xavotir va tushunarsiz toliqishni e'tiborsiz qoldirmang. 3 daqiqalik muloyim test orqali joriy ruhiy holatingizni bilib oling.",
     "cta": "Konsultatsiyaga yozilish",
     "startTest": "3 daqiqalik testni boshlash",
-    "strategicAnalysis": "Holat diagnostikasi"
+    "strategicAnalysis": "Holat diagnostikasi",
+    "ctaDiagnostic": "3 daqiqalik testni boshlash"
   },
   "expert": {
     "kicker": "PSIXOLOG & TRENER",
@@ -285,7 +381,8 @@
     "spec2Value": "Amaliy mashqlar, meditativ texnikalar va savol-javob",
     "spec3Label": "03 / NATIJA",
     "spec3Value": "Ichki xotirjamlik, barqaror o'zlik va ruhiy yengillik",
-    "cta": "Treningga yozilish"
+    "cta": "Treningga yozilish",
+    "badge": "MUALLIFLIK DASTURI"
   },
   "webinars": {
     "kicker": "FOYDALI PSIXOLOGIK TAVSIYALAR",
@@ -335,7 +432,16 @@
     "nameError": "Iltimos, ismingizni kiriting",
     "phoneError": "Iltimos, to'liq telefon raqamingizni kiriting (+998 (XX) XXX-XX-XX)",
     "submitAnother": "Yana murojaat yuborish",
-    "cta": "Konsultatsiyaga yozilish →"
+    "cta": "Konsultatsiyaga yozilish →",
+    "formatOffline": "Toshkent 5/5 (Oflayn)",
+    "formatOnline": "Onlayn (Zoom / Telegram)",
+    "formatTraining": "Mualliflik Treningi",
+    "formatLabel": "Qabul formati",
+    "noteLabel": "Qo'shimcha izoh yoki savol (ixtiyoriy)",
+    "notePlaceholder": "Qisqacha nima sizni bezovta qilayotganini yozishingiz mumkin...",
+    "anonymousLabel": "Anonim rejim (ism kiritish shart emas)",
+    "anonymousHint": "Shaxsingiz to'liq sir saqlanadi",
+    "submitButton": "Ariza yuborish"
   },
   "applyModal": {
     "title": "Konsultatsiyaga yozilish",
@@ -501,7 +607,69 @@
     "cityShymkent": "Onlayn Dunyo",
     "cityOsh": "Onlayn",
     "cityKhujand": "Onlayn",
-    "businessTourSuffix": "dagi trening"
+    "businessTourSuffix": "dagi trening",
+    "testimonials": [
+      {
+        "id": "test-1",
+        "author": "M.A.",
+        "role": "29 yosh",
+        "format": "Toshkent 5/5 oflayn",
+        "avatarText": "MA",
+        "timeAgo": "Yaqinda",
+        "highlight": "Surunkali xavotirdan xalos bo'ldim",
+        "message": "Dinna xonim bilan uchrashuvlardan so'ng ko'p yillik surunkali xavotir va ichki qo'rquvlarimdan xalos bo'ldim. 5/5 ofisidagi muhit juda iliq va xavfsiz. O'zimni nihoyat qabul qilishni va xotirjam nafas olishni o'rgandim."
+      },
+      {
+        "id": "test-2",
+        "author": "D.K.",
+        "role": "34 yosh",
+        "format": "Onlayn (Zoom)",
+        "avatarText": "DK",
+        "timeAgo": "1 hafta oldin",
+        "highlight": "Har bir seansdan keyin yengillik",
+        "message": "Onlayn formatda shunday chuqur empatiya va ishonchni his qilaman deb o'ylamagandim. Har bir seansdan keyin yelkamdan og'ir yuk tushgandek yengillik his qilaman. Rahmat sizga!"
+      },
+      {
+        "id": "test-3",
+        "author": "S.R.",
+        "role": "26 yosh",
+        "format": "Mualliflik treningi",
+        "avatarText": "SR",
+        "timeAgo": "2 hafta oldin",
+        "highlight": "Munosabatlarga qarashim o'zgardi",
+        "message": "Mualliflik treningingiz mening munosabatlarga va eng muhimi o'zimga bo'lgan qarashimni butkul o'zgartirdi. Hissiy chegaralarimni xotirjam va chiroyli himoya qilishni boshladim."
+      },
+      {
+        "id": "test-4",
+        "author": "N.T.",
+        "role": "31 yosh",
+        "format": "Toshkent 5/5 oflayn",
+        "avatarText": "NT",
+        "timeAgo": "Yaqinda",
+        "highlight": "Hissiy charchoqni (burnout) yengdim",
+        "message": "Hissiy charchoq (burnout) va tushkunlikdan chiqishimda bergan amaliy mashqlaringiz beqiyos bo'ldi. Endi hayotimga ranglar va xotirjamlik qaytdi."
+      },
+      {
+        "id": "test-5",
+        "author": "G.B.",
+        "role": "38 yosh",
+        "format": "Onlayn konsultatsiya",
+        "avatarText": "GB",
+        "timeAgo": "1 oy oldin",
+        "highlight": "Ichki tayanchimni topdim",
+        "message": "Oilaviy inqiroz paytida o'zimni yo'qotib qo'ygandim. Dinna xonim menga o'z ichki tayanchimni topishga va oqilona, xotirjam qaror qabul qilishga ko'maklashdilar."
+      },
+      {
+        "id": "test-6",
+        "author": "Z.M.",
+        "role": "24 yosh",
+        "format": "Shaxsiy rivojlanish kursi",
+        "avatarText": "ZM",
+        "timeAgo": "1 oy oldin",
+        "highlight": "O'zimga bo'lgan mehr qaytdi",
+        "message": "O'z-o'zimni tinimsiz tanqid qilish odatim yo'qoldi. O'rniga xotirjamlik va o'zimga mehr keldi. Bu hayotimdagi eng to'g'ri qadam bo'ldi."
+      }
+    ]
   },
   "footer": {
     "brand": "DINNA MIRZABAYEVA",
