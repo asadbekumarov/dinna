@@ -15,7 +15,7 @@ export function MobileStickyBar() {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [isInputFocused, setIsInputFocused] = useState(false);
 
-  const isTestPage = pathname?.includes("/test");
+  const isExcludedPage = pathname?.includes("/test") || pathname?.includes("/bron");
 
   // Track Hero visibility via IntersectionObserver
   useEffect(() => {
@@ -69,7 +69,7 @@ export function MobileStickyBar() {
 
   // Condition to show sticky bar
   const shouldShow =
-    !isTestPage && !isModalOpen && !isInputFocused && !isHeroVisible;
+    !isExcludedPage && !isModalOpen && !isInputFocused && !isHeroVisible;
 
   return (
     <aside

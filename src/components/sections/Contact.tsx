@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { contactConfig } from "@/config/contact";
@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Video, Sparkles, CheckCircle2, ShieldCheck } from "lucide-react";
+import { MapPin, Video, Sparkles, CheckCircle2, ShieldCheck, AlertCircle } from "lucide-react";
 import {
   formatUzbekPhone,
   cleanUzbekPhone,
@@ -40,6 +40,9 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const phoneInputRef = useRef<HTMLInputElement>(null);
 
   const formatOptions = [
     { id: "Toshkent 5/5", label: t("formatOffline") || "Toshkent 5/5 (Oflayn)", icon: MapPin },
@@ -78,6 +81,13 @@ export function Contact() {
 
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors);
+      if (errors.name && nameInputRef.current) {
+        nameInputRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        nameInputRef.current.focus();
+      } else if (errors.phone && phoneInputRef.current) {
+        phoneInputRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        phoneInputRef.current.focus();
+      }
       return;
     }
 
@@ -213,17 +223,18 @@ export function Contact() {
                     autoComplete="off"
                   />
 
-                  {/* Anonymous Mode Switch */}
-                  <div className="flex items-center justify-between p-3.5 bg-cream-200/70 border border-border rounded-xl">
-                    <div className="pr-3">
+                  {/* Anonymous Mode Switch (44px min touch zone) */}
+                  <div className="flex items-center justify-between p-3.5 min-h-[44px] bg-cream-200/70 border border-border rounded-xl">
+                    <label htmlFor="contact-anonymous" className="pr-3 cursor-pointer flex-1">
                       <span className="font-medium text-xs sm:text-sm text-charcoal block">
                         {t("anonymousLabel")}
                       </span>
                       <span className="text-[11px] text-charcoal-muted font-mono">
                         {t("anonymousHint")}
                       </span>
-                    </div>
+                    </label>
                     <Switch
+                      id="contact-anonymous"
                       checked={isAnonymous}
                       onCheckedChange={(checked) => setIsAnonymous(checked)}
                       aria-label={t("anonymousLabel")}
@@ -261,36 +272,64 @@ export function Contact() {
                   {/* Name Input (hidden if anonymous) */}
                   {!isAnonymous && (
                     <div>
-                      <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
+                      <label htmlFor="contact-name" className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
                         {t("nameLabel")} <span className="text-terracotta">*</span>
                       </label>
                       <Input
+                        ref={nameInputRef}
+                        id="contact-name"
                         type="text"
                         value={formData.name}
                         onChange={handleNameChange}
                         placeholder={t("namePlaceholder")}
-                        className="w-full h-12 rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage text-base"
+                        className={`w-full h-12 rounded-xl bg-cream-100 text-charcoal text-base ${
+                          fieldErrors.name
+                            ? "border-red-500 focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                            : "border-border focus:border-sage focus:ring-1 focus:ring-sage"
+                        }`}
                       />
                       {fieldErrors.name && (
-                        <p className="text-xs text-red-600 mt-1 font-mono">{fieldErrors.name}</p>
+                        <p
+                          role="alert"
+                          aria-live="polite"
+                          className="text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
+                        >
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                          <span>{fieldErrors.name}</span>
+                        </p>
                       )}
                     </div>
                   )}
 
                   {/* Phone Input (16px / text-base for iOS zoom protection) */}
                   <div>
-                    <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
+                    <label htmlFor="contact-phone" className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
                       {t("phoneLabel")} <span className="text-terracotta">*</span>
                     </label>
                     <Input
+                      ref={phoneInputRef}
+                      id="contact-phone"
                       type="tel"
+                      inputMode="tel"
+                      autoComplete="tel"
                       value={displayPhone}
                       onChange={handlePhoneChange}
                       placeholder="+998 90 123 45 67"
-                      className="w-full h-12 rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage font-mono text-base"
+                      className={`w-full h-12 rounded-xl bg-cream-100 text-charcoal font-mono text-base ${
+                        fieldErrors.phone
+                          ? "border-red-500 focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                          : "border-border focus:border-sage focus:ring-1 focus:ring-sage"
+                      }`}
                     />
                     {fieldErrors.phone && (
-                      <p className="text-xs text-red-600 mt-1 font-mono">{fieldErrors.phone}</p>
+                      <p
+                        role="alert"
+                        aria-live="polite"
+                        className="text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
+                      >
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                        <span>{fieldErrors.phone}</span>
+                      </p>
                     )}
                   </div>
 
