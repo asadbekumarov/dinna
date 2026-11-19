@@ -6,11 +6,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { BotanicalMotif } from "@/components/ui/BotanicalMotif";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Marquee } from "@/components/ui/Marquee";
-import { Lock, Sparkles, Star } from "lucide-react";
+import { Sparkles, Star } from "lucide-react";
 
 interface HeroProps {
   onOpenModal?: () => void;
@@ -50,18 +48,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column (Desktop 7 cols) / Mobile Stack */}
           <div className="lg:col-span-7 flex flex-col">
-            {/* 1. Boutique Kicker */}
-            <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
-              <BotanicalMotif variant="leaf" className="w-4 h-4 sm:w-5 sm:h-5 text-terracotta shrink-0" />
-              <Badge
-                variant="outline"
-                className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-1 px-3 rounded-full"
-              >
-                {t("kicker")}
-              </Badge>
-            </div>
-
-            {/* 2. Bespoke Editorial H1 */}
+            {/* Bespoke Editorial H1 */}
             <h1 className="text-display font-serif font-normal tracking-[-0.02em] text-charcoal leading-[1.12] animate-hero-mask-reveal">
               {t("titlePrefix")}
               <span className="italic text-sage border-b border-sage/40 pb-0.5 inline-block">
@@ -82,16 +69,6 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent pointer-events-none" />
-
-                {/* Mobile Floating Badge: Exactly 1 badge as required */}
-                <div className="absolute top-3.5 left-1/2 -translate-x-1/2 z-20">
-                  <div className="bg-white/95 border border-border rounded-full py-1.5 px-3.5 shadow-sm flex items-center gap-2 whitespace-nowrap">
-                    <span className="w-2 h-2 rounded-full bg-sage animate-pulse shrink-0" />
-                    <span className="font-mono text-[11px] text-charcoal font-medium tracking-wide">
-                      {t("statusPill")}
-                    </span>
-                  </div>
-                </div>
 
                 {/* Photo Bottom Identification */}
                 <div className="absolute bottom-3.5 left-4 right-4 z-20 text-cream">
@@ -148,14 +125,6 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                 <span>{t("quickQuiz")}</span>
               </Link>
             </div>
-
-            {/* Reassuring Confidentiality Line */}
-            <div className="hidden sm:flex items-center gap-2.5 pt-4 text-xs text-charcoal-muted">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sage/10 text-sage">
-                <Lock className="w-3 h-3 text-sage" />
-              </span>
-              <span>{t("reassurance")}</span>
-            </div>
           </div>
 
           {/* Right Column (Desktop 5 cols) — Arch Sculptural Portrait */}
@@ -181,33 +150,6 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                   <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-terracotta mt-1 font-medium">
                     {t("captionRole")}
                   </p>
-                </div>
-              </div>
-
-              {/* Floating Badge 1: Top Status Pill */}
-              <div className="absolute -top-3 left-6 z-30">
-                <div className="bg-white/95 md:backdrop-blur-md border border-border rounded-full py-1.5 px-4 shadow-sm flex items-center gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-sage animate-pulse shrink-0" />
-                  <span className="font-mono text-xs text-charcoal font-medium tracking-wide">
-                    {t("statusPill")}
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating Badge 2: Bottom Experience Badge */}
-              <div className="absolute -bottom-4 -left-4 z-30">
-                <div className="bg-white/95 md:backdrop-blur-md border border-border rounded-2xl py-2 px-3.5 shadow-card flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-sage/10 text-sage flex items-center justify-center shrink-0">
-                    <Sparkles className="w-4 h-4 text-sage" />
-                  </span>
-                  <div className="text-left">
-                    <span className="block font-serif text-sm font-semibold text-charcoal leading-tight">
-                      {t("badgeExperience")}
-                    </span>
-                    <span className="block font-mono text-[10px] text-charcoal-muted uppercase tracking-wider mt-0.5">
-                      {t("badgeFormat")}
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
