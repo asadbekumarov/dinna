@@ -641,63 +641,63 @@
     "testimonials": [
       {
         "id": "test-1",
-        "author": "M.A.",
-        "role": "29 yosh",
-        "format": "Toshkent 5/5 oflayn",
-        "avatarText": "MA",
-        "timeAgo": "Yaqinda",
-        "highlight": "Surunkali xavotirdan xalos bo'ldim",
-        "message": "Dinna xonim bilan uchrashuvlardan so'ng ko'p yillik surunkali xavotir va ichki qo'rquvlarimdan xalos bo'ldim. 5/5 ofisidagi muhit juda iliq va xavfsiz. O'zimni nihoyat qabul qilishni va xotirjam nafas olishni o'rgandim."
+        "author": "Mijoz fikri",
+        "role": "2 ta seans",
+        "format": "2 ta seans natijasi",
+        "avatarText": "MF",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "Bolalik og'rig'idan og'riqsiz xalos bo'ldim",
+        "message": "Oldin ota haqidagi videolarni yoki qiziga mehr bergan otalarni ko'rsam yig'lab yuborardim. Seanslarimizdan so'ng birinchi marta buni og'riqsiz, xotirjam qabul qildim. 2 ta konsultatsiyaning o'zidayoq shunday natija bo'lganidan juda minnatdorman."
       },
       {
         "id": "test-2",
-        "author": "D.K.",
-        "role": "34 yosh",
-        "format": "Onlayn (Zoom)",
-        "avatarText": "DK",
-        "timeAgo": "1 hafta oldin",
-        "highlight": "Har bir seansdan keyin yengillik",
-        "message": "Onlayn formatda shunday chuqur empatiya va ishonchni his qilaman deb o'ylamagandim. Har bir seansdan keyin yelkamdan og'ir yuk tushgandek yengillik his qilaman. Rahmat sizga!"
+        "author": "Mijoz tavsiyasi",
+        "role": "Individual terapiya",
+        "format": "Shaxsiy terapiya",
+        "avatarText": "MT",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "Birovga aytolmaydigan og'riqlar ketdi",
+        "message": "Hammamizning ham ichimizda to'planib qolgan, lekin birovga aytolmaydigan gaplarimiz bo'ladi. Dinna xonim sizga yengil bo'lishga va qalbdagi og'riqlarni qo'yib yuborishga haqiqatan yordam bera oladi."
       },
       {
         "id": "test-3",
-        "author": "S.R.",
-        "role": "26 yosh",
-        "format": "Mualliflik treningi",
-        "avatarText": "SR",
-        "timeAgo": "2 hafta oldin",
-        "highlight": "Munosabatlarga qarashim o'zgardi",
-        "message": "Mualliflik treningingiz mening munosabatlarga va eng muhimi o'zimga bo'lgan qarashimni butkul o'zgartirdi. Hissiy chegaralarimni xotirjam va chiroyli himoya qilishni boshladim."
+        "author": "Mijoz fikri",
+        "role": "Onlayn konsultatsiya",
+        "format": "Onlayn seans",
+        "avatarText": "MF",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "10 kunda ijobiy o'zgarishlar sezildi",
+        "message": "Dinna xonim, ancha o'zimga kelib qoldim. Bergan amaliy tavsiyalaringizni qildim, 10 kunga qolmay ichki holatimda va fikrlarimda ijobiy o'zgarishlar paydo bo'ldi. Hammasi uchun katta rahmat!"
       },
       {
         "id": "test-4",
-        "author": "N.T.",
-        "role": "31 yosh",
-        "format": "Toshkent 5/5 oflayn",
-        "avatarText": "NT",
-        "timeAgo": "Yaqinda",
-        "highlight": "Hissiy charchoqni (burnout) yengdim",
-        "message": "Hissiy charchoq (burnout) va tushkunlikdan chiqishimda bergan amaliy mashqlaringiz beqiyos bo'ldi. Endi hayotimga ranglar va xotirjamlik qaytdi."
+        "author": "Mijoz fikri",
+        "role": "Individual konsultatsiya",
+        "format": "Shaxsiy seans",
+        "avatarText": "MF",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "O'zimdagi o'zgarishlarni chuqur sezyapman",
+        "message": "O'zimdagi o'zgarishlarni ancha sezyapman. Menga aytgan har bitta gaplaringiz to'g'ri bo'lib chiqyapti. Sizga kattakon rahmat, yaxshiyam sizdek samimiy va kuchli mutaxassis bor."
       },
       {
         "id": "test-5",
-        "author": "G.B.",
-        "role": "38 yosh",
-        "format": "Onlayn konsultatsiya",
-        "avatarText": "GB",
-        "timeAgo": "1 oy oldin",
-        "highlight": "Ichki tayanchimni topdim",
-        "message": "Oilaviy inqiroz paytida o'zimni yo'qotib qo'ygandim. Dinna xonim menga o'z ichki tayanchimni topishga va oqilona, xotirjam qaror qabul qilishga ko'maklashdilar."
+        "author": "Mijoz fikri",
+        "role": "Mualliflik seansi",
+        "format": "Mualliflik terapiyasi",
+        "avatarText": "MF",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "O'zimni qadrlashni va haqli ekanimni angladim",
+        "message": "Seanslardan keyin nihoyat sovg'alar yoki yaxshiliklarni xijolat bo'lmasdan qabul qilishni boshladim, o'zimni baxtga haqli deb bildim. O'zimni qadrlaganim sari hayotimga men xohlagan yaxshi narsalar kela boshladi."
       },
       {
         "id": "test-6",
-        "author": "Z.M.",
-        "role": "24 yosh",
-        "format": "Shaxsiy rivojlanish kursi",
-        "avatarText": "ZM",
-        "timeAgo": "1 oy oldin",
-        "highlight": "O'zimga bo'lgan mehr qaytdi",
-        "message": "O'z-o'zimni tinimsiz tanqid qilish odatim yo'qoldi. O'rniga xotirjamlik va o'zimga mehr keldi. Bu hayotimdagi eng to'g'ri qadam bo'ldi."
+        "author": "Mijoz fikri",
+        "role": "1 seans natijasi",
+        "format": "Bir martalik konsultatsiya",
+        "avatarText": "MF",
+        "timeAgo": "Instagram hikoyalaridan",
+        "highlight": "Bir martalik konsultatsiyaning o'zidayoq natija",
+        "message": "Bir martalik uchrashuvning o'zidayoq ko'nglim yorishib, ichki xavotir tarqaldi. Atrofdagilar bilan munosabatlarimda iliqlik va hurmat paydo bo'ldi, o'zimga ishonchim va hayotga qiziqishim qaytdi."
       }
     ]
   },

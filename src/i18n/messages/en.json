@@ -641,63 +641,63 @@
     "testimonials": [
       {
         "id": "test-1",
-        "author": "M.A.",
-        "role": "29 years old",
-        "format": "Tashkent 5/5 In-Person",
-        "avatarText": "MA",
-        "timeAgo": "Recently",
-        "highlight": "Freed from chronic anxiety",
-        "message": "After sessions with Dinna, years of chronic anxiety and fear began to dissolve. The 5/5 office atmosphere is so warm and safe. I finally learned to accept myself and breathe easily."
+        "author": "Client Review",
+        "role": "2 sessions",
+        "format": "Result of 2 sessions",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Healed childhood pain calmly and without tears",
+        "message": "I used to tear up whenever I saw videos about fathers or loving dads with their daughters. After our sessions, for the very first time, I felt complete peace without the ache. Achieving this in just two consultations is truly invaluable."
       },
       {
         "id": "test-2",
-        "author": "D.K.",
-        "role": "34 years old",
-        "format": "Online (Zoom)",
-        "avatarText": "DK",
-        "timeAgo": "1 week ago",
-        "highlight": "A sense of relief after each session",
-        "message": "I never imagined experiencing such profound empathy and trust online. After each meeting, I feel a heavy weight lifted off my shoulders. Thank you!"
+        "author": "Client Recommendation",
+        "role": "Individual therapy",
+        "format": "Personal therapy",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Released the burdens I couldn't share with anyone",
+        "message": "We all carry unspoken worries deep inside that feel impossible to tell anyone. Dinna genuinely helps you find emotional lightness and gently let go of inner pain in a safe space."
       },
       {
         "id": "test-3",
-        "author": "S.R.",
-        "role": "26 years old",
-        "format": "Signature Training",
-        "avatarText": "SR",
-        "timeAgo": "2 weeks ago",
-        "highlight": "My perspective on relationships shifted",
-        "message": "Your signature training changed how I view relationships and myself. I learned how to calmly and gracefully honor my personal boundaries."
+        "author": "Client Review",
+        "role": "Online consultation",
+        "format": "Online session",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Positive changes felt in less than 10 days",
+        "message": "Dinna, I have recovered so much clarity. I followed your practical guidance, and in under 10 days noticeable positive shifts started happening in my thoughts and state of mind. Thank you so much!"
       },
       {
         "id": "test-4",
-        "author": "N.T.",
-        "role": "31 years old",
-        "format": "Tashkent 5/5 In-Person",
-        "avatarText": "NT",
-        "timeAgo": "Recently",
-        "highlight": "Overcame emotional burnout",
-        "message": "Your practical exercises and steady support during my burnout were invaluable. Color and peace have returned to my daily life."
+        "author": "Client Review",
+        "role": "Individual consultation",
+        "format": "Personal session",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Deeply feeling positive personal transformation",
+        "message": "I feel immense positive changes within myself. Every insight and piece of guidance you shared proved completely true. Thank you so much for being such a supportive and skilled specialist."
       },
       {
         "id": "test-5",
-        "author": "G.B.",
-        "role": "38 years old",
-        "format": "Online Consultation",
-        "avatarText": "GB",
-        "timeAgo": "1 month ago",
-        "highlight": "Found my inner anchor",
-        "message": "During a severe family crisis, I was completely lost. Dinna helped me find my ground and make wise, calm decisions."
+        "author": "Client Review",
+        "role": "Signature session",
+        "format": "Signature therapy",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Learned to value myself and receive without guilt",
+        "message": "After our sessions, I finally stopped feeling guilty when receiving gifts or care, realizing I am worthy of happiness. The more I truly value myself, the more positive things unfold in my life."
       },
       {
         "id": "test-6",
-        "author": "Z.M.",
-        "role": "24 years old",
-        "format": "Personal Growth Course",
-        "avatarText": "ZM",
-        "timeAgo": "1 month ago",
-        "highlight": "Self-compassion returned",
-        "message": "The habit of constant self-criticism faded away. In its place came peace and self-compassion. This was the most important decision I've made."
+        "author": "Client Review",
+        "role": "1 session result",
+        "format": "Single consultation result",
+        "avatarText": "CR",
+        "timeAgo": "From Instagram Stories",
+        "highlight": "Immediate breakthrough after just one session",
+        "message": "Even after a single session, my chronic anxiety dissolved and clarity returned. Warmth and mutual respect returned to my relationships, along with renewed self-confidence and vitality."
       }
     ]
   },
