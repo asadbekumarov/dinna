@@ -32,10 +32,12 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
 
   const testimonialsList: TestimonialItem[] = (t.raw("testimonials") as TestimonialItem[]) || [];
   const reelsList = siteMedia.reels;
+  const trainingsList = siteMedia.trainings;
 
   const tabs = [
     { id: "testimonials", label: t("tabTestimonials"), count: testimonialsList.length },
     { id: "reels", label: t("tabWebinars"), count: reelsList.length },
+    { id: "trainings", label: t("tabEvents"), count: trainingsList.length },
   ];
 
   return (
@@ -180,6 +182,71 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
                 <div className="relative z-10 pt-4">
                   <h4 className="font-serif text-base sm:text-lg font-medium text-white leading-snug line-clamp-3 mb-2 drop-shadow-sm">
                     {reel.title}
+                  </h4>
+                  <span className="inline-flex items-center gap-1 font-mono text-[11px] text-white/80 group-hover:text-cream tracking-wide">
+                    {t("watchOnInstagram")} &rarr;
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 3: Authentic Training Reels (Strict 9:16 Vertical Cards) */}
+        {activeTab === "trainings" && (
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:items-start sm:overflow-visible no-scrollbar">
+            {trainingsList.map((item) => (
+              <div
+                key={item.id}
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveReel(item)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveReel(item);
+                  }
+                }}
+                aria-label={`${item.title} - ${t("watchOnInstagram")}`}
+                className="group relative snap-center w-[75vw] max-w-[280px] shrink-0 sm:w-full sm:max-w-none aspect-[9/16] rounded-2xl overflow-hidden border border-border bg-charcoal shadow-card hover:border-sage/60 hover:shadow-2xl transition-all flex flex-col justify-between p-5 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
+              >
+                {/* Background Image */}
+                <Image
+                  src={item.thumb}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+
+                {/* Dark Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/40 to-charcoal/20 group-hover:from-charcoal/90 transition-colors" />
+
+                {/* Top Badges */}
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-mono text-[10px] uppercase tracking-wider border border-white/20">
+                    {item.category}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center border border-white/20 group-hover:bg-sage group-hover:border-sage transition-colors">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </span>
+                </div>
+
+                {/* Center Play Icon */}
+                <div className="relative z-10 flex items-center justify-center my-auto">
+                  <div className="w-12 h-12 rounded-full bg-white/30 backdrop-blur-md border border-white/40 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-sage group-hover:border-sage transition-all duration-300">
+                    <svg className="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Bottom Title & Action */}
+                <div className="relative z-10 pt-4">
+                  <h4 className="font-serif text-base sm:text-lg font-medium text-white leading-snug line-clamp-3 mb-2 drop-shadow-sm">
+                    {item.title}
                   </h4>
                   <span className="inline-flex items-center gap-1 font-mono text-[11px] text-white/80 group-hover:text-cream tracking-wide">
                     {t("watchOnInstagram")} &rarr;

@@ -229,6 +229,30 @@ export const siteMedia = {
     },
   ] as ReelItem[],
 
+  trainings: [
+    {
+      id: "training-1",
+      title: "Kasalliklar: insonni qiynayotgan muammolar",
+      url: "https://www.instagram.com/reel/Dbqnk56sjMM/",
+      thumb: "/images/training/training-1.jpg",
+      category: "Psixosomatika",
+    },
+    {
+      id: "training-2",
+      title: "Treningdan jonli lavha va amaliy jarayon",
+      url: "https://www.instagram.com/reel/Db508p_MdRH/",
+      thumb: "/images/training/training-2.jpg",
+      category: "Jonli lavha",
+    },
+    {
+      id: "training-3",
+      title: "Dars jarayoni va chuqur muhit",
+      url: "https://www.instagram.com/reel/DcEftErs3sa/",
+      thumb: "/images/training/training-3.jpg",
+      category: "Dars jarayoni",
+    },
+  ] as ReelItem[],
+
   webinars: [
     {
       id: "sn68jdRJym0",
