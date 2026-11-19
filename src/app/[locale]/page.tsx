@@ -26,6 +26,9 @@ const Expert = dynamic(
   () => import("@/components/sections/Expert").then((m) => m.Expert),
   { loading: () => <ExpertSkeleton /> }
 );
+const Gallery = dynamic(
+  () => import("@/components/sections/Gallery").then((m) => m.Gallery)
+);
 const MediaArchive = dynamic(
   () => import("@/components/sections/MediaArchive").then((m) => m.MediaArchive),
   { loading: () => <MediaArchiveSkeleton /> }
@@ -72,6 +75,11 @@ export default async function HomePage({
         {/* Section 04: Founder Monograph + Compact Diplomas Strip with Lightbox */}
         <RevealOnScroll>
           <Expert />
+        </RevealOnScroll>
+
+        {/* Section 04.5: Live Moments Marquee Photo Gallery */}
+        <RevealOnScroll>
+          <Gallery />
         </RevealOnScroll>
 
         {/* Section 05: Tabbed Media, Cases & Business Tour Hub (Testimonials + Webinars + EventsTour) */}

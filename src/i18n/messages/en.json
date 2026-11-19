@@ -622,6 +622,11 @@
       "cta": "Book a Consultation"
     }
   },
+  "gallery": {
+    "kicker": "LIVE MOMENTS",
+    "headline": "Warm impressions from workshops and sessions",
+    "altDefault": "Dinna Mirzabayeva with workshop participants"
+  },
   "mediaArchive": {
     "sectionAria": "Client reflections",
     "kicker": "GRATITUDE & SINCERITY",

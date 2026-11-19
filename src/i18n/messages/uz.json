@@ -622,6 +622,11 @@
       "cta": "Konsultatsiyaga yozilish"
     }
   },
+  "gallery": {
+    "kicker": "JONLI LAHZALAR",
+    "headline": "Treninglar va uchrashuvlardan samimiy lahzalar",
+    "altDefault": "Dinna Mirzabayeva o'quvchilari bilan"
+  },
   "mediaArchive": {
     "sectionAria": "Mijozlar natijalari",
     "kicker": "MINNATDORLIK VA SAMIMIYAT",
