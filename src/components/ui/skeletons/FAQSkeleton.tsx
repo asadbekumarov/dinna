@@ -5,54 +5,35 @@ export function FAQSkeleton() {
   return (
     <section
       aria-hidden="true"
-      className="scroll-mt-20 py-14 sm:py-20 border-b border-border bg-cream relative overflow-hidden"
+      className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream relative overflow-hidden"
     >
-      <div className="max-w-[1360px] mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div className="max-w-2xl mb-12 space-y-4">
-          <div className="flex items-center gap-4">
-            <span className="w-8 h-[1px] bg-sage/40" />
-            <Skeleton className="w-36 h-3.5 font-mono" />
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column Skeleton */}
+          <div className="lg:col-span-5 space-y-6">
+            <Skeleton className="w-3/4 h-10 sm:h-12" />
+            <Skeleton className="w-full h-16" />
+            <Skeleton className="w-full h-12 rounded-full" />
+            <div className="flex flex-wrap gap-2">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Skeleton key={i} className="w-24 h-9 rounded-full" />
+              ))}
+            </div>
+            <Skeleton className="w-full h-44 rounded-2xl hidden lg:block" />
           </div>
-          <Skeleton className="w-[85%] h-10 sm:h-12" />
-          <Skeleton className="w-full h-4 mt-2" />
-        </div>
 
-        {/* 4 Category Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {[1, 2, 3, 4].map((cat) => (
-            <div
-              key={cat}
-              className="p-5 rounded-xl border border-border bg-cream-200/50 space-y-3"
-            >
-              <div className="flex items-center justify-between">
-                <Skeleton className="w-8 h-8 rounded-lg" />
-                <Skeleton className="w-10 h-3" />
+          {/* Right Column Skeleton */}
+          <div className="lg:col-span-7 space-y-4">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div
+                key={item}
+                className="py-5 border-b border-border flex items-center justify-between gap-4"
+              >
+                <Skeleton className="w-3/4 h-6" />
+                <Skeleton className="w-6 h-6 rounded-full shrink-0" />
               </div>
-              <Skeleton className="w-24 h-4" />
-            </div>
-          ))}
-        </div>
-
-        {/* Search Bar Skeleton */}
-        <div className="relative mb-10 max-w-xl">
-          <Skeleton className="w-full h-12 rounded-xl border border-border bg-cream-200/50" />
-        </div>
-
-        {/* FAQ Accordion Items (5 items) */}
-        <div className="space-y-3">
-          {[1, 2, 3, 4, 5].map((item) => (
-            <div
-              key={item}
-              className="p-6 rounded-xl border border-border bg-cream-200/50 flex items-center justify-between gap-4"
-            >
-              <div className="space-y-2 flex-1">
-                <Skeleton className="w-12 h-3 font-mono opacity-60" />
-                <Skeleton className="w-3/4 h-5" />
-              </div>
-              <Skeleton className="w-8 h-8 rounded-full flex-shrink-0" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

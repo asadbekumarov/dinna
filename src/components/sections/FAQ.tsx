@@ -4,7 +4,8 @@ import React, { useState, useMemo } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { FAQSkeleton } from "@/components/ui/skeletons";
 import { Input } from "@/components/ui/input";
-import { Search, X } from "lucide-react";
+import { Search, X, MessageSquare, ArrowUpRight } from "lucide-react";
+import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import {
   Accordion,
   AccordionItem,
@@ -31,6 +32,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
   const t = useTranslations("faq");
   const locale = useLocale();
   const isUz = locale === "uz";
+  const { openApply } = useApplyModal();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey>("all");
@@ -45,7 +47,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
       },
       {
         id: "q2",
-        category: "systematization",
+        category: "mentorship",
         question: t("items.1.question"),
         answer: t("items.1.answer"),
       },
@@ -57,7 +59,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
       },
       {
         id: "q4",
-        category: "consulting",
+        category: "guarantees",
         question: t("items.3.question"),
         answer: t("items.3.answer"),
       },
@@ -114,93 +116,142 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
     return <FAQSkeleton />;
   }
 
+  const handleOpenConsultation = () => {
+    openApply({ defaultPlan: "Individual psixologik konsultatsiya" });
+  };
+
   return (
     <section
       id="faq"
+      aria-label={t("headline")}
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
-            {isUz ? t("headlineUz") : t("headline")}
-          </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column (Sticky Sidebar on Desktop): Header, Search, Categories, and Help Card */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+            <div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
+                {isUz ? t("headlineUz") : t("headline")}
+              </h2>
 
-          <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4 max-w-2xl">
-            {t("lede")}
-          </p>
-        </div>
-
-        {/* Search Bar (text-base / 16px to prevent iOS auto-zoom) */}
-        <div className="max-w-2xl mb-6">
-          <div className="relative flex items-center">
-            <span className="absolute left-4 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
-              <Search className="w-4 h-4 text-sage" />
-            </span>
-
-            <Input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={t("searchPlaceholder")}
-              aria-label={t("searchLabel")}
-              className="w-full h-12 pl-11 pr-12 rounded-full bg-white text-charcoal placeholder:text-charcoal-muted/70 text-base border-border focus:border-sage focus:ring-1 focus:ring-sage shadow-sm"
-            />
-
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery("")}
-                aria-label={t("clearSearch")}
-                className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Horizontal Scrollable Category Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-6 mb-8 border-b border-border">
-          {categories.map((cat) => {
-            const isSelected = selectedCategory === cat.key;
-            return (
-              <button
-                key={cat.key}
-                type="button"
-                onClick={() => setSelectedCategory(cat.key)}
-                className={`min-h-[44px] px-4 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer shrink-0 flex items-center justify-center ${
-                  isSelected
-                    ? "bg-sage text-cream shadow-sm font-semibold"
-                    : "bg-cream-200 hover:bg-cream-300 text-charcoal-muted hover:text-charcoal border border-border"
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Accordion List (min-h-[56px] trigger) */}
-        <div className="max-w-3xl">
-          {filteredItems.length === 0 ? (
-            <div className="py-12 text-center text-charcoal-muted font-mono text-sm">
-              Hech qanday savol topilmadi.
+              <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4">
+                {t("lede")}
+              </p>
             </div>
-          ) : (
-            <Accordion type="single" collapsible className="w-full divide-y divide-border border-b border-border">
-              {filteredItems.map((item) => (
-                <AccordionItem key={item.id} value={item.id} className="border-none">
-                  <AccordionTrigger className="min-h-[56px] py-4 text-left font-serif text-lg sm:text-xl font-normal text-charcoal hover:text-sage transition-colors">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          )}
+
+            {/* Search Bar */}
+            <div className="relative flex items-center">
+              <span className="absolute left-4 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
+                <Search className="w-4 h-4 text-sage" />
+              </span>
+
+              <Input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={t("searchPlaceholder")}
+                aria-label={t("searchLabel")}
+                className="w-full h-12 pl-11 pr-12 rounded-full bg-white text-charcoal placeholder:text-charcoal-muted/70 text-base border-border focus:border-sage focus:ring-1 focus:ring-sage shadow-sm"
+              />
+
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  aria-label={t("clearSearch")}
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Category Filter Chips */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {categories.map((cat) => {
+                const isSelected = selectedCategory === cat.key;
+                return (
+                  <button
+                    key={cat.key}
+                    type="button"
+                    onClick={() => setSelectedCategory(cat.key)}
+                    className={`min-h-[40px] px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer flex items-center justify-center ${
+                      isSelected
+                        ? "bg-sage text-cream shadow-sm font-semibold"
+                        : "bg-white/80 hover:bg-cream-200 text-charcoal-muted hover:text-charcoal border border-border"
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Assistance Card (Desktop only in left column) */}
+            <div className="hidden lg:block bg-white/85 border border-border rounded-2xl p-6 sm:p-7 shadow-card space-y-3 mt-4">
+              <div className="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center">
+                <MessageSquare className="w-5 h-5 text-sage" />
+              </div>
+              <h3 className="font-serif text-xl font-normal text-charcoal">
+                {t("bottomCard.title")}
+              </h3>
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                {t("bottomCard.description")}
+              </p>
+              <button
+                type="button"
+                onClick={handleOpenConsultation}
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 rounded-full bg-sage text-cream font-mono text-xs uppercase tracking-wider hover:bg-sage-dark transition-all shadow-sm font-medium w-full cursor-pointer"
+              >
+                <span>{t("bottomCard.cta")}</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: Accordion Questions */}
+          <div className="lg:col-span-7">
+            {filteredItems.length === 0 ? (
+              <div className="py-14 text-center text-charcoal-muted font-mono text-sm bg-white/60 rounded-2xl border border-dashed border-border p-8">
+                {t("noResults")}
+              </div>
+            ) : (
+              <Accordion type="single" collapsible className="w-full divide-y divide-border border-y border-border">
+                {filteredItems.map((item) => (
+                  <AccordionItem key={item.id} value={item.id} className="border-none">
+                    <AccordionTrigger className="min-h-[60px] py-4 text-left font-serif text-lg sm:text-xl font-normal text-charcoal hover:text-sage transition-colors">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-5 text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            )}
+
+            {/* Assistance Card (Mobile / Tablet only, below questions) */}
+            <div className="block lg:hidden bg-white/85 border border-border rounded-2xl p-6 sm:p-7 shadow-card space-y-3 mt-8">
+              <div className="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center">
+                <MessageSquare className="w-5 h-5 text-sage" />
+              </div>
+              <h3 className="font-serif text-xl font-normal text-charcoal">
+                {t("bottomCard.title")}
+              </h3>
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                {t("bottomCard.description")}
+              </p>
+              <button
+                type="button"
+                onClick={handleOpenConsultation}
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] px-5 py-2.5 rounded-full bg-sage text-cream font-mono text-xs uppercase tracking-wider hover:bg-sage-dark transition-all shadow-sm font-medium w-full cursor-pointer"
+              >
+                <span>{t("bottomCard.cta")}</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
