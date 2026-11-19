@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { siteMedia } from "@/config/siteMedia";
+import { siteMedia, ReelItem } from "@/config/siteMedia";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
+import { ReelModal } from "@/components/ui/ReelModal";
 
 interface MediaArchiveProps {
   onOpenApply?: (options?: string | { service?: string }) => void;
@@ -27,6 +28,7 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
   const t = useTranslations("mediaArchive");
 
   const [activeTab, setActiveTab] = useState<string>("testimonials");
+  const [activeReel, setActiveReel] = useState<ReelItem | null>(null);
 
   const testimonialsList: TestimonialItem[] = (t.raw("testimonials") as TestimonialItem[]) || [];
   const reelsList = siteMedia.reels;
@@ -123,17 +125,23 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
           </div>
         )}
 
-        {/* Tab 2: Authentic Instagram Reels (9:16 Portrait Cards) */}
+        {/* Tab 2: Authentic Instagram Reels (Strict 9:16 Vertical Cards) */}
         {activeTab === "reels" && (
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible no-scrollbar">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:items-start sm:overflow-visible no-scrollbar">
             {reelsList.map((reel) => (
-              <a
+              <div
                 key={reel.id}
-                href={reel.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveReel(reel)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveReel(reel);
+                  }
+                }}
                 aria-label={`${reel.title} - ${t("watchOnInstagram")}`}
-                className="group relative snap-center w-[75vw] max-w-[280px] shrink-0 sm:w-auto sm:shrink aspect-[9/16] rounded-2xl overflow-hidden border border-border bg-charcoal shadow-card hover:border-sage/60 hover:shadow-xl transition-all flex flex-col justify-between p-5"
+                className="group relative snap-center w-[75vw] max-w-[280px] shrink-0 sm:w-full sm:max-w-none aspect-[9/16] rounded-2xl overflow-hidden border border-border bg-charcoal shadow-card hover:border-sage/60 hover:shadow-2xl transition-all flex flex-col justify-between p-5 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
               >
                 {/* Background Image */}
                 <Image
@@ -177,11 +185,19 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
                     {t("watchOnInstagram")} &rarr;
                   </span>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         )}
       </div>
+
+      {/* 9:16 Vertical Instagram Reel Modal */}
+      <ReelModal
+        isOpen={Boolean(activeReel)}
+        onClose={() => setActiveReel(null)}
+        reelUrl={activeReel?.url ?? null}
+        title={activeReel?.title}
+      />
     </section>
   );
 }
