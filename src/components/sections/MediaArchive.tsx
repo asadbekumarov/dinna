@@ -19,7 +19,7 @@ interface TestimonialItem {
   role: string;
   format: string;
   avatarText: string;
-  timeAgo: string;
+  timeAgo?: string;
   highlight: string;
   message: string;
 }
@@ -120,9 +120,11 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
                     <span className="block font-medium text-xs text-charcoal">
                       {item.author}
                     </span>
-                    <span className="block font-mono text-[10px] text-charcoal-muted">
-                      {item.role} · {item.timeAgo}
-                    </span>
+                    {item.role && (
+                      <span className="block font-mono text-[10px] text-charcoal-muted">
+                        {item.role}
+                      </span>
+                    )}
                   </div>
                 </div>
               </article>

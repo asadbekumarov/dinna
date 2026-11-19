@@ -642,60 +642,54 @@
       {
         "id": "test-1",
         "author": "Client Review",
-        "role": "2 sessions",
+        "role": "Result of 2 sessions",
         "format": "Result of 2 sessions",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Healed childhood pain calmly and without tears",
         "message": "I used to tear up whenever I saw videos about fathers or loving dads with their daughters. After our sessions, for the very first time, I felt complete peace without the ache. Achieving this in just two consultations is truly invaluable."
       },
       {
         "id": "test-2",
         "author": "Client Recommendation",
-        "role": "Individual therapy",
+        "role": "Personal therapy",
         "format": "Personal therapy",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Released the burdens I couldn't share with anyone",
         "message": "We all carry unspoken worries deep inside that feel impossible to tell anyone. Dinna genuinely helps you find emotional lightness and gently let go of inner pain in a safe space."
       },
       {
         "id": "test-3",
         "author": "Client Review",
-        "role": "Online consultation",
+        "role": "Online session",
         "format": "Online session",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Positive changes felt in less than 10 days",
         "message": "Dinna, I have recovered so much clarity. I followed your practical guidance, and in under 10 days noticeable positive shifts started happening in my thoughts and state of mind. Thank you so much!"
       },
       {
         "id": "test-4",
         "author": "Client Review",
-        "role": "Individual consultation",
+        "role": "Personal session",
         "format": "Personal session",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Deeply feeling positive personal transformation",
         "message": "I feel immense positive changes within myself. Every insight and piece of guidance you shared proved completely true. Thank you so much for being such a supportive and skilled specialist."
       },
       {
         "id": "test-5",
         "author": "Client Review",
-        "role": "Signature session",
+        "role": "Signature therapy",
         "format": "Signature therapy",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Learned to value myself and receive without guilt",
         "message": "After our sessions, I finally stopped feeling guilty when receiving gifts or care, realizing I am worthy of happiness. The more I truly value myself, the more positive things unfold in my life."
       },
       {
         "id": "test-6",
         "author": "Client Review",
-        "role": "1 session result",
+        "role": "Single consultation result",
         "format": "Single consultation result",
         "avatarText": "CR",
-        "timeAgo": "From Instagram Stories",
         "highlight": "Immediate breakthrough after just one session",
         "message": "Even after a single session, my chronic anxiety dissolved and clarity returned. Warmth and mutual respect returned to my relationships, along with renewed self-confidence and vitality."
       }
