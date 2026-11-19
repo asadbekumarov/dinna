@@ -8,7 +8,42 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { MapPin, Video, Sparkles, CheckCircle2, ShieldCheck, AlertCircle } from "lucide-react";
+import {
+  Phone,
+  Send,
+  MapPin,
+  Clock,
+  ShieldCheck,
+  Check,
+  CheckCircle2,
+  ArrowUpRight,
+  Lock,
+  Video,
+  Sparkles,
+  User,
+  MessageSquare,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
+
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 import {
   formatUzbekPhone,
   cleanUzbekPhone,
@@ -144,6 +179,8 @@ export function Contact() {
       ? contactConfig.office.addressEn
       : contactConfig.office.addressUz;
 
+  const isPhoneValid = isUzbekPhoneComplete(displayPhone);
+
   return (
     <section
       id="aloqa"
@@ -153,6 +190,11 @@ export function Contact() {
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-border text-charcoal-muted font-mono text-xs uppercase tracking-wider mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-sage" />
+            <span>{t("kicker")}</span>
+          </div>
+
           <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
             {t("titlePrefix")}
             <span className="italic text-sage ml-1">
@@ -165,40 +207,222 @@ export function Contact() {
           </p>
         </div>
 
-        {/* 12-Column Grid: On Mobile Form is order-1 (first for conversion!), Details is order-2 */}
+        {/* 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Form Column (order-1 on mobile, order-2 on desktop lg:col-span-7) */}
-          <div className="order-1 lg:order-2 lg:col-span-7">
-            <div className="bg-white/85 border border-border rounded-2xl p-6 sm:p-8 shadow-card">
-              <h3 className="font-serif text-2xl text-charcoal font-normal mb-1">
-                {t("formTitle")}
-              </h3>
-              <p className="text-xs sm:text-sm text-charcoal-muted mb-6">
-                {t("formSubtitle")}
+          {/* Details Column (Desktop lg:col-span-5) */}
+          <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
+            {/* Direct Contact Channels Card */}
+            <div className="border border-border bg-white/85 rounded-3xl p-6 sm:p-7 shadow-card space-y-4">
+              <div>
+                <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-normal">
+                  {t("directTitle")}
+                </h3>
+                <p className="text-xs sm:text-sm text-charcoal-muted mt-1 leading-relaxed">
+                  {t("directSubtitle")}
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-2">
+                {/* Phone */}
+                <a
+                  href={contactConfig.phone.href}
+                  className="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-cream-100 hover:bg-cream-200/90 border border-border hover:border-sage/40 transition-all min-h-[56px]"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-sage/10 text-sage flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:text-cream transition-colors">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                        {t("phoneLabel")}
+                      </div>
+                      <div className="text-sm sm:text-base font-mono font-medium text-charcoal group-hover:text-sage transition-colors truncate">
+                        {contactConfig.phone.display}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-sage text-xs font-mono shrink-0 pl-2">
+                    <span className="hidden sm:inline">Qo&apos;ng&apos;iroq</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </a>
+
+                {/* Telegram Direct */}
+                <a
+                  href={contactConfig.telegramDirect.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-cream-100 hover:bg-cream-200/90 border border-border hover:border-sage/40 transition-all min-h-[56px]"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-sage/10 text-sage flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:text-cream transition-colors">
+                      <Send className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                          {t("telegramDirectLabel")}
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-sage/15 text-sage text-[10px] font-mono font-medium">
+                          {t("fastReplyBadge")}
+                        </span>
+                      </div>
+                      <div className="text-sm sm:text-base font-mono font-medium text-charcoal group-hover:text-sage transition-colors truncate">
+                        {contactConfig.telegramDirect.display}
+                      </div>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-sage group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                </a>
+
+                {/* Telegram Channel */}
+                <a
+                  href={contactConfig.telegramChannel.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-cream-100 hover:bg-cream-200/90 border border-border hover:border-sage/40 transition-all min-h-[56px]"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-sage/10 text-sage flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:text-cream transition-colors">
+                      <Send className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                        {t("telegramChannelLabel")}
+                      </div>
+                      <div className="text-xs sm:text-sm text-charcoal-muted truncate">
+                        {t("channelSubtitle")}
+                      </div>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-sage group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href={contactConfig.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-cream-100 hover:bg-cream-200/90 border border-border hover:border-sage/40 transition-all min-h-[56px]"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-sage/10 text-sage flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:text-cream transition-colors">
+                      <InstagramIcon className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                        Instagram
+                      </div>
+                      <div className="text-sm font-mono font-medium text-charcoal group-hover:text-sage transition-colors truncate">
+                        {contactConfig.instagram.display}
+                      </div>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-sage group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                </a>
+
+                {/* Office & Working Hours */}
+                <div className="p-4 rounded-2xl bg-cream-100/70 border border-border/80 space-y-2.5">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-sage mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                        {t("addressLabel")}
+                      </div>
+                      <div className="text-xs sm:text-sm font-medium text-charcoal mt-0.5">
+                        {officeAddress}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-1 border-t border-border/60">
+                    <Clock className="w-4 h-4 text-sage mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
+                        {t("hoursLabel")}
+                      </div>
+                      <div className="text-xs sm:text-sm text-charcoal-muted mt-0.5">
+                        {t("hoursValue")}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Confidentiality & Ethics Card */}
+            <div className="p-6 bg-sage/10 border border-sage/25 rounded-3xl space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-sage text-cream flex items-center justify-center shrink-0 shadow-sm">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h4 className="font-serif text-lg text-charcoal font-medium">
+                  {t("guaranteeTitle")}
+                </h4>
+              </div>
+
+              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                {t("guaranteeDesc")}
               </p>
 
+              <div className="pt-2 space-y-2 border-t border-sage/20 text-xs sm:text-sm text-charcoal">
+                <div className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0" />
+                  <span>{t("guaranteePoint1")}</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0" />
+                  <span>{t("guaranteePoint2")}</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0" />
+                  <span>{t("guaranteePoint3")}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Form Column (Desktop lg:col-span-7) */}
+          <div className="order-1 lg:order-2 lg:col-span-7">
+            <div className="bg-white/95 border border-border rounded-3xl p-6 sm:p-9 shadow-card relative overflow-hidden">
+              {/* Subtle ambient light */}
+              <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 bg-sage/10 rounded-full blur-3xl" />
+
+              <div className="relative z-10 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-border text-charcoal-muted font-mono text-[11px] uppercase tracking-wider mb-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sage" />
+                  <span>Qabulga ariza</span>
+                </div>
+                <h3 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
+                  {t("formTitle")}
+                </h3>
+                <p className="text-xs sm:text-sm text-charcoal-muted mt-1 leading-relaxed">
+                  {t("formSubtitle")}
+                </p>
+              </div>
+
               {isSuccess ? (
-                <div className="p-6 bg-sage/10 border border-sage/30 rounded-xl text-center space-y-3">
-                  <div className="w-12 h-12 rounded-full bg-sage/20 text-sage mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6 text-sage" />
+                <div className="p-8 bg-sage/10 border border-sage/30 rounded-2xl text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-sage text-cream mx-auto flex items-center justify-center shadow-sm">
+                    <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h4 className="font-serif text-xl text-sage font-medium">
+                  <h4 className="font-serif text-2xl text-charcoal font-normal">
                     {applyT("thankYouBadge") || "Arizangiz qabul qilindi"}
                   </h4>
                   <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed max-w-md mx-auto">
-                    {t("successMessage") || "Tez orada mutaxassisimiz siz bilan bog'lanadi."}
+                    {t("successMessage")}
                   </p>
                   <Button
                     type="button"
                     onClick={() => setIsSuccess(false)}
                     variant="outline"
-                    className="mt-3 rounded-full text-xs min-h-[44px]"
+                    className="mt-2 rounded-full text-xs font-mono uppercase tracking-wider min-h-[44px] px-6 border-sage/40 hover:bg-sage hover:text-cream transition-colors"
                   >
-                    Yangi ariza qoldirish
+                    {t("submitAnother")}
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                   {/* Honeypot anti-spam */}
                   <input
                     type="text"
@@ -210,13 +434,13 @@ export function Contact() {
                     autoComplete="off"
                   />
 
-                  {/* Anonymous Mode Switch (44px min touch zone) */}
-                  <div className="flex items-center justify-between p-3.5 min-h-[44px] bg-cream-200/70 border border-border rounded-xl">
+                  {/* Anonymous Mode Switch */}
+                  <div className="flex items-center justify-between p-4 min-h-[48px] bg-cream-100/90 border border-border rounded-2xl transition-colors">
                     <label htmlFor="contact-anonymous" className="pr-3 cursor-pointer flex-1">
                       <span className="font-medium text-xs sm:text-sm text-charcoal block">
                         {t("anonymousLabel")}
                       </span>
-                      <span className="text-[11px] text-charcoal-muted font-mono">
+                      <span className="text-[11px] text-charcoal-muted font-mono block mt-0.5">
                         {t("anonymousHint")}
                       </span>
                     </label>
@@ -228,7 +452,7 @@ export function Contact() {
                     />
                   </div>
 
-                  {/* Format Selection Buttons: min-h-[48px] */}
+                  {/* Format Selection Buttons */}
                   <div>
                     <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-2">
                       {t("formatLabel")} <span className="text-terracotta">*</span>
@@ -242,10 +466,10 @@ export function Contact() {
                             key={opt.id}
                             type="button"
                             onClick={() => setFormData((p) => ({ ...p, companySize: opt.id }))}
-                            className={`min-h-[48px] px-3 py-2 rounded-xl border text-xs font-medium transition-all text-left flex items-center gap-2 cursor-pointer ${
+                            className={`min-h-[52px] px-3.5 py-2.5 rounded-2xl border text-xs font-medium transition-all text-left flex items-center gap-2.5 cursor-pointer ${
                               isSelected
                                 ? "bg-sage text-cream border-sage shadow-sm font-semibold"
-                                : "bg-cream-100 border-border text-charcoal hover:bg-cream-200"
+                                : "bg-cream-100 hover:bg-cream-200 border-border text-charcoal"
                             }`}
                           >
                             <IconComponent className={`w-4 h-4 shrink-0 ${isSelected ? "text-cream" : "text-sage"}`} />
@@ -262,24 +486,27 @@ export function Contact() {
                       <label htmlFor="contact-name" className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
                         {t("nameLabel")} <span className="text-terracotta">*</span>
                       </label>
-                      <Input
-                        ref={nameInputRef}
-                        id="contact-name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleNameChange}
-                        placeholder={t("namePlaceholder")}
-                        className={`w-full h-12 rounded-xl bg-cream-100 text-charcoal text-base ${
-                          fieldErrors.name
-                            ? "border-red-500 focus:border-red-600 focus:ring-1 focus:ring-red-500"
-                            : "border-border focus:border-sage focus:ring-1 focus:ring-sage"
-                        }`}
-                      />
+                      <div className="relative flex items-center">
+                        <span className="absolute left-4 pointer-events-none text-charcoal-muted flex items-center justify-center" aria-hidden="true">
+                          <User className="w-4 h-4 text-sage" />
+                        </span>
+                        <Input
+                          ref={nameInputRef}
+                          id="contact-name"
+                          type="text"
+                          value={formData.name}
+                          onChange={handleNameChange}
+                          placeholder={t("namePlaceholder")}
+                          className={`w-full h-12 pl-11 pr-4 rounded-2xl bg-cream-100 text-charcoal text-base border-border focus:border-sage focus:ring-1 focus:ring-sage ${
+                            fieldErrors.name ? "border-red-500 focus:border-red-600 focus:ring-red-500" : ""
+                          }`}
+                        />
+                      </div>
                       {fieldErrors.name && (
                         <p
                           role="alert"
                           aria-live="polite"
-                          className="text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
+                          className="text-xs sm:text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
                         >
                           <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                           <span>{fieldErrors.name}</span>
@@ -288,31 +515,39 @@ export function Contact() {
                     </div>
                   )}
 
-                  {/* Phone Input (16px / text-base for iOS zoom protection) */}
+                  {/* Phone Input */}
                   <div>
                     <label htmlFor="contact-phone" className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
-                      {t("phoneLabel")} <span className="text-terracotta">*</span>
+                      {t("phoneInputLabel")} <span className="text-terracotta">*</span>
                     </label>
-                    <Input
-                      ref={phoneInputRef}
-                      id="contact-phone"
-                      type="tel"
-                      inputMode="tel"
-                      autoComplete="tel"
-                      value={displayPhone}
-                      onChange={handlePhoneChange}
-                      placeholder="+998 90 123 45 67"
-                      className={`w-full h-12 rounded-xl bg-cream-100 text-charcoal font-mono text-base ${
-                        fieldErrors.phone
-                          ? "border-red-500 focus:border-red-600 focus:ring-1 focus:ring-red-500"
-                          : "border-border focus:border-sage focus:ring-1 focus:ring-sage"
-                      }`}
-                    />
+                    <div className="relative flex items-center">
+                      <span className="absolute left-4 pointer-events-none text-charcoal-muted flex items-center justify-center" aria-hidden="true">
+                        <Phone className="w-4 h-4 text-sage" />
+                      </span>
+                      <Input
+                        ref={phoneInputRef}
+                        id="contact-phone"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        value={displayPhone}
+                        onChange={handlePhoneChange}
+                        placeholder="+998 90 123 45 67"
+                        className={`w-full h-12 pl-11 pr-10 rounded-2xl bg-cream-100 text-charcoal font-mono text-base border-border focus:border-sage focus:ring-1 focus:ring-sage ${
+                          fieldErrors.phone ? "border-red-500 focus:border-red-600 focus:ring-red-500" : ""
+                        }`}
+                      />
+                      {isPhoneValid && (
+                        <span className="absolute right-3.5 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
+                          <Check className="w-4 h-4 text-sage" />
+                        </span>
+                      )}
+                    </div>
                     {fieldErrors.phone && (
                       <p
                         role="alert"
                         aria-live="polite"
-                        className="text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
+                        className="text-xs sm:text-sm text-red-700 mt-1.5 flex items-center gap-1 font-normal"
                       >
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>{fieldErrors.phone}</span>
@@ -320,123 +555,56 @@ export function Contact() {
                     )}
                   </div>
 
-                  {/* Note / Question (16px text-base) */}
+                  {/* Note / Question */}
                   <div>
                     <label className="font-mono text-xs uppercase tracking-wider text-charcoal-muted font-medium block mb-1.5">
                       {t("noteLabel")}
                     </label>
-                    <Textarea
-                      value={formData.business}
-                      onChange={(e) => setFormData((p) => ({ ...p, business: e.target.value }))}
-                      placeholder={t("notePlaceholder")}
-                      rows={3}
-                      className="w-full rounded-xl bg-cream-100 text-charcoal border-border focus:border-sage text-base leading-relaxed"
-                    />
+                    <div className="relative">
+                      <Textarea
+                        value={formData.business}
+                        onChange={(e) => setFormData((p) => ({ ...p, business: e.target.value }))}
+                        placeholder={t("notePlaceholder")}
+                        rows={3}
+                        className="w-full rounded-2xl bg-cream-100 text-charcoal border-border focus:border-sage text-base leading-relaxed p-3.5"
+                      />
+                    </div>
                   </div>
 
                   {errorMessage && (
-                    <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl font-mono">
-                      {errorMessage}
+                    <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl font-mono flex items-start gap-2">
+                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                      <span>{errorMessage}</span>
                     </div>
                   )}
 
-                  {/* Submit Button: min-h-[48px] */}
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full min-h-[50px] rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold uppercase tracking-wider shadow-sm active:scale-[0.98] transition-all cursor-pointer"
-                  >
-                    {isSubmitting ? "Yuborilmoqda..." : t("submitButton") + " →"}
-                  </Button>
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full min-h-[52px] rounded-full bg-sage hover:bg-sage-dark text-cream text-xs font-semibold uppercase tracking-wider shadow-sm active:scale-[0.99] transition-all cursor-pointer flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin text-cream" />
+                          <span>Yuborilmoqda...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>{t("submitButton")}</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </Button>
+
+                    <div className="mt-3 flex items-center justify-center gap-1.5 text-center text-[11px] text-charcoal-muted/80 font-mono">
+                      <Lock className="w-3 h-3 text-sage" />
+                      <span>{t("secureDataNotice")}</span>
+                    </div>
+                  </div>
                 </form>
               )}
-            </div>
-          </div>
-
-          {/* Details Column (order-2 on mobile, order-1 on desktop lg:col-span-5) */}
-          <div className="order-2 lg:order-1 lg:col-span-5 space-y-6">
-            {/* Contact Details Ledger */}
-            <div className="border border-border bg-white/70 rounded-2xl p-6 sm:p-7 shadow-card divide-y divide-border">
-              {/* Phone */}
-              <div className="py-3.5 flex items-baseline justify-between gap-4">
-                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
-                  {t("phoneLabel")}
-                </span>
-                <a
-                  href={contactConfig.phone.href}
-                  className="text-sm font-medium text-charcoal hover:text-sage font-mono min-h-[44px] inline-flex items-center"
-                >
-                  {contactConfig.phone.display}
-                </a>
-              </div>
-
-              {/* Telegram Channel */}
-              <div className="py-3.5 flex items-baseline justify-between gap-4">
-                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
-                  {t("telegramChannelLabel")}
-                </span>
-                <a
-                  href={contactConfig.telegramChannel.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
-                >
-                  {contactConfig.telegramChannel.display}
-                </a>
-              </div>
-
-              {/* Telegram Direct */}
-              <div className="py-3.5 flex items-baseline justify-between gap-4">
-                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
-                  {t("telegramDirectLabel")}
-                </span>
-                <a
-                  href={contactConfig.telegramDirect.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
-                >
-                  {contactConfig.telegramDirect.display}
-                </a>
-              </div>
-
-              {/* Instagram */}
-              <div className="py-3.5 flex items-baseline justify-between gap-4">
-                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
-                  Instagram
-                </span>
-                <a
-                  href={contactConfig.instagram.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-sage hover:underline font-mono min-h-[44px] inline-flex items-center"
-                >
-                  {contactConfig.instagram.display}
-                </a>
-              </div>
-
-              {/* Address */}
-              <div className="py-3.5 flex items-baseline justify-between gap-4">
-                <span className="font-mono text-xs text-charcoal-muted uppercase tracking-wider shrink-0">
-                  {t("addressLabel")}
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-charcoal text-right">
-                  {officeAddress}
-                </span>
-              </div>
-            </div>
-
-            {/* Confidentiality Reminder Card */}
-            <div className="p-5 bg-cream-200/80 border border-sage/20 rounded-2xl flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-              <div>
-                <h5 className="font-serif text-base text-charcoal font-medium">
-                  Xavfsiz va sokin muhit
-                </h5>
-                <p className="text-xs text-charcoal-muted leading-relaxed mt-1">
-                  Har bir suhbat qat&apos;iy maxfiylik qoidalariga asoslanadi. Sizning ma&apos;lumotlaringiz hech qachon uchinchi shaxslarga berilmaydi.
-                </p>
-              </div>
             </div>
           </div>
         </div>

@@ -436,7 +436,19 @@
     "anonymousLabel": "Anonim rejim (ism kiritish shart emas)",
     "anonymousHint": "Shaxsingiz to'liq sir saqlanadi",
     "submitButton": "Ariza yuborish",
-    "successMessage": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanib, qulay vaqtni kelishib olamiz."
+    "successMessage": "Murojaatingiz qabul qilindi. Tez orada siz bilan bog'lanib, qulay vaqtni kelishib olamiz.",
+    "directTitle": "To'g'ridan-to'g'ri aloqa",
+    "directSubtitle": "O'zingizga qulay vosita orqali yozing yoki qo'ng'iroq qiling.",
+    "fastReplyBadge": "Tezkor javob",
+    "channelSubtitle": "Foydali maqolalar va tavsiyalar",
+    "instagramSubtitle": "Reelslar, amaliyot va jonli efirlar",
+    "officeTitle": "Qabul manzili va vaqti",
+    "guaranteeTitle": "100% Maxfiylik va Xavfsiz Muhit",
+    "guaranteeDesc": "Har bir uchrashuv professional psixologik etika asosida o'tkaziladi. Sizning ma'lumotlaringiz hech qachon uchinchi shaxslarga berilmaydi.",
+    "guaranteePoint1": "Shaxsingiz to'liq sir saqlanadi",
+    "guaranteePoint2": "Hukm va tanqidsiz, iliq qabul",
+    "guaranteePoint3": "Tezkor aloqa (15-30 daqiqada javob)",
+    "secureDataNotice": "Ma'lumotlaringiz xavfsiz va shifrlangan holda uzatiladi"
   },
   "applyModal": {
     "title": "Konsultatsiyaga yozilish",

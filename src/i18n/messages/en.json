@@ -436,7 +436,19 @@
     "anonymousLabel": "Anonymous mode (no name required)",
     "anonymousHint": "Your identity remains completely confidential",
     "submitButton": "Submit Request",
-    "successMessage": "Your request has been received. We will get back to you shortly."
+    "successMessage": "Your request has been received. We will get back to you shortly.",
+    "directTitle": "Direct Connection",
+    "directSubtitle": "Feel free to call or message through your preferred channel.",
+    "fastReplyBadge": "Prompt reply",
+    "channelSubtitle": "Helpful articles and reflections",
+    "instagramSubtitle": "Reels, exercises, and live sessions",
+    "officeTitle": "Location & Office Hours",
+    "guaranteeTitle": "100% Confidentiality & Safe Space",
+    "guaranteeDesc": "Every session is conducted strictly under professional psychological ethics. Your private details are never disclosed.",
+    "guaranteePoint1": "Complete personal confidentiality",
+    "guaranteePoint2": "Warm, non-judgmental acceptance",
+    "guaranteePoint3": "Quick response (within 15-30 mins)",
+    "secureDataNotice": "Your information is transmitted securely and encrypted"
   },
   "applyModal": {
     "title": "Book a Consultation",
