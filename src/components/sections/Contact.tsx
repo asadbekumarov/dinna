@@ -13,7 +13,6 @@ import {
   Send,
   MapPin,
   Clock,
-  ShieldCheck,
   Check,
   CheckCircle2,
   ArrowUpRight,
@@ -346,37 +345,6 @@ export function Contact() {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Confidentiality & Ethics Card */}
-            <div className="p-6 bg-sage/10 border border-sage/25 rounded-3xl space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-sage text-cream flex items-center justify-center shrink-0 shadow-sm">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h4 className="font-serif text-lg text-charcoal font-medium">
-                  {t("guaranteeTitle")}
-                </h4>
-              </div>
-
-              <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                {t("guaranteeDesc")}
-              </p>
-
-              <div className="pt-2 space-y-2 border-t border-sage/20 text-xs sm:text-sm text-charcoal">
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>{t("guaranteePoint1")}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>{t("guaranteePoint2")}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>{t("guaranteePoint3")}</span>
                 </div>
               </div>
             </div>
