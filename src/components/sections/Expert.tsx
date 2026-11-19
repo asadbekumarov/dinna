@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { siteMedia } from "@/config/siteMedia";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { Lightbox, LightboxMedia } from "@/components/ui/Lightbox";
-import { Badge } from "@/components/ui/badge";
 
 export function Expert() {
   const t = useTranslations("expert");
@@ -121,18 +120,6 @@ export function Expert() {
 
         {/* Diplomas & Qualifications (Mobile: Horizontal Scroll-Snap / Desktop: 3 Columns) */}
         <div id="sertifikatlar" className="pt-10 sm:pt-14 border-t border-border w-full">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3">
-              <span className="w-8 h-[2px] bg-sage rounded-full" aria-hidden="true" />
-              <Badge
-                variant="outline"
-                className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-sage border-sage/30 bg-sage/5 font-medium py-0.5 px-3 rounded-full"
-              >
-                {t("certificatesHint")}
-              </Badge>
-            </div>
-          </div>
-
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible no-scrollbar">
             {diplomas.map((doc, idx) => (
               <div
