@@ -178,7 +178,48 @@ export function Contact() {
       ? contactConfig.office.addressEn
       : contactConfig.office.addressUz;
 
+  const isUz = locale === "uz";
   const isPhoneValid = isUzbekPhoneComplete(displayPhone);
+
+  const directTitle = t.has("directTitle")
+    ? t("directTitle")
+    : isUz
+    ? "To'g'ridan-to'g'ri aloqa"
+    : locale === "ru"
+    ? "Прямая связь"
+    : "Direct Connection";
+
+  const directSubtitle = t.has("directSubtitle")
+    ? t("directSubtitle")
+    : isUz
+    ? "O'zingizga qulay vosita orqali yozing yoki qo'ng'iroq qiling."
+    : locale === "ru"
+    ? "Напишите или позвоните удобным для вас способом."
+    : "Feel free to call or message through your preferred channel.";
+
+  const fastReplyBadge = t.has("fastReplyBadge")
+    ? t("fastReplyBadge")
+    : isUz
+    ? "Tezkor javob"
+    : locale === "ru"
+    ? "Быстрый ответ"
+    : "Prompt reply";
+
+  const channelSubtitle = t.has("channelSubtitle")
+    ? t("channelSubtitle")
+    : isUz
+    ? "Foydali maqolalar va tavsiyalar"
+    : locale === "ru"
+    ? "Полезные статьи и рекомендации"
+    : "Helpful articles and reflections";
+
+  const secureDataNotice = t.has("secureDataNotice")
+    ? t("secureDataNotice")
+    : isUz
+    ? "Ma'lumotlaringiz xavfsiz va shifrlangan holda uzatiladi"
+    : locale === "ru"
+    ? "Ваши данные передаются в зашифрованном виде"
+    : "Your information is transmitted securely and encrypted";
 
   return (
     <section
@@ -214,10 +255,10 @@ export function Contact() {
             <div className="border border-border bg-white/85 rounded-3xl p-6 sm:p-7 shadow-card space-y-4">
               <div>
                 <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-normal">
-                  {t("directTitle")}
+                  {directTitle}
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-muted mt-1 leading-relaxed">
-                  {t("directSubtitle")}
+                  {directSubtitle}
                 </p>
               </div>
 
@@ -263,7 +304,7 @@ export function Contact() {
                           {t("telegramDirectLabel")}
                         </span>
                         <span className="px-2 py-0.5 rounded-full bg-sage/15 text-sage text-[10px] font-mono font-medium">
-                          {t("fastReplyBadge")}
+                          {fastReplyBadge}
                         </span>
                       </div>
                       <div className="text-sm sm:text-base font-mono font-medium text-charcoal group-hover:text-sage transition-colors truncate">
@@ -290,7 +331,7 @@ export function Contact() {
                         {t("telegramChannelLabel")}
                       </div>
                       <div className="text-xs sm:text-sm text-charcoal-muted truncate">
-                        {t("channelSubtitle")}
+                        {channelSubtitle}
                       </div>
                     </div>
                   </div>
@@ -568,7 +609,7 @@ export function Contact() {
 
                     <div className="mt-3 flex items-center justify-center gap-1.5 text-center text-[11px] text-charcoal-muted/80 font-mono">
                       <Lock className="w-3 h-3 text-sage" />
-                      <span>{t("secureDataNotice")}</span>
+                      <span>{secureDataNotice}</span>
                     </div>
                   </div>
                 </form>
