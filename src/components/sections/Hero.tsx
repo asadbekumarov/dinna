@@ -93,7 +93,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
               <Button
                 size="lg"
                 onClick={handleOpenModal}
-                className="w-full sm:w-auto h-[52px] min-h-[52px] bg-sage hover:bg-sage-hover text-cream px-8 rounded-full text-sm font-semibold tracking-wide shadow-[0_8px_24px_rgba(46,90,68,0.25)] hover:shadow-[0_12px_30px_rgba(46,90,68,0.35)] cursor-pointer active:scale-[0.98] flex items-center justify-center gap-3"
+                className="group w-full sm:w-auto h-[52px] min-h-[52px] bg-sage hover:bg-sage-hover text-cream px-8 rounded-full text-sm font-semibold tracking-wide shadow-[0_8px_24px_rgba(46,90,68,0.25)] hover:shadow-[0_12px_30px_rgba(46,90,68,0.35)] cursor-pointer active:scale-[0.98] flex items-center justify-center gap-3"
               >
                 <span>{ctaT("primary")}</span>
                 <span className="text-base transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
@@ -128,8 +128,8 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
           </div>
 
           {/* Right Column (Desktop 5 cols) — Arch Sculptural Portrait */}
-          <div className="hidden lg:flex lg:col-span-5 relative justify-end w-full">
-            <div className="relative w-full max-w-[390px]">
+          <div className="hidden lg:flex lg:col-span-5 relative justify-end w-full items-center">
+            <div className="relative w-full max-w-[345px]">
               {/* Arch Photo Container */}
               <div className="relative w-full aspect-[4/5] rounded-t-full rounded-b-2xl overflow-hidden border border-sage/20 shadow-modal bg-cream-200 group">
                 <Image
@@ -137,7 +137,7 @@ export default function Hero({ onOpenModal, onOpenApply }: HeroProps = {}) {
                   alt={t("portraitAlt")}
                   fill
                   priority
-                  sizes="390px"
+                  sizes="345px"
                   className="object-cover object-top hover:scale-[1.02] transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent pointer-events-none" />

@@ -11,8 +11,8 @@ interface AnimatedCounterProps {
 
 export function AnimatedCounter({
   value,
-  duration = 1800,
-  delay = 500,
+  duration = 1400,
+  delay = 0,
   className = "",
 }: AnimatedCounterProps) {
   // Extract number from string (e.g. "10 000+" -> 10000, suffix "+")
