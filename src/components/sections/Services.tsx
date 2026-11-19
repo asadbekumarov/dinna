@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { useApplyModal, type OpenApplyOptions } from "@/features/apply/context/ApplyModalContext";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { formatSectionKicker } from "@/config/sections";
@@ -192,13 +191,12 @@ export function Services({ onOpenApply }: ServicesProps) {
 
           <div className="shrink-0 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <Button
-              asChild
-              className="w-full sm:w-auto min-h-[48px] px-6 rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm"
+              type="button"
+              onClick={() => openApply(t("diagServiceApplyName") || "Individual konsultatsiya")}
+              className="w-full sm:w-auto min-h-[48px] px-6 rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm active:scale-[0.98] cursor-pointer"
             >
-              <Link href="/test">
-                <span>{t("diagCta")}</span>
-                <span className="ml-1.5" aria-hidden="true">→</span>
-              </Link>
+              <span>{t("diagCta")}</span>
+              <span className="ml-1.5" aria-hidden="true">→</span>
             </Button>
           </div>
         </div>
