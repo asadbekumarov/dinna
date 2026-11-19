@@ -1,14 +1,12 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { siteMedia } from "@/config/siteMedia";
 import { useApplyModal } from "@/features/apply/context/ApplyModalContext";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ShieldCheck, HeartPulse } from "lucide-react";
 
 interface BookCtaSplitProps {
   onOpenApply?: (options?: string | { service?: string }) => void;
@@ -17,134 +15,113 @@ interface BookCtaSplitProps {
 export function BookCtaSplit({ onOpenApply }: BookCtaSplitProps) {
   const { openApply } = useApplyModal();
   const handleApply = onOpenApply || openApply;
-  const tBook = useTranslations("book");
-  const tCta = useTranslations("ctaBand");
-  const { cover } = siteMedia.book;
+  const t = useTranslations("book");
 
-  const handleOrderBook = () => {
-    handleApply(tBook("bookTitle"));
+  const handleConsultation = () => {
+    handleApply(t("card1Title"));
   };
-
-  const specs = [
-    { label: tBook("spec1Label"), value: tBook("spec1Value") },
-    { label: tBook("spec2Label"), value: tBook("spec2Value") },
-    { label: tBook("spec3Label"), value: tBook("spec3Value") },
-  ];
 
   return (
     <section
-      id="kitob"
-      aria-label={tBook("sectionAria")}
+      id="qabul"
+      aria-label={t("sectionAria")}
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
-            {tBook("titlePrefix")}
+            {t("titlePrefix")}
             <span className="italic text-sage ml-1">
-              {tBook("titleHighlight")}
+              {t("titleHighlight")}
             </span>
           </MaskedHeading>
         </div>
 
-        {/* 2 Blocks Stacked on Mobile, Side-by-Side 7/5 on Desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          {/* Block 1: The Book (lg:col-span-7) */}
-          <article className="lg:col-span-7 bg-white/80 border border-border rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/40 transition-colors">
+        {/* 2 Equal Cards: Consultation & Assessment */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+          {/* Card 1: Individual Consultation */}
+          <article className="bg-white/90 border border-border rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/40 transition-colors">
             <div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-terracotta-dark font-semibold block mb-2">
-                {tBook("badge")}
-              </span>
+              <div className="w-11 h-11 rounded-xl bg-sage-soft text-sage flex items-center justify-center mb-5">
+                <HeartPulse className="w-5 h-5 text-sage" aria-hidden="true" />
+              </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3">
-                {tBook("bookTitle")}
+              <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3 leading-snug">
+                {t("card1Title")}
               </h3>
 
-              <p className="text-sm text-charcoal-muted leading-relaxed mb-6">
-                {tBook("description")}
+              <p className="text-sm text-charcoal-muted leading-relaxed mb-6 font-normal">
+                {t("card1Desc")}
               </p>
 
-              {/* Cover & Specs */}
-              <div className="pt-6 border-t border-border grid grid-cols-1 sm:grid-cols-12 gap-6 items-center mb-6">
-                <div className="sm:col-span-4 flex justify-center">
-                  <div className="relative w-[140px] aspect-[1/1.38] rounded-xl overflow-hidden shadow-card border border-border">
-                    <Image
-                      src={cover.src}
-                      alt={cover.alt}
-                      fill
-                      sizes="140px"
-                      className="object-cover"
-                      loading="lazy"
-                    />
-                  </div>
+              <div className="p-4 bg-cream-50 rounded-xl border border-border text-xs text-charcoal/90 space-y-2.5 mb-6">
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card1Point1")}</span>
                 </div>
-
-                <div className="sm:col-span-8 space-y-2.5 font-mono text-xs">
-                  {specs.map((item, idx) => (
-                    <div key={idx} className="flex items-baseline justify-between py-1.5 border-b border-border/70">
-                      <span className="text-charcoal-muted uppercase">{item.label}</span>
-                      <span className="font-semibold text-charcoal">{item.value}</span>
-                    </div>
-                  ))}
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card1Point2")}</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card1Point3")}</span>
                 </div>
               </div>
             </div>
 
-            {/* CTA 1: Order Book */}
+            {/* CTA 1: Apply for consultation */}
             <div className="pt-4 border-t border-border">
               <Button
                 type="button"
-                onClick={handleOrderBook}
-                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm"
+                onClick={handleConsultation}
+                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-sm font-semibold tracking-wide shadow-sm"
               >
-                {tBook("cta")} →
+                {t("card1Cta")} &rarr;
               </Button>
             </div>
           </article>
 
-          {/* Block 2: Quick Diagnostic & Consultation CTA (lg:col-span-5) */}
-          <article className="lg:col-span-5 bg-cream-200/90 border border-sage/30 rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card">
+          {/* Card 2: 3-Minute Assessment Test */}
+          <article className="bg-cream-200/80 border border-sage/30 rounded-2xl p-6 sm:p-9 flex flex-col justify-between shadow-card hover:border-sage/50 transition-colors">
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-                <span className="font-mono text-[10px] uppercase tracking-wider text-sage font-bold">
-                  {tCta("kicker")}
-                </span>
+              <div className="w-11 h-11 rounded-xl bg-terracotta-soft text-terracotta-dark flex items-center justify-center mb-5">
+                <ShieldCheck className="w-5 h-5 text-terracotta-dark" aria-hidden="true" />
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal mb-3 leading-snug">
-                {tCta("title")}
+                {t("card2Title")}
               </h3>
 
-              <p className="text-sm text-charcoal-muted leading-relaxed mb-6">
-                {tCta("description")}
+              <p className="text-sm text-charcoal-muted leading-relaxed mb-6 font-normal">
+                {t("card2Desc")}
               </p>
 
-              <div className="p-4 bg-white/70 rounded-xl border border-border/80 text-xs text-charcoal/90 space-y-2 mb-6">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>3 daqiqalik holat diagnostikasi</span>
+              <div className="p-4 bg-white/80 rounded-xl border border-border text-xs text-charcoal/90 space-y-2.5 mb-6">
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card2Point1")}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>Toshkent 5/5 oflayn & Dunyo onlayn</span>
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card2Point2")}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-sage shrink-0" />
-                  <span>100% konfidensial va xavfsiz muhit</span>
+                <div className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />
+                  <span>{t("card2Point3")}</span>
                 </div>
               </div>
             </div>
 
-            {/* CTA 2: Start Diagnostic */}
-            <div className="pt-4 border-t border-border/80 flex flex-col sm:flex-row gap-3">
+            {/* CTA 2: Start 3-minute test */}
+            <div className="pt-4 border-t border-border/80">
               <Button
                 asChild
-                className="w-full min-h-[48px] rounded-full bg-sage hover:bg-sage-hover text-cream text-xs font-semibold tracking-wide shadow-sm"
+                className="w-full sm:w-auto min-h-[48px] px-8 rounded-full bg-sage hover:bg-sage-hover text-cream text-sm font-semibold tracking-wide shadow-sm"
               >
                 <Link href="/test">
-                  <span>{tCta("ctaDiagnostic")} →</span>
+                  <span>{t("card2Cta")} &rarr;</span>
                 </Link>
               </Button>
             </div>
