@@ -96,7 +96,7 @@ export function Stages({ onOpenApply }: StagesProps) {
           {steps.map((step, idx) => (
             <article
               key={step.num || idx}
-              className="pt-6 border-t-2 border-sage/30 flex flex-col justify-between group hover:border-sage transition-colors duration-300"
+              className="pt-6 border-t-2 border-sage/30 flex flex-col justify-between h-full group hover:border-sage transition-colors duration-300"
             >
               <div>
                 {/* Meta Header */}
@@ -121,7 +121,7 @@ export function Stages({ onOpenApply }: StagesProps) {
               </div>
 
               {/* Highlights List */}
-              <ul className="space-y-2 py-4 border-t border-border text-xs text-charcoal/90">
+              <ul className="space-y-2 py-4 border-t border-border text-xs text-charcoal/90 mt-auto">
                 {step.highlights?.map((h, hIdx) => (
                   <li key={hIdx} className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-sage shrink-0 mt-0.5" />

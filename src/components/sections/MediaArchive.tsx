@@ -83,11 +83,11 @@ export function MediaArchive({}: MediaArchiveProps = {}) {
 
         {/* Tab 1: Testimonials (Mobile: Scroll-snap horizontal cards 80vw / Desktop: 2-3 Columns) */}
         {activeTab === "testimonials" && (
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible no-scrollbar">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:items-stretch sm:overflow-visible no-scrollbar">
             {testimonialsList.map((item) => (
               <article
                 key={item.id}
-                className="snap-center w-[80vw] max-w-[340px] shrink-0 sm:w-auto sm:shrink bg-white/80 border border-border rounded-2xl p-6 sm:p-7 shadow-card flex flex-col justify-between hover:border-sage/40 transition-colors"
+                className="snap-center w-[80vw] max-w-[340px] shrink-0 sm:w-auto sm:shrink bg-white/80 border border-border rounded-2xl p-6 sm:p-7 shadow-card flex flex-col justify-between h-full hover:border-sage/40 transition-colors"
               >
                 <div>
                   {/* Top Quote & Rating */}

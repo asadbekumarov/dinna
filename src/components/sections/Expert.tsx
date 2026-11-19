@@ -64,9 +64,9 @@ export function Expert() {
         </div>
 
         {/* 12-Column Editorial Grid (Desktop: Portrait left, Bio right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch mb-16">
           {/* Left Column (Desktop 5 cols) — Arch Portrait */}
-          <div className="hidden lg:block lg:col-span-5">
+          <div className="hidden lg:flex lg:col-span-5 flex-col justify-between h-full">
             <div className="relative aspect-[4/5] w-full rounded-t-full rounded-b-2xl overflow-hidden border border-sage/20 shadow-card bg-cream-200 group">
               <Image
                 src={portrait.src}
@@ -77,35 +77,39 @@ export function Expert() {
                 loading="lazy"
               />
             </div>
-            <div className="mt-4 pt-3 border-t border-border flex items-baseline justify-between font-mono text-xs uppercase tracking-wider text-charcoal-muted">
+            <div className="mt-4 pt-3 border-t border-border flex items-baseline justify-between font-mono text-xs uppercase tracking-wider text-charcoal-muted shrink-0">
               <span className="text-charcoal font-semibold">{t("name")}</span>
               <span className="text-sage font-bold">{t("experience")}</span>
             </div>
           </div>
 
           {/* Right Column (Desktop 7 cols) — Bio, Pull Quote & Philosophy */}
-          <div className="lg:col-span-7 space-y-8">
-            {/* Pull Quote */}
-            <blockquote className="border-l-2 border-sage pl-5 sm:pl-6 py-2 font-serif italic text-lg sm:text-2xl text-charcoal leading-relaxed bg-cream-200/50 rounded-r-2xl">
-              &ldquo;{t("quote")}&rdquo;
-            </blockquote>
+          <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-6">
+            <div className="space-y-6">
+              {/* Pull Quote */}
+              <blockquote className="border-l-2 border-sage pl-5 sm:pl-6 py-2.5 font-serif italic text-lg sm:text-2xl text-charcoal leading-relaxed bg-cream-200/50 rounded-r-2xl">
+                &ldquo;{t("quote")}&rdquo;
+              </blockquote>
 
-            {/* Biography Prose */}
-            <div className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed space-y-4">
-              <p>{t("bio1")}</p>
-              <p>{t("bio2")}</p>
+              {/* Biography Prose */}
+              <div className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed space-y-4">
+                <p>{t("bio1")}</p>
+                <p>{t("bio2")}</p>
+              </div>
             </div>
 
             {/* 3 Pillars: Editorial Cards with Top Border */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4 border-t border-border">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4 border-t border-border mt-auto">
               {pillars.map((p, idx) => (
-                <div key={idx} className="pt-3 border-t border-sage/30">
-                  <span className="font-mono text-[10px] text-terracotta-dark font-semibold uppercase tracking-wider block mb-1">
-                    {p.tag}
-                  </span>
-                  <h4 className="text-sm sm:text-base font-serif text-charcoal font-normal mb-1">
-                    {p.title}
-                  </h4>
+                <div key={idx} className="pt-3 border-t border-sage/30 flex flex-col justify-between">
+                  <div>
+                    <span className="font-mono text-[10px] text-terracotta-dark font-semibold uppercase tracking-wider block mb-1">
+                      {p.tag}
+                    </span>
+                    <h4 className="text-sm sm:text-base font-serif text-charcoal font-normal mb-1">
+                      {p.title}
+                    </h4>
+                  </div>
                   <p className="text-xs text-charcoal-muted leading-relaxed">
                     {p.desc}
                   </p>

@@ -127,69 +127,71 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           {/* Left Column (Sticky Sidebar on Desktop): Header, Search, Categories, and Help Card */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
-            <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
-                {isUz ? t("headlineUz") : t("headline")}
-              </h2>
+          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal tracking-tight leading-[1.16]">
+                  {isUz ? t("headlineUz") : t("headline")}
+                </h2>
 
-              <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4">
-                {t("lede")}
-              </p>
-            </div>
+                <p className="text-sm sm:text-base text-charcoal-muted font-normal leading-relaxed mt-4">
+                  {t("lede")}
+                </p>
+              </div>
 
-            {/* Search Bar */}
-            <div className="relative flex items-center">
-              <span className="absolute left-4 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
-                <Search className="w-4 h-4 text-sage" />
-              </span>
+              {/* Search Bar */}
+              <div className="relative flex items-center">
+                <span className="absolute left-4 pointer-events-none text-sage flex items-center justify-center" aria-hidden="true">
+                  <Search className="w-4 h-4 text-sage" />
+                </span>
 
-              <Input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={t("searchPlaceholder")}
-                aria-label={t("searchLabel")}
-                className="w-full h-12 pl-11 pr-12 rounded-full bg-white text-charcoal placeholder:text-charcoal-muted/70 text-base border-border focus:border-sage focus:ring-1 focus:ring-sage shadow-sm"
-              />
+                <Input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={t("searchPlaceholder")}
+                  aria-label={t("searchLabel")}
+                  className="w-full h-12 pl-11 pr-12 rounded-full bg-white text-charcoal placeholder:text-charcoal-muted/70 text-base border-border focus:border-sage focus:ring-1 focus:ring-sage shadow-sm"
+                />
 
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => setSearchQuery("")}
-                  aria-label={t("clearSearch")}
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-            </div>
-
-            {/* Category Filter Chips */}
-            <div className="flex flex-wrap gap-2 pt-1">
-              {categories.map((cat) => {
-                const isSelected = selectedCategory === cat.key;
-                return (
+                {searchQuery && (
                   <button
-                    key={cat.key}
                     type="button"
-                    onClick={() => setSelectedCategory(cat.key)}
-                    className={`min-h-[40px] px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer flex items-center justify-center ${
-                      isSelected
-                        ? "bg-sage text-cream shadow-sm font-semibold"
-                        : "bg-white/80 hover:bg-cream-200 text-charcoal-muted hover:text-charcoal border border-border"
-                    }`}
+                    onClick={() => setSearchQuery("")}
+                    aria-label={t("clearSearch")}
+                    className="w-11 h-11 min-w-[44px] min-h-[44px] absolute right-1 flex items-center justify-center text-charcoal-muted hover:text-charcoal transition-colors cursor-pointer rounded-full"
                   >
-                    {cat.label}
+                    <X className="w-4 h-4" />
                   </button>
-                );
-              })}
+                )}
+              </div>
+
+              {/* Category Filter Chips */}
+              <div className="flex flex-wrap gap-2 pt-1">
+                {categories.map((cat) => {
+                  const isSelected = selectedCategory === cat.key;
+                  return (
+                    <button
+                      key={cat.key}
+                      type="button"
+                      onClick={() => setSelectedCategory(cat.key)}
+                      className={`min-h-[40px] px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer flex items-center justify-center ${
+                        isSelected
+                          ? "bg-sage text-cream shadow-sm font-semibold"
+                          : "bg-white/80 hover:bg-cream-200 text-charcoal-muted hover:text-charcoal border border-border"
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Assistance Card (Desktop only in left column) */}
-            <div className="hidden lg:block bg-white/85 border border-border rounded-2xl p-6 sm:p-7 shadow-card space-y-3 mt-4">
+            {/* Assistance Card (Desktop only in left column, pinned to bottom) */}
+            <div className="hidden lg:block bg-white/85 border border-border rounded-2xl p-6 sm:p-7 shadow-card space-y-3 mt-auto">
               <div className="w-10 h-10 rounded-full bg-sage/10 text-sage flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-sage" />
               </div>
@@ -211,7 +213,7 @@ export function FAQ({ isLoading = false }: FAQProps = {}) {
           </div>
 
           {/* Right Column: Accordion Questions */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 flex flex-col justify-between h-full">
             {filteredItems.length === 0 ? (
               <div className="py-14 text-center text-charcoal-muted font-mono text-sm bg-white/60 rounded-2xl border border-dashed border-border p-8">
                 {t("noResults")}
