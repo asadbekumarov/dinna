@@ -642,7 +642,6 @@
       {
         "id": "test-1",
         "author": "Client Review",
-        "role": "Result of 2 sessions",
         "format": "Result of 2 sessions",
         "avatarText": "CR",
         "highlight": "Healed childhood pain calmly and without tears",
@@ -651,7 +650,6 @@
       {
         "id": "test-2",
         "author": "Client Recommendation",
-        "role": "Personal therapy",
         "format": "Personal therapy",
         "avatarText": "CR",
         "highlight": "Released the burdens I couldn't share with anyone",
@@ -660,7 +658,6 @@
       {
         "id": "test-3",
         "author": "Client Review",
-        "role": "Online session",
         "format": "Online session",
         "avatarText": "CR",
         "highlight": "Positive changes felt in less than 10 days",
@@ -669,7 +666,6 @@
       {
         "id": "test-4",
         "author": "Client Review",
-        "role": "Personal session",
         "format": "Personal session",
         "avatarText": "CR",
         "highlight": "Deeply feeling positive personal transformation",
@@ -678,7 +674,6 @@
       {
         "id": "test-5",
         "author": "Client Review",
-        "role": "Signature therapy",
         "format": "Signature therapy",
         "avatarText": "CR",
         "highlight": "Learned to value myself and receive without guilt",
@@ -687,7 +682,6 @@
       {
         "id": "test-6",
         "author": "Client Review",
-        "role": "Single consultation result",
         "format": "Single consultation result",
         "avatarText": "CR",
         "highlight": "Immediate breakthrough after just one session",

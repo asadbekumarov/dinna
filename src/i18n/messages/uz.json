@@ -642,7 +642,6 @@
       {
         "id": "test-1",
         "author": "Mijoz fikri",
-        "role": "2 ta seans natijasi",
         "format": "2 ta seans natijasi",
         "avatarText": "MF",
         "highlight": "Bolalik og'rig'idan og'riqsiz xalos bo'ldim",
@@ -651,7 +650,6 @@
       {
         "id": "test-2",
         "author": "Mijoz tavsiyasi",
-        "role": "Shaxsiy terapiya",
         "format": "Shaxsiy terapiya",
         "avatarText": "MT",
         "highlight": "Birovga aytolmaydigan og'riqlar ketdi",
@@ -660,7 +658,6 @@
       {
         "id": "test-3",
         "author": "Mijoz fikri",
-        "role": "Onlayn seans",
         "format": "Onlayn seans",
         "avatarText": "MF",
         "highlight": "10 kunda ijobiy o'zgarishlar sezildi",
@@ -669,7 +666,6 @@
       {
         "id": "test-4",
         "author": "Mijoz fikri",
-        "role": "Shaxsiy seans",
         "format": "Shaxsiy seans",
         "avatarText": "MF",
         "highlight": "O'zimdagi o'zgarishlarni chuqur sezyapman",
@@ -678,7 +674,6 @@
       {
         "id": "test-5",
         "author": "Mijoz fikri",
-        "role": "Mualliflik terapiyasi",
         "format": "Mualliflik terapiyasi",
         "avatarText": "MF",
         "highlight": "O'zimni qadrlashni va haqli ekanimni angladim",
@@ -687,7 +682,6 @@
       {
         "id": "test-6",
         "author": "Mijoz fikri",
-        "role": "Bir martalik konsultatsiya",
         "format": "Bir martalik konsultatsiya",
         "avatarText": "MF",
         "highlight": "Bir martalik konsultatsiyaning o'zidayoq natija",
