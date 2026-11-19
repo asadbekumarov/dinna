@@ -12,6 +12,8 @@ export type { MediaItem, VideoItem, ReelItem, PartnerLogo, CityEvent, DiplomaIte
 export const siteMedia = {
   brand: {
     logoText: "DINNA MIRZABAYEVA",
+    logoMark: "/images/brand/logo-mark.webp",
+    logoFull: "/images/brand/logo.webp",
     ogImage: "/images/brand/og-image.png",
     consultantName: "Dinna Mirzabayeva",
   },

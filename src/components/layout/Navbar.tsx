@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
@@ -139,11 +140,16 @@ export function Navbar({ onOpenApply }: NavbarProps) {
               aria-label={common("brandAria")}
               className="group flex items-center gap-2.5 sm:gap-3 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/40 rounded-full py-1 pr-2 select-none"
             >
-              {/* Minimalist Monogram Badge (>= 40px, 44px touch target) */}
-              <div className="w-11 h-11 rounded-full bg-sage border border-sage/20 group-hover:bg-sage-hover flex items-center justify-center shrink-0 transition-all duration-300 shadow-[0_2px_10px_rgba(46,90,68,0.2)]">
-                <span className="font-serif text-sm font-semibold tracking-wider text-cream">
-                  DM
-                </span>
+              {/* Canva Brand Monogram Badge (>= 40px, 44px touch target) */}
+              <div className="w-11 h-11 rounded-full overflow-hidden border border-sage/25 group-hover:border-sage bg-cream-100 flex items-center justify-center shrink-0 transition-all duration-300 shadow-[0_2px_10px_rgba(46,90,68,0.15)] relative">
+                <Image
+                  src="/images/brand/logo-mark.webp"
+                  alt="Dinna Mirzabayeva Logo"
+                  width={44}
+                  height={44}
+                  priority
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               {/* Brand Typography */}
