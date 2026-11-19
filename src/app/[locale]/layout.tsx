@@ -35,11 +35,55 @@ export async function generateMetadata({
     ? "Динна Мирзабаева (@m1rzabayevaa_021) — Индивидуальные психологические консультации в Ташкенте (5/5) и онлайн по всему миру, авторские тренинги личностного роста."
     : "Dinna Mirzabayeva (@m1rzabayevaa_021) — In-person psychological consultations in Tashkent (5/5), worldwide online therapy, and transformational personal growth trainings.";
 
+  const keywords = isUz
+    ? [
+        "psixolog toshkent",
+        "dinna mirzabayeva",
+        "psixologik konsultatsiya",
+        "amaliyotchi psixolog",
+        "onlayn psixolog",
+        "shaxsiy rivojlanish treyningi",
+        "ruhiy xotirjamlik",
+        "ichki xavotir va depressiya",
+        "psixolog qabuli",
+        "toshkent 5/5 psixolog",
+        "individual terapiya",
+        "oilaviy psixolog",
+        "psixologik test diagnostika",
+      ]
+    : isRu
+    ? [
+        "психолог ташкент",
+        "динна мирзабаева",
+        "психологическая консультация ташкент",
+        "онлайн психолог узбекистан",
+        "практикующий психолог",
+        "тренинги личностного роста",
+        "душевное спокойствие",
+        "избавление от тревоги",
+        "запись к психологу ташкент",
+        "психологический тест",
+      ]
+    : [
+        "psychologist tashkent",
+        "dinna mirzabayeva",
+        "psychological consultation tashkent",
+        "online psychologist uzbekistan",
+        "mental wellness coach",
+        "personal growth trainings",
+        "anxiety and stress relief",
+        "confidential psychological therapy",
+      ];
+
   const isProduction = process.env.VERCEL_ENV === "production";
 
   return {
     title,
     description,
+    keywords,
+    authors: [{ name: "Dinna Mirzabayeva", url: `${SITE_URL}/${locale}` }],
+    creator: "Dinna Mirzabayeva",
+    publisher: "Dinna Mirzabayeva",
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: `/${locale}`,
@@ -56,7 +100,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "uz" ? "uz_UZ" : locale === "ru" ? "ru_RU" : "en_US",
       url: `${SITE_URL}/${locale}`,
-      siteName: "Dinna Mirzabayeva",
+      siteName: "Dinna Mirzabayeva — Psixolog",
       images: [
         {
           url: `${SITE_URL}/og-image.png`,
@@ -64,7 +108,7 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           type: "image/png",
-          alt: "Dinna Mirzabayeva — Psixolog",
+          alt: "Dinna Mirzabayeva — Amaliyotchi Psixolog & Shaxsiy Rivojlanish Treneri",
         },
       ],
     },
@@ -73,20 +117,31 @@ export async function generateMetadata({
       title,
       description,
       images: [`${SITE_URL}/og-image.png`],
+      creator: "@m1rzabayevaa_021",
     },
     icons: {
       icon: [
         { url: "/favicon.ico" },
-        { url: "/icon.png", type: "image/png" },
+        { url: "/images/brand/logo-mark.webp", type: "image/webp" },
       ],
       shortcut: "/favicon.ico",
       apple: [
-        { url: "/apple-icon.png", type: "image/png" },
+        { url: "/images/brand/logo-mark.webp", type: "image/webp" },
       ],
     },
     robots: !isProduction
       ? { index: false, follow: false }
-      : { index: true, follow: true },
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
   };
 }
 
@@ -115,23 +170,65 @@ export default async function RootLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["Person", "HealthAndBeautyBusiness"],
+    "@type": ["Person", "HealthAndBeautyBusiness", "MedicalBusiness"],
+    "@id": `${SITE_URL}/#dinna-mirzabayeva`,
     name: "Dinna Mirzabayeva",
+    alternateName: "Динна Мирзабаева",
     jobTitle:
       locale === "ru"
-        ? "Психолог и тренер личностного роста"
+        ? "Практикующий психолог и тренер личностного роста"
         : locale === "en"
-        ? "Psychologist & Personal Growth Coach"
-        : "Psixolog va Shaxsiy Rivojlanish Treneri",
+        ? "Certified Psychologist & Personal Growth Coach"
+        : "Amaliyotchi psixolog va shaxsiy rivojlanish treneri",
+    description:
+      locale === "ru"
+        ? "Индивидуальные психологические консультации в Ташкенте (5/5) и онлайн по всему миру. 100% конфиденциальность и бережная терапия."
+        : locale === "en"
+        ? "Confidential in-person psychological therapy in Tashkent (5/5) and worldwide online sessions."
+        : "Toshkentda oflayn (5/5) va dunyo bo'ylab onlayn individual psixologik konsultatsiyalar hamda mualliflik treninglari.",
     url: `${SITE_URL}/${locale}`,
-    image: `${SITE_URL}/images/hero/portrait.webp`,
+    image: `${SITE_URL}/images/hero/dinna-mirzabayeva-hero.webp`,
+    logo: `${SITE_URL}/images/brand/logo.webp`,
     telephone: contactConfig.phone.clean,
+    priceRange: "$$",
+    currenciesAccepted: "UZS, USD",
+    paymentAccepted: "Cash, Card, Payme, Click",
+    medicalSpecialty: "Psychology",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Toshkent shahri, 5/5",
       addressLocality: "Tashkent",
       addressCountry: "UZ",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "41.311081",
+      longitude: "69.240562",
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "10:00",
+        closes: "19:00",
+      },
+    ],
+    knowsAbout: [
+      "Psixologiya",
+      "Individual konsultatsiya",
+      "Stress va xavotirni yengish",
+      "Ruhiy xotirjamlik",
+      "Shaxsiy chegaralar",
+      "Munosabatlar terapiyasi",
+      "Art-terapiya",
+    ],
     sameAs: [
       contactConfig.instagram.url,
       contactConfig.telegramDirect.url,
