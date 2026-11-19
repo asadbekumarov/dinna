@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useSyncExternalStore, useCallback } from "react";
 
 /**
  * Custom hook for responsive CSS media queries using useSyncExternalStore.
@@ -9,21 +9,24 @@ import { useSyncExternalStore } from "react";
  * Example: const isDesktop = useMediaQuery("(min-width: 768px)");
  */
 export function useMediaQuery(query: string): boolean {
-  const subscribe = (callback: () => void) => {
-    if (typeof window === "undefined") return () => {};
-    const mediaQueryList = window.matchMedia(query);
-    mediaQueryList.addEventListener("change", callback);
-    return () => mediaQueryList.removeEventListener("change", callback);
-  };
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      if (typeof window === "undefined") return () => {};
+      const mediaQueryList = window.matchMedia(query);
+      mediaQueryList.addEventListener("change", callback);
+      return () => mediaQueryList.removeEventListener("change", callback);
+    },
+    [query]
+  );
 
-  const getSnapshot = () => {
+  const getSnapshot = useCallback(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia(query).matches;
-  };
+  }, [query]);
 
-  const getServerSnapshot = () => {
+  const getServerSnapshot = useCallback(() => {
     return false; // Mobile-first default snapshot
-  };
+  }, []);
 
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
