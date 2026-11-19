@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { siteMedia } from "@/config/siteMedia";
 import { MaskedHeading } from "@/components/ui/MaskedHeading";
-import { Lightbox, LightboxMedia } from "@/components/ui/Lightbox";
 
 export function Expert() {
   const t = useTranslations("expert");
   const { portrait } = siteMedia.expert;
-  const diplomas = siteMedia.diplomas;
-  const [activeMedia, setActiveMedia] = useState<LightboxMedia | null>(null);
 
   const pillars = [
     {
@@ -117,84 +114,7 @@ export function Expert() {
             </div>
           </div>
         </div>
-
-        {/* Diplomas & Qualifications (Mobile: Horizontal Scroll-Snap / Desktop: 3 Columns) */}
-        <div id="sertifikatlar" className="pt-10 sm:pt-14 border-t border-border w-full">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible no-scrollbar">
-            {diplomas.map((doc, idx) => (
-              <div
-                key={doc.id || idx}
-                role="button"
-                tabIndex={0}
-                onClick={() =>
-                  setActiveMedia({
-                    src: doc.src,
-                    title: doc.title,
-                    issuer: doc.issuer,
-                    year: doc.year,
-                    alt: doc.alt,
-                  })
-                }
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setActiveMedia({
-                      src: doc.src,
-                      title: doc.title,
-                      issuer: doc.issuer,
-                      year: doc.year,
-                      alt: doc.alt,
-                    });
-                  }
-                }}
-                aria-label={`${doc.title} — zoom`}
-                className="snap-center min-w-[260px] sm:min-w-0 group relative bg-white/80 border border-border hover:border-sage/40 p-4 rounded-2xl shadow-card transition-all duration-300 cursor-pointer flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream-100 rounded-xl mb-3 border border-border/80 flex items-center justify-center p-2">
-                    <Image
-                      src={doc.thumb}
-                      alt={doc.alt}
-                      fill
-                      loading="lazy"
-                      sizes="(max-width: 640px) 260px, (max-width: 1024px) 50vw, 380px"
-                      className="object-contain w-full h-full group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-                    />
-                    <div className="absolute bottom-2 right-2 bg-sage text-cream px-2 py-0.5 rounded-full font-mono text-[10px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-sm">
-                      Zoom
-                    </div>
-                  </div>
-
-                  <h4 className="text-xs sm:text-sm font-medium text-charcoal line-clamp-2 leading-snug group-hover:text-sage transition-colors">
-                    {doc.title}
-                  </h4>
-                  {doc.issuer && (
-                    <p className="text-[11px] text-charcoal-muted font-normal line-clamp-1 mt-1 font-mono">
-                      {doc.issuer}
-                    </p>
-                  )}
-                </div>
-
-                <div className="pt-3 mt-3 border-t border-border flex items-center justify-between text-xs">
-                  <span className="font-mono text-[10px] text-sage font-semibold">
-                    {doc.year || "CERT"}
-                  </span>
-                  <span className="text-[11px] text-charcoal-muted group-hover:text-sage font-medium">
-                    Ko&apos;rish →
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
-
-      {/* Accessible Lightbox Modal */}
-      <Lightbox
-        isOpen={Boolean(activeMedia)}
-        onClose={() => setActiveMedia(null)}
-        media={activeMedia}
-      />
     </section>
   );
 }
