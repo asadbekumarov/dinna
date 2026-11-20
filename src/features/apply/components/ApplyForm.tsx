@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Badge } from "@/components/ui/badge";
 import { Lock, Sparkles, MapPin, Video, AlertCircle } from "lucide-react";
 
 interface ApplyFormProps {
@@ -410,13 +409,10 @@ export function ApplyForm({ onSuccess, selectedService }: ApplyFormProps) {
 
             {isAnonymous && (
               <div className="mt-3 pt-2.5 border-t border-border/60 animate-in fade-in duration-200">
-                <Badge
-                  variant="outline"
-                  className="bg-sage/10 text-sage border-sage/30 text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 rounded-full w-full justify-center"
-                >
+                <div className="text-sage text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 justify-center">
                   <Sparkles className="w-3.5 h-3.5 text-terracotta shrink-0" />
                   <span>{t("anonymousBadge")}</span>
-                </Badge>
+                </div>
               </div>
             )}
           </div>

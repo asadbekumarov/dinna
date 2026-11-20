@@ -230,11 +230,6 @@ export function Contact() {
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-border text-charcoal-muted font-mono text-xs uppercase tracking-wider mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-            <span>{t("kicker")}</span>
-          </div>
-
           <MaskedHeading className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-charcoal leading-[1.16]">
             {t("titlePrefix")}
             <span className="italic text-sage ml-1">
@@ -299,14 +294,9 @@ export function Contact() {
                       <Send className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider">
-                          {t("telegramDirectLabel")}
-                        </span>
-                        <span className="px-2 py-0.5 rounded-full bg-sage/15 text-sage text-[10px] font-mono font-medium">
-                          {fastReplyBadge}
-                        </span>
-                      </div>
+                      <span className="font-mono text-[11px] text-charcoal-muted uppercase tracking-wider block">
+                        {t("telegramDirectLabel")}
+                      </span>
                       <div className="text-sm sm:text-base font-mono font-medium text-charcoal group-hover:text-sage transition-colors truncate">
                         {contactConfig.telegramDirect.display}
                       </div>
@@ -398,10 +388,6 @@ export function Contact() {
               <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 bg-sage/10 rounded-full blur-3xl" />
 
               <div className="relative z-10 mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-border text-charcoal-muted font-mono text-[11px] uppercase tracking-wider mb-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-                  <span>Qabulga ariza</span>
-                </div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
                   {t("formTitle")}
                 </h3>

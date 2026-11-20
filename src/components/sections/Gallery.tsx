@@ -76,13 +76,8 @@ export function Gallery() {
       aria-label={t("headline")}
       className="scroll-mt-20 py-[var(--section-y)] border-b border-border bg-cream text-charcoal relative overflow-x-clip"
     >
-      {/* Section Header: Minimalist — Small kicker and one serif headline */}
+      {/* Section Header: Minimalist — One serif headline */}
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 mb-7 sm:mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cream-200 border border-border text-charcoal-muted font-mono text-[11px] sm:text-xs uppercase tracking-wider mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-          <span>{t("kicker")}</span>
-        </div>
-
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal tracking-tight leading-[1.2] max-w-2xl">
           {t("headline")}
         </h2>

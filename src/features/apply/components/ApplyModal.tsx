@@ -60,11 +60,6 @@ export function ApplyModal({
 
       {isSuccess ? (
         <div className="py-2 text-left animate-in fade-in duration-300">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-sage/10 rounded-full font-mono text-xs text-sage font-medium mb-4">
-            <span className="w-2 h-2 rounded-full bg-sage animate-pulse shrink-0" />
-            <span>{t("thankYouBadge")}</span>
-          </div>
-
           <h4 className="font-serif text-2xl sm:text-3xl text-charcoal mb-3">
             {t("thankYouTitle")}
           </h4>

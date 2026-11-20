@@ -61,7 +61,7 @@ export function Services({ onOpenApply }: ServicesProps) {
                 {/* Meta Bar */}
                 <div className="flex items-center justify-between text-xs font-mono text-charcoal-muted mb-3">
                   <span className="text-sage font-bold tracking-widest">{service.index}</span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-cream-200 border border-border text-[11px]">
+                  <span className="text-[11px] text-charcoal-muted">
                     {service.time}
                   </span>
                 </div>
@@ -162,12 +162,6 @@ export function Services({ onOpenApply }: ServicesProps) {
         {/* Diagnostic CTA Monolith */}
         <div className="border border-sage/30 bg-cream-200/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-wider text-sage font-semibold">
-                {t("diagKicker")}
-              </span>
-            </div>
             <h4 className="font-serif text-xl sm:text-2xl text-charcoal font-normal mb-1">
               {t("diagTitle")}
             </h4>

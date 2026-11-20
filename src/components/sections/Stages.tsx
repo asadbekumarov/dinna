@@ -102,7 +102,7 @@ export function Stages({ onOpenApply }: StagesProps) {
                 {/* Meta Header */}
                 <div className="flex items-center justify-between font-mono text-xs text-charcoal-muted mb-4">
                   <span className="text-2xl font-serif text-sage font-light">{step.num}</span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-cream-200 border border-border text-[11px]">
+                  <span className="text-[11px] text-charcoal-muted">
                     {step.time}
                   </span>
                 </div>

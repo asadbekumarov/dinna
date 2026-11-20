@@ -16,7 +16,6 @@ import {
 } from "@/lib/formatPhone";
 import { contactConfig } from "@/config/contact";
 import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -279,15 +278,6 @@ export function QuizView() {
         {/* ================= STEP 1: INTRO ================= */}
         {step === "intro" && (
           <div className="w-full bg-[#142820] text-cream border-0 sm:border border-[#C59B6D]/30 rounded-none sm:rounded-3xl p-6 sm:p-10 shadow-none sm:shadow-2xl relative overflow-hidden transition-all">
-            <div className="mb-4">
-              <Badge
-                variant="outline"
-                className="bg-[#DFBA73]/15 text-[#DFBA73] border-[#DFBA73]/40 text-xs font-mono uppercase tracking-[0.2em] px-3.5 py-1 rounded-full font-medium"
-              >
-                {t("badge")}
-              </Badge>
-            </div>
-
             <h1 className="text-2xl sm:text-4xl font-serif text-cream font-normal leading-tight tracking-tight mb-4">
               {t("introTitle")}
             </h1>
@@ -455,13 +445,10 @@ export function QuizView() {
 
               {isAnonymous && (
                 <div className="mt-3 pt-2.5 border-t border-white/10 animate-in fade-in duration-200">
-                  <Badge
-                    variant="outline"
-                    className="bg-[#DFBA73]/10 text-[#DFBA73] border-[#DFBA73]/30 text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 rounded-full w-full justify-center"
-                  >
+                  <div className="text-[#DFBA73] text-[11px] font-normal py-1 px-3 flex items-center gap-1.5 justify-center">
                     <Sparkles className="w-3.5 h-3.5 text-[#DFBA73] shrink-0" />
                     <span>{t("anonymousBadge")}</span>
-                  </Badge>
+                  </div>
                 </div>
               )}
             </div>
@@ -669,14 +656,11 @@ export function QuizView() {
         {/* ================= STEP 4: RESULT ================= */}
         {step === "result" && resultData && (
           <div className="w-full bg-[#142820] text-cream border-0 sm:border border-[#C59B6D]/30 rounded-none sm:rounded-3xl p-6 sm:p-10 shadow-none sm:shadow-2xl relative overflow-hidden transition-all">
-            {/* Top Badge & Score */}
+            {/* Top Score Bar */}
             <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-              <Badge
-                variant="outline"
-                className="bg-[#DFBA73]/15 text-[#DFBA73] border-[#DFBA73]/40 text-xs font-mono uppercase tracking-[0.2em] px-3.5 py-1 rounded-full font-medium"
-              >
+              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[#DFBA73] font-medium">
                 {t("resultScoreLabel")}
-              </Badge>
+              </span>
               <span className="font-mono text-sm text-[#DFBA73] font-semibold">
                 {resultData.score} / {t("resultScoreOutOf")}
               </span>
