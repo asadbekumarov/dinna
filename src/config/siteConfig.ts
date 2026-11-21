@@ -21,8 +21,8 @@ const getBaseUrl = (): string => {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL.trim().replace(/\/$/, "")}`;
   }
-  // 3. Fallback
-  return "https://dinnamirzabayeva.uz";
+  // 3. Fallback (Live Vercel domain)
+  return "https://dinna-psixologiya.vercel.app";
 };
 
 export const SITE_URL = getBaseUrl();
