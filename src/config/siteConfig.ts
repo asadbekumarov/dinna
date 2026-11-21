@@ -1,7 +1,7 @@
 import { contactConfig } from "./contact";
 
 const getBaseUrl = (): string => {
-  // 1. Explicit custom domain from environment
+  // 1. Explicit custom domain from environment (e.g. when custom domain is mapped)
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     const url = process.env.NEXT_PUBLIC_SITE_URL.trim().replace(/\/$/, "");
     return url.startsWith("http") ? url : `https://${url}`;
@@ -10,18 +10,7 @@ const getBaseUrl = (): string => {
     const url = process.env.SITE_URL.trim().replace(/\/$/, "");
     return url.startsWith("http") ? url : `https://${url}`;
   }
-  // 2. Vercel deployment URLs (automatically injected by Vercel)
-  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-    const url = process.env.NEXT_PUBLIC_VERCEL_URL.trim().replace(/\/$/, "");
-    return url.startsWith("http") ? url : `https://${url}`;
-  }
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.trim().replace(/\/$/, "")}`;
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL.trim().replace(/\/$/, "")}`;
-  }
-  // 3. Fallback (Live Vercel domain)
+  // 2. Public production domain (do not use VERCEL_URL as it points to SSO-protected preview hashes)
   return "https://dinna-psixologiya.vercel.app";
 };
 
