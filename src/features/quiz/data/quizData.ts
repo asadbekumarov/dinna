@@ -301,6 +301,7 @@ export function calculateQuizScore(answers: number[]): number {
 }
 
 export function getQuizTier(_score: number) {
+  void _score;
   // Always returns an empathetic baseline tier object for backward compatibility
   return {
     id: "clarity",

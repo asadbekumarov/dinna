@@ -75,8 +75,6 @@ export async function generateMetadata({
         "confidential psychological therapy",
       ];
 
-  const isProduction = process.env.VERCEL_ENV === "production";
-
   return {
     title,
     description,
@@ -129,19 +127,17 @@ export async function generateMetadata({
         { url: "/images/brand/logo-mark.webp", type: "image/webp" },
       ],
     },
-    robots: !isProduction
-      ? { index: false, follow: false }
-      : {
-          index: true,
-          follow: true,
-          googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-          },
-        },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 

@@ -1,9 +1,27 @@
 import { contactConfig } from "./contact";
 
 const getBaseUrl = (): string => {
+  // 1. Explicit custom domain from environment
   if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+    const url = process.env.NEXT_PUBLIC_SITE_URL.trim().replace(/\/$/, "");
+    return url.startsWith("http") ? url : `https://${url}`;
   }
+  if (process.env.SITE_URL) {
+    const url = process.env.SITE_URL.trim().replace(/\/$/, "");
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+  // 2. Vercel deployment URLs (automatically injected by Vercel)
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    const url = process.env.NEXT_PUBLIC_VERCEL_URL.trim().replace(/\/$/, "");
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.trim().replace(/\/$/, "")}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL.trim().replace(/\/$/, "")}`;
+  }
+  // 3. Fallback
   return "https://dinnamirzabayeva.uz";
 };
 

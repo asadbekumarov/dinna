@@ -20,7 +20,6 @@ import {
   Video,
   Sparkles,
   User,
-  MessageSquare,
   AlertCircle,
   Loader2,
 } from "lucide-react";
@@ -196,14 +195,6 @@ export function Contact() {
     : locale === "ru"
     ? "Напишите или позвоните удобным для вас способом."
     : "Feel free to call or message through your preferred channel.";
-
-  const fastReplyBadge = t.has("fastReplyBadge")
-    ? t("fastReplyBadge")
-    : isUz
-    ? "Tezkor javob"
-    : locale === "ru"
-    ? "Быстрый ответ"
-    : "Prompt reply";
 
   const channelSubtitle = t.has("channelSubtitle")
     ? t("channelSubtitle")
